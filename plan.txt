@@ -1,0 +1,5 @@
+* Have colors working - DONE
+* Disko and impermanence - DONE
+* Secrets
+* Flake templates as programming templates
+* Neovim config
