@@ -1,10 +1,12 @@
-# https://github.com/vimjoyer/impermanent-setup/blob/main/final/disko.nix
-{device ? throw "Please specify a device to partition", ...}: {
-  disko.device = {
+# https://raw.githubusercontent.com/vimjoyer/impermanent-setup/main/final/disko.nix
+{
+  device ? throw "Set this to your disk device, e.g. /dev/sda",
+  ...
+}: {
+  disko.devices = {
     disk.main = {
       inherit device;
       type = "disk";
-
       content = {
         type = "gpt";
         partitions = {
@@ -13,7 +15,6 @@
             size = "1M";
             type = "EF02";
           };
-
           esp = {
             name = "ESP";
             size = "500M";
@@ -24,7 +25,6 @@
               mountpoint = "/boot";
             };
           };
-
           swap = {
             size = "4G";
             content = {
@@ -32,19 +32,17 @@
               resumeDevice = true;
             };
           };
-
           root = {
             name = "root";
             size = "100%";
             content = {
-              type = "lvm_vg";
+              type = "lvm_pv";
               vg = "root_vg";
             };
           };
         };
       };
     };
-
     lvm_vg = {
       root_vg = {
         type = "lvm_vg";

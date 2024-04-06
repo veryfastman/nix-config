@@ -4,6 +4,7 @@
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel"];
       home = "/home/donny";
+      initialPassword = "password";
     };
   };
 }

@@ -13,9 +13,6 @@ in {
   options.impermanence.enable = mkEnableOption "Enable impermanence";
 
   config = mkIf cfg.enable {
-    fileSystems."/persist".neededForBoot = true;
-    programs.fuse.userAllowOther = true;
-
     boot.initrd.postDeviceCommands = mkAfter ''
       mkdir /btrfs_tmp
       mount /dev/root_vg/root /btrfs_tmp
@@ -41,6 +38,8 @@ in {
       umount /btrfs_tmp
     '';
 
+    fileSystems."/persist".neededForBoot = true;
+    programs.fuse.userAllowOther = true;
     environment.persistence."/persist/system" = {
       hideMounts = true;
       directories = [
@@ -55,10 +54,10 @@ in {
       ];
       files = [
         "/etc/machine-id"
-        {
-          file = "/var/keys/secret_file";
-          parentDirectory = {mode = "u=rwx,g=,o=";};
-        }
+        # {
+        #   file = "/var/keys/secret_file";
+        #   parentDirectory = {mode = "u=rwx,g=,o=";};
+        # }
       ];
     };
   };
