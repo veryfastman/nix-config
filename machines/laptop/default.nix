@@ -10,7 +10,7 @@ localFlake: {
 
   boot.loader.systemd-boot.enable = true;
   hardware.opengl.enable = true;
-  impermanence.enable = false;
+  impermanence.enable = true;
   services.keyd.enable = true;
   services.pipewire.enable = true;
   fonts.enable = true;
@@ -82,7 +82,7 @@ localFlake: {
     };
 
     misc = {
-      impermanence.enable = false;
+      impermanence.enable = true;
       scripts.enable = true;
       wallpapers.enable = true;
       zathura.enable = true;
