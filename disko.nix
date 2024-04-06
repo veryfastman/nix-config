@@ -1,8 +1,5 @@
 # https://raw.githubusercontent.com/vimjoyer/impermanent-setup/main/final/disko.nix
-{
-  device ? throw "Set this to your disk device, e.g. /dev/sda",
-  ...
-}: {
+{device ? throw "Set this to your disk device, e.g. /dev/sda", ...}: {
   disko.devices = {
     disk.main = {
       inherit device;
