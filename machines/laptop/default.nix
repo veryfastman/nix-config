@@ -33,7 +33,7 @@ localFlake: {
       ripgrep
       streamlink
       trash-cli
-      texlive.combined.scheme-full
+      # texlive.combined.scheme-full
       unzip
       yewtube
       yt-dlp
