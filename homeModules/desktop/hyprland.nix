@@ -4,7 +4,7 @@
     lib,
     ...
   }: let
-    inherit (lib) mkEnableOption mkIf mkOption;
+    inherit (lib) mkEnableOption mkIf mkOption types;
     inherit (myLib) createListOfStringsOption;
     cfg = config.desktop.hyprland;
   in {
@@ -15,8 +15,22 @@
       extraKeybindings = createListOfStringsOption "Custom Hyprland keybindings";
       windowRules = createListOfStringsOption "Set window rules";
       monitor = createListOfStringsOption "List of monitors to be used";
-      roundBorders = mkEnableOption "Hyprland rounded corners";
-      wallpaperCommand = createListOfStringsOption "Commands for setting the wallpaper";
+      wallpaperCommands = createListOfStringsOption "Commands for setting the wallpaper";
+
+      borderSize = mkOption {
+        type = types.int;
+	default = 1;
+	description = "Set the border size of windows";
+      };
+
+      roundBorders = {
+        enable = mkEnableOption "Enable rounded borders";
+        roundingAmount = mkOption {
+	  type = types.int;
+	  default = 5;
+	  description = "Amount of rounding to applied to window borders";
+	};
+      };
     };
 
     config = mkIf cfg.enable {
@@ -39,7 +53,7 @@
             [
               (mkIf config.graphic.waybar.enable "waybar")
             ]
-            ++ cfg.wallpaperCommand;
+            ++ cfg.wallpaperCommands;
 
           input = {
             follow_mouse = 1;
@@ -52,14 +66,14 @@
           general = {
             gaps_in = 6;
             gaps_out = 8;
-            border_size = 2;
+            border_size = cfg.borderSize;
             "col.inactive_border" = "rgb(${background})";
             "col.active_border" = "rgb(${blue})";
             layout = "master";
           };
 
           decoration = {
-            rounding = mkIf cfg.roundBorders 5;
+            rounding = mkIf cfg.roundBorders.enable cfg.roundBorders.roundingAmount;
             blur = {
               enabled = cfg.enableBlur;
               size = 5;

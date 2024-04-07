@@ -3,6 +3,7 @@
     alacritty
     bash
     direnv
+    git
     nushell
     starship
     yazi
@@ -13,6 +14,7 @@
     ./alacritty.nix
     ./bash.nix
     ./direnv.nix
+    ./git.nix
     ./nushell.nix
     ./starship.nix
     ./yazi.nix

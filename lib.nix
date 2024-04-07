@@ -10,9 +10,6 @@ in {
       inherit description;
     };
 
-  # Should only be used when not able to call moduleWithSystem
-  pkgs = inputs.nixpkgs.legacyPackages.x84_64-linux;
-
   commonOptions = let
     inherit (inputs.nixpkgs.lib) mkOption types;
   in {

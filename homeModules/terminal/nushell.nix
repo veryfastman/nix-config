@@ -38,7 +38,6 @@
           alias se = sudoedit
           alias snip = grim -g (slurp)
           alias strcam = mpv av://v4l2:/dev/video0
-          alias cat = bat -p
         '';
       };
     };

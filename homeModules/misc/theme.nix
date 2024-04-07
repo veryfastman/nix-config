@@ -5,11 +5,17 @@ localFlake: {
     ...
   }: let
     inherit (lib) mkOption types;
+    cfg = config.theme;
   in {
     options.theme = mkOption {
       type = types.attrs;
       default = localFlake.config.flake.colors.gruvbox;
       description = "Set desktop colorscheme";
     };
+
+    # config = {
+    #   inherit (cfg) gtk;
+    #   home.pointerCursor = cfg.pointerCursor;
+    # };
   };
 }

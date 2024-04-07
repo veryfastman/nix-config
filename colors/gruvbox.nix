@@ -1,6 +1,10 @@
-{myLib, ...}: {
+localFlake:
+{myLib, ...}:
+let
+  pkgs = localFlake.inputs.nixpkgs.legacyPackages.x86_64-linux;
+in {
   flake.colors.gruvbox = let
-    inherit (myLib) pkgs specifyHexFormat;
+    inherit (myLib) specifyHexFormat;
 
     neovim = {
       plugin = pkgs.vimPlugins.gruvbox-nvim;
@@ -24,6 +28,13 @@
         name = "Capitaine Cursors (Gruvbox)";
         package = pkgs.capitaine-cursors-themed;
       };
+    };
+
+    pointerCursor = {
+      package = pkgs.capitaine-cursors-themed;
+      name = "Capitaine Cursors (Gruvbox)";
+      x11.enable = true;
+      gtk.enable = true;
     };
 
     colors = {
@@ -56,7 +67,7 @@
       };
     };
   in {
-    inherit colors gtk neovim;
+    inherit colors gtk pointerCursor neovim;
     alacrittyCompatible = specifyHexFormat (colors // {primary = builtins.removeAttrs colors.primary ["alternate-background"];}) "0x";
     normalHex = specifyHexFormat colors "#";
   };

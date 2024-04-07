@@ -17,8 +17,23 @@ localFlake: {
 
   hardware.bluetooth.enable = true;
 
-  home-manager.users.donny = {
+  environment.systemPackages = with pkgs; [
+    curl
+    gcc
+    git
+    neovim
+    nix-prefetch-git
+    pulseaudio
+    python3
+    tree
+    wget
+  ];
+
+  home-manager.users.donny = { config, ... }: {
     theme = localFlake.config.flake.colors.gruvbox;
+
+    inherit (config.theme) gtk;
+    home.pointerCursor = config.theme.pointerCursor;
 
     home.packages = with pkgs; [
       ani-cli
@@ -34,11 +49,12 @@ localFlake: {
       ripgrep
       streamlink
       trash-cli
-      # texlive.combined.scheme-full
       unzip
       yewtube
       yt-dlp
       zip
+
+      (callPackage ../../pkgs/tex.nix {})
 
       (wrapMpv
         (mpv-unwrapped.override {
@@ -52,6 +68,8 @@ localFlake: {
         enable = true;
         enableAnimations = true;
         enableBlur = true;
+	roundBorders.enable = true;
+	wallpaperCommands = ["${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg"];
 
         extraKeybindings = [
           "SUPER, RETURN, exec, alacritty"
@@ -77,8 +95,14 @@ localFlake: {
 
       waybar = {
         enable = true;
+	barHeight = 22;
         terminal = "alacritty";
         soundControl = "pavucontrol";
+
+	font = {
+	  name = "RobotoMonoNerdFont";
+	  size = 9.0;
+	};
       };
     };
 
@@ -93,6 +117,7 @@ localFlake: {
     terminal = {
       bash.enable = true;
       direnv.enable = true;
+      git.enable = true;
       nushell.enable = true;
       starship.enable = true;
       yazi.enable = true;
@@ -109,6 +134,8 @@ localFlake: {
   };
 
   networking.networkmanager.enable = true;
+
+  security.sudo.extraConfig = "Defaults lecture=\"never\"";
 
   services.printing.enable = true;
   services.udisks2.enable = true;

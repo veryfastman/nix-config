@@ -70,7 +70,7 @@
             disk = {
               format = "󰨣 {percentage_free}%";
               format-alt = "󰨣 {free} free";
-              on-click-right = "${pkgs.cinnamon.nemo}/bin/nemo"; # If this approach is too slow then check if package exists or not
+              on-click-right = "${pkgs.cinnamon.nemo}/bin/nemo";
               path = "/";
             };
 
@@ -110,14 +110,14 @@
           inherit (cfg) font;
         in ''
           * {
-              background: ${background};
-              border: none;
-              border-radius: 0;
-              color: ${foreground};
-              font-family: ${font.name};
-              font-size: ${toString font.size}px;
-              margin: 0;
-              padding: 0;
+            background: ${background};
+            border: none;
+            border-radius: 0;
+            color: ${foreground};
+            font-family: ${font.name};
+            font-size: ${toString font.size}px;
+            margin: 0;
+            padding: 0;
           }
 
           #backlight,
@@ -127,32 +127,32 @@
           #pulseaudio,
           #tray,
           #window {
-              margin-right: 8px;
-              margin-left: 8px;
+            margin-right: 5px;
+            margin-left: 5px;
           }
 
           #tags button {
-              margin: -10px;
+            margin: -10px;
           }
 
           #battery,
           #network {
-              margin-right: 5px;
-              margin-left: 5px;
-              font-size: ${toString (font.size + 2)}px;
+            margin-right: 5px;
+            margin-left: 5px;
+            font-size: ${toString (font.size + 2)}px;
           }
 
           #tags button.occupied label {
-              color: ${green};
+            color: ${green};
           }
 
           #tags button.focused label {
-              color: ${blue};
+            color: ${blue};
           }
 
           #workspaces button.active label {
-              color: ${blue};
-              font-weight: bold;
+            color: ${blue};
+            font-weight: bold;
           }
         '';
       };
