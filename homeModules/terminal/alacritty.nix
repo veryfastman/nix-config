@@ -2,6 +2,7 @@
   flake.homeModules.alacritty = {
     config,
     lib,
+    pkgs,
     ...
   }: let
     inherit (lib) mkEnableOption mkIf mkOption types;
@@ -16,12 +17,12 @@
       enable = true;
       settings = {
         colors = config.theme.alacrittyCompatible;
-        env.TERM = "{pkgs.nushell}/bin/nu";
+        env.TERM = "${pkgs.nushell}/bin/nu";
 
         font = {
           size = cfg.font.size;
           normal = {
-            family = cfg.font;
+            family = cfg.font.name;
             style = "Normal";
           };
         };
