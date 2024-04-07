@@ -17,7 +17,7 @@
       enable = true;
       settings = {
         colors = config.theme.alacrittyCompatible;
-        env.TERM = "${pkgs.nushell}/bin/nu";
+        shell.program = "${pkgs.nushell}/bin/nu";
 
         font = {
           size = cfg.font.size;

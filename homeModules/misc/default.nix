@@ -7,6 +7,7 @@
   inherit (flake-parts-lib) importApply;
 in {
   flake.homeModules.misc.imports = with config.flake.homeModules; [
+    firefox
     impermanence
     scripts
     theme
@@ -15,6 +16,7 @@ in {
   ];
 
   imports = [
+    ./firefox.nix
     ./scripts.nix
     ./zathura.nix
     (importApply ./impermanence.nix {inherit inputs;})

@@ -29,6 +29,7 @@ localFlake: {
       fzf
       gimp
       htop
+      lazygit
       ncdu
       ripgrep
       streamlink
@@ -82,6 +83,7 @@ localFlake: {
     };
 
     misc = {
+      firefox.enable = true;
       impermanence.enable = true;
       scripts.enable = true;
       wallpapers.enable = true;
@@ -99,8 +101,8 @@ localFlake: {
       alacritty = {
         enable = true;
         font = {
-          name = "RobotoMonoNerdFont";
-          size = 14.0;
+          name = "JetBrainsMonoNerdFont";
+          size = 7.5;
         };
       };
     };
