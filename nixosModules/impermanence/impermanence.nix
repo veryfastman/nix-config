@@ -40,6 +40,7 @@ in {
 
     fileSystems."/persist".neededForBoot = true;
     programs.fuse.userAllowOther = true;
+    environment.etc.machine-id.source = ./machine-id;
     environment.persistence."/persist/system" = {
       hideMounts = true;
       directories = [
@@ -53,12 +54,17 @@ in {
         # { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
       ];
       files = [
-        "/etc/machine-id"
+        # "/etc/machine-id"
         # {
         #   file = "/var/keys/secret_file";
         #   parentDirectory = {mode = "u=rwx,g=,o=";};
         # }
       ];
     };
+
+    systemd.tmpfiles.rules = [
+      "d /persist/home/ 0777 root root -"
+      "d /persist/home/donny 0700 donny users -"
+    ];
   };
 }
