@@ -65,7 +65,7 @@ localFlake: {
         enable = true;
         enableAnimations = true;
         enableBlur = true;
-	blurSize = 3;
+	blurSize = 10;
 	roundBorders.enable = true;
 	startupCommands = ["${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg"];
 
@@ -77,7 +77,7 @@ localFlake: {
           "SUPER, R, exec, rofi -show drun"
           "SUPER SHIFT, R, exec, rofi -show run"
           "SUPER, P, exec, rofimoji"
-          "SUPER, E, exec, nemo"
+          "SUPER, E, exec, pcmanfm"
         ];
 
         windowRules = [
