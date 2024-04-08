@@ -117,14 +117,16 @@ localFlake: {
     terminal = {
       bash.enable = true;
       direnv.enable = true;
+      fish.enable = true;
       git.enable = true;
-      nushell.enable = true;
+      nushell.enable = false;
       starship.enable = true;
       yazi.enable = true;
       zellij.enable = true;
 
       alacritty = {
         enable = true;
+	shell = "fish";
         font = {
           name = "JetBrainsMonoNerdFont";
           size = 7.5;

@@ -11,13 +11,19 @@
     options.terminal.alacritty = {
       enable = mkEnableOption "Enable Alacritty";
       inherit (myLib.commonOptions) font;
+
+      shell = mkOption {
+        type = types.str;
+	default = "bash";
+	description = "Set the default shell for alacritty";
+      };
     };
 
     config.programs.alacritty = mkIf cfg.enable {
       enable = true;
       settings = {
         colors = config.theme.alacrittyCompatible;
-        shell.program = "${pkgs.nushell}/bin/nu";
+        shell.program = cfg.shell;
 
         font = {
           size = cfg.font.size;

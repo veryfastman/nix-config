@@ -27,8 +27,10 @@ localFlake: {
           ".ssh"
           ".local/share/keyrings"
           ".local/share/direnv"
-	  # ".local/state"
           ".mozilla"
+
+	  ".local/state/wireplumber"
+	  # ".local/state/nvim"
 
           # {
           #   directory = ".local/share/Steam";

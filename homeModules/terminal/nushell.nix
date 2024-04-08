@@ -2,6 +2,7 @@
   flake.homeModules.nushell = {
     config,
     lib,
+    pkgs,
     ...
   }: let
     inherit (lib) mkEnableOption mkIf;
@@ -38,6 +39,8 @@
           alias se = sudoedit
           alias snip = grim -g (slurp)
           alias strcam = mpv av://v4l2:/dev/video0
+
+	  ${pkgs.carapace}/bin/carapace chmod nushell | ignore
         '';
       };
     };

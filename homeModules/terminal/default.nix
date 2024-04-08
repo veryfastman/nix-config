@@ -3,6 +3,7 @@
     alacritty
     bash
     direnv
+    fish
     git
     nushell
     starship
@@ -14,6 +15,7 @@
     ./alacritty.nix
     ./bash.nix
     ./direnv.nix
+    ./fish.nix
     ./git.nix
     ./nushell.nix
     ./starship.nix
