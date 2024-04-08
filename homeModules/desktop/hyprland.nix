@@ -17,6 +17,12 @@
       monitor = createListOfStringsOption "List of monitors to be used";
       startupCommands = createListOfStringsOption "Commands to be automatically executed when Hyprland launches";
 
+      blurSize = mkOption {
+        type = types.int;
+	default = 5;
+	description = "Amount of blur to be applied to windows";
+      };
+
       borderSize = mkOption {
         type = types.int;
 	default = 1;
@@ -76,7 +82,7 @@
             rounding = mkIf cfg.roundBorders.enable cfg.roundBorders.roundingAmount;
             blur = {
               enabled = cfg.enableBlur;
-              size = 5;
+              size = cfg.blurSize;
               passes = 1;
               new_optimizations = true;
             };

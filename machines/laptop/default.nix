@@ -65,6 +65,7 @@ localFlake: {
         enable = true;
         enableAnimations = true;
         enableBlur = true;
+	blurSize = 3;
 	roundBorders.enable = true;
 	startupCommands = ["${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg"];
 
