@@ -13,9 +13,9 @@ localFlake: {
       description = "Set desktop colorscheme";
     };
 
-    # config = {
-    #   inherit (cfg) gtk;
-    #   home.pointerCursor = cfg.pointerCursor;
-    # };
+    config = {
+      gtk = cfg.gtk // { enable = true; };
+      home.pointerCursor = cfg.pointerCursor;
+    };
   };
 }

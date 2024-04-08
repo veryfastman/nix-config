@@ -32,6 +32,7 @@
           fish_add_path ~/.local/bin
           export VISUAL=nvim
           export EDITOR="$VISUAL"
+	  fish_vi_key_bindings
 	'';
       };
     };

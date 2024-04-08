@@ -127,8 +127,8 @@
           #pulseaudio,
           #tray,
           #window {
-            margin-right: 5px;
-            margin-left: 5px;
+            margin-right: 8px;
+            margin-left: 8px;
           }
 
           #tags button {
@@ -149,6 +149,10 @@
           #tags button.focused label {
             color: ${blue};
           }
+
+          #workspaces {
+	    margin-left: 4px;
+	  }
 
           #workspaces button.active label {
             color: ${blue};

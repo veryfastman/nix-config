@@ -26,5 +26,11 @@ in {
         description = "Set the font size";
       };
     };
+
+    shell = mkOption {
+      type = types.str;
+      default = "bash";
+      description = "Set the default shell for alacritty";
+    };
   };
 }

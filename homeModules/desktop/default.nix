@@ -22,13 +22,15 @@
       default = with pkgs; [
         bluetuith
         brightnessctl
-        cinnamon.nemo
         grim
         imv
         pavucontrol
+        pcmanfm
         playerctl
+	polkit_gnome
         slurp
         wl-clipboard
+	wlr-randr
       ];
       description = "List of packages to be installed when using a window manager";
     };

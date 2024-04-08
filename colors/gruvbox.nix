@@ -15,27 +15,27 @@ in {
       '';
     };
 
+    cursorTheme = {
+      name = "Capitaine Cursors (Gruvbox)";
+      package = pkgs.capitaine-cursors-themed;
+    };
+
     gtk = {
+      inherit cursorTheme;
       theme = {
         name = "Gruvbox-Dark-B";
-        package = pkgs.gruvbox-dark-gtk;
+        package = pkgs.gruvbox-gtk-theme;
       };
       iconTheme = {
-        name = "gruvbox-dark";
-        package = pkgs.gruvbox-dark-icons-gtk;
-      };
-      cursorTheme = {
-        name = "Capitaine Cursors (Gruvbox)";
-        package = pkgs.capitaine-cursors-themed;
+        name = "Gruvbox-Plus-Dark";
+        package = pkgs.gruvbox-plus-icons;
       };
     };
 
     pointerCursor = {
-      package = pkgs.capitaine-cursors-themed;
-      name = "Capitaine Cursors (Gruvbox)";
       x11.enable = true;
       gtk.enable = true;
-    };
+    } // cursorTheme;
 
     colors = {
       bright = {

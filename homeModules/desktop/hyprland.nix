@@ -15,7 +15,7 @@
       extraKeybindings = createListOfStringsOption "Custom Hyprland keybindings";
       windowRules = createListOfStringsOption "Set window rules";
       monitor = createListOfStringsOption "List of monitors to be used";
-      wallpaperCommands = createListOfStringsOption "Commands for setting the wallpaper";
+      startupCommands = createListOfStringsOption "Commands to be automatically executed when Hyprland launches";
 
       borderSize = mkOption {
         type = types.int;
@@ -53,7 +53,7 @@
             [
               (mkIf config.graphic.waybar.enable "waybar")
             ]
-            ++ cfg.wallpaperCommands;
+            ++ cfg.startupCommands;
 
           input = {
             follow_mouse = 1;

@@ -10,13 +10,7 @@
   in {
     options.terminal.alacritty = {
       enable = mkEnableOption "Enable Alacritty";
-      inherit (myLib.commonOptions) font;
-
-      shell = mkOption {
-        type = types.str;
-	default = "bash";
-	description = "Set the default shell for alacritty";
-      };
+      inherit (myLib.commonOptions) font shell;
     };
 
     config.programs.alacritty = mkIf cfg.enable {

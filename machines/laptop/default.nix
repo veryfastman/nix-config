@@ -32,9 +32,6 @@ localFlake: {
   home-manager.users.donny = { config, ... }: {
     theme = localFlake.config.flake.colors.gruvbox;
 
-    inherit (config.theme) gtk;
-    home.pointerCursor = config.theme.pointerCursor;
-
     home.packages = with pkgs; [
       ani-cli
       bluetuith
@@ -69,7 +66,9 @@ localFlake: {
         enableAnimations = true;
         enableBlur = true;
 	roundBorders.enable = true;
-	wallpaperCommands = ["${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg"];
+	startupCommands = ["${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg"];
+
+        monitor = [ "eDP-1, 1920x1080@60,0x0,1" ];
 
         extraKeybindings = [
           "SUPER, RETURN, exec, alacritty"
@@ -95,13 +94,13 @@ localFlake: {
 
       waybar = {
         enable = true;
-	barHeight = 22;
+	barHeight = 30;
         terminal = "alacritty";
         soundControl = "pavucontrol";
 
 	font = {
-	  name = "RobotoMonoNerdFont";
-	  size = 9.0;
+	  name = "JetBrainsMonoNerdFont";
+	  size = 12.0;
 	};
       };
     };
@@ -114,7 +113,13 @@ localFlake: {
       zathura.enable = true;
     };
 
-    terminal = {
+    terminal =
+    let
+      enableAndShell = shell: {
+        enable = true;
+	inherit shell;
+      };
+    in {
       bash.enable = true;
       direnv.enable = true;
       fish.enable = true;
@@ -122,14 +127,12 @@ localFlake: {
       nushell.enable = false;
       starship.enable = true;
       yazi.enable = true;
-      zellij.enable = true;
+      zellij = enableAndShell "fish";
 
-      alacritty = {
-        enable = true;
-	shell = "fish";
+      alacritty = (enableAndShell "fish") // {
         font = {
           name = "JetBrainsMonoNerdFont";
-          size = 7.5;
+          size = 11.5;
         };
       };
     };
