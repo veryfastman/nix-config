@@ -27,10 +27,10 @@
         pavucontrol
         pcmanfm
         playerctl
-	polkit_gnome
+        polkit_gnome
         slurp
         wl-clipboard
-	wlr-randr
+        wlr-randr
       ];
       description = "List of packages to be installed when using a window manager";
     };

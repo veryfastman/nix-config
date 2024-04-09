@@ -29,8 +29,8 @@ localFlake: {
           ".local/share/direnv"
           ".mozilla"
 
-	  ".local/state/wireplumber"
-	  # ".local/state/nvim"
+          ".local/state/wireplumber"
+          # ".local/state/nvim"
 
           # {
           #   directory = ".local/share/Steam";

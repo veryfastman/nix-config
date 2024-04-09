@@ -19,23 +19,23 @@
 
       blurSize = mkOption {
         type = types.int;
-	default = 5;
-	description = "Amount of blur to be applied to windows";
+        default = 5;
+        description = "Amount of blur to be applied to windows";
       };
 
       borderSize = mkOption {
         type = types.int;
-	default = 1;
-	description = "Set the border size of windows";
+        default = 1;
+        description = "Set the border size of windows";
       };
 
       roundBorders = {
         enable = mkEnableOption "Enable rounded borders";
         roundingAmount = mkOption {
-	  type = types.int;
-	  default = 5;
-	  description = "Amount of rounding to applied to window borders";
-	};
+          type = types.int;
+          default = 5;
+          description = "Amount of rounding to applied to window borders";
+        };
       };
     };
 

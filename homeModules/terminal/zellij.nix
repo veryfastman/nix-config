@@ -9,7 +9,7 @@
   in {
     options.terminal.zellij = {
       enable = mkEnableOption "Enable Zellij";
-      inherit (myLib.commonOptions) shell;
+      shell = myLib.commonOptions.shell "Zellij";
     };
 
     config = mkIf cfg.enable {

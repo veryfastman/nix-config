@@ -29,7 +29,7 @@ localFlake: {
     wget
   ];
 
-  home-manager.users.donny = { config, ... }: {
+  home-manager.users.donny = {config, ...}: {
     theme = localFlake.config.flake.colors.gruvbox;
 
     home.packages = with pkgs; [
@@ -65,11 +65,11 @@ localFlake: {
         enable = true;
         enableAnimations = true;
         enableBlur = true;
-	blurSize = 10;
-	roundBorders.enable = true;
-	startupCommands = ["${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg"];
+        blurSize = 10;
+        roundBorders.enable = true;
+        startupCommands = ["${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg"];
 
-        monitor = [ "eDP-1, 1920x1080@60,0x0,1" ];
+        monitor = ["eDP-1, 1920x1080@60,0x0,1"];
 
         extraKeybindings = [
           "SUPER, RETURN, exec, alacritty"
@@ -95,14 +95,14 @@ localFlake: {
 
       waybar = {
         enable = true;
-	barHeight = 30;
+        barHeight = 30;
         terminal = "alacritty";
         soundControl = "pavucontrol";
 
-	font = {
-	  name = "JetBrainsMonoNerdFont";
-	  size = 12.0;
-	};
+        font = {
+          name = "JetBrainsMonoNerdFont";
+          size = 12.0;
+        };
       };
     };
 
@@ -114,11 +114,10 @@ localFlake: {
       zathura.enable = true;
     };
 
-    terminal =
-    let
+    terminal = let
       enableAndShell = shell: {
         enable = true;
-	inherit shell;
+        inherit shell;
       };
     in {
       bash.enable = true;
@@ -130,12 +129,14 @@ localFlake: {
       yazi.enable = true;
       zellij = enableAndShell "fish";
 
-      alacritty = (enableAndShell "fish") // {
-        font = {
-          name = "JetBrainsMonoNerdFont";
-          size = 11.5;
+      alacritty =
+        (enableAndShell "fish")
+        // {
+          font = {
+            name = "JetBrainsMonoNerdFont";
+            size = 11.5;
+          };
         };
-      };
     };
   };
 

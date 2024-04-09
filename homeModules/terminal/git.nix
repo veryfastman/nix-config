@@ -1,6 +1,9 @@
 {
-  flake.homeModules.git = { config, lib, ... }:
-  let
+  flake.homeModules.git = {
+    config,
+    lib,
+    ...
+  }: let
     inherit (lib) mkEnableOption mkIf;
     cfg = config.terminal.git;
   in {
@@ -10,7 +13,7 @@
       programs.git = {
         enable = true;
         userName = "veryfastman";
-	userEmail = "dony357@outlook.com";
+        userEmail = "dony357@outlook.com";
       };
     };
   };

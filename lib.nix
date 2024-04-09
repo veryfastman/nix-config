@@ -27,10 +27,11 @@ in {
       };
     };
 
-    shell = mkOption {
-      type = types.str;
-      default = "bash";
-      description = "Set the default shell for alacritty";
-    };
+    shell = program:
+      mkOption {
+        type = types.str;
+        default = "bash";
+        description = "Set the default shell for ${program}";
+      };
   };
 }

@@ -109,55 +109,55 @@
           inherit (config.theme.normalHex.normal) blue green;
           inherit (cfg) font;
         in ''
-          * {
-            background: ${background};
-            border: none;
-            border-radius: 0;
-            color: ${foreground};
-            font-family: ${font.name};
-            font-size: ${toString font.size}px;
-            margin: 0;
-            padding: 0;
+                 * {
+                   background: ${background};
+                   border: none;
+                   border-radius: 0;
+                   color: ${foreground};
+                   font-family: ${font.name};
+                   font-size: ${toString font.size}px;
+                   margin: 0;
+                   padding: 0;
+                 }
+
+                 #backlight,
+                 #clock,
+                 #disk,
+                 #memory,
+                 #pulseaudio,
+                 #tray,
+                 #window {
+                   margin-right: 8px;
+                   margin-left: 8px;
+                 }
+
+                 #tags button {
+                   margin: -10px;
+                 }
+
+                 #battery,
+                 #network {
+                   margin-right: 5px;
+                   margin-left: 5px;
+                   font-size: ${toString (font.size + 2)}px;
+                 }
+
+                 #tags button.occupied label {
+                   color: ${green};
+                 }
+
+                 #tags button.focused label {
+                   color: ${blue};
+                 }
+
+                 #workspaces {
+            margin-left: 4px;
           }
 
-          #backlight,
-          #clock,
-          #disk,
-          #memory,
-          #pulseaudio,
-          #tray,
-          #window {
-            margin-right: 8px;
-            margin-left: 8px;
-          }
-
-          #tags button {
-            margin: -10px;
-          }
-
-          #battery,
-          #network {
-            margin-right: 5px;
-            margin-left: 5px;
-            font-size: ${toString (font.size + 2)}px;
-          }
-
-          #tags button.occupied label {
-            color: ${green};
-          }
-
-          #tags button.focused label {
-            color: ${blue};
-          }
-
-          #workspaces {
-	    margin-left: 4px;
-	  }
-
-          #workspaces button.active label {
-            color: ${blue};
-            font-weight: bold;
-          }
+                 #workspaces button.active label {
+                   color: ${blue};
+                   font-weight: bold;
+                 }
         '';
       };
     };

@@ -14,7 +14,7 @@ localFlake: {
     };
 
     config = {
-      gtk = cfg.gtk // { enable = true; };
+      gtk = cfg.gtk // {enable = true;};
       home.pointerCursor = cfg.pointerCursor;
     };
   };

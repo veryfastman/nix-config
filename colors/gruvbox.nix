@@ -1,6 +1,4 @@
-localFlake:
-{myLib, ...}:
-let
+localFlake: {myLib, ...}: let
   pkgs = localFlake.inputs.nixpkgs.legacyPackages.x86_64-linux;
 in {
   flake.colors.gruvbox = let
@@ -32,10 +30,12 @@ in {
       };
     };
 
-    pointerCursor = {
-      x11.enable = true;
-      gtk.enable = true;
-    } // cursorTheme;
+    pointerCursor =
+      {
+        x11.enable = true;
+        gtk.enable = true;
+      }
+      // cursorTheme;
 
     colors = {
       bright = {
