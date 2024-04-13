@@ -20,6 +20,7 @@
           "nglayout.initialpaint.delay_in_oopif" = 0;
           "content.notify.interval" = 100000;
           "browser.startup.preXulSkeletonUI" = false;
+          "general.autoscroll.enable" = true;
 
           # EXPERIMENTAL
           "layout.css.grid-template-masonry-value.enabled" = true;
