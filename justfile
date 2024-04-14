@@ -22,6 +22,10 @@ check:
 debug:
   nix --extra-experimental-features repl-flake repl ".#"
 
+# update the lock file
+update:
+  nix flake update
+
 # generate a hardware configuration file for the current system
 generate-hardware-config TARGET_FILE:
   nixos-generate-config --no-filesystems --show-hardware-config > {{TARGET_FILE}}
