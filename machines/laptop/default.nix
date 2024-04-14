@@ -30,7 +30,7 @@ localFlake: {
   ];
 
   home-manager.users.donny = {config, ...}: {
-    theme = localFlake.config.flake.colors.gruvbox;
+    theme = localFlake.config.flake.themes.gruvbox;
 
     home.packages = with pkgs; [
       ani-cli

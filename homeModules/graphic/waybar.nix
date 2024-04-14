@@ -105,8 +105,8 @@
           };
         };
         style = let
-          inherit (config.theme.normalHex.primary) background foreground;
-          inherit (config.theme.normalHex.normal) blue green;
+          inherit (config.theme.normalHexColorFormat.primary) background foreground;
+          inherit (config.theme.normalHexColorFormat.normal) blue green;
           inherit (cfg) font;
         in ''
                  * {

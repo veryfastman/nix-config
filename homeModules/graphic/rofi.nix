@@ -30,8 +30,8 @@
         };
         theme = let
           inherit (config.lib.formats.rasi) mkLiteral;
-          inherit (config.theme.normalHex.primary) alternate-background background foreground;
-          inherit (config.theme.normalHex.normal) blue;
+          inherit (config.theme.normalHexColorFormat.primary) alternate-background background foreground;
+          inherit (config.theme.normalHexColorFormat.normal) blue;
         in {
           "*" = {
             bg = mkLiteral background;

@@ -15,7 +15,7 @@
       programs.zathura = {
         enable = true;
         options = let
-          inherit (config.theme.normalHex.primary) background foreground;
+          inherit (config.theme.normalHexColorFormat.primary) background foreground;
         in {
           default-bg = background;
           default-fg = foreground;

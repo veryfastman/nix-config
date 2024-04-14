@@ -246,6 +246,12 @@
           "cookiebanners.service.mode.privateBrowsing" = 2;
         };
 
+        search = {
+          force = true;
+          default = "DuckDuckGo";
+          privateDefault = "DuckDuckGo";
+        };
+
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           decentraleyes
           df-youtube
@@ -263,8 +269,28 @@
         programs.firefox = {
           enable = true;
           profiles = {
-            fun = commonProfileSettings // {isDefault = true;};
-            school = commonProfileSettings // {id = 1;};
+            fun =
+              commonProfileSettings
+              // {
+                isDefault = true;
+                bookmarks = [
+                  {
+                    name = "youtube";
+                    url = "https://youtube.com";
+                  }
+                ];
+              };
+            school =
+              commonProfileSettings
+              // {
+                id = 1;
+                bookmarks = [
+                  {
+                    name = "gmail";
+                    url = "https://gmail.com";
+                  }
+                ];
+              };
           };
         };
       };

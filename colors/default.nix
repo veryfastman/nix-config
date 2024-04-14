@@ -6,12 +6,5 @@
 }: let
   inherit (flake-parts-lib) importApply;
 in {
-  flake.colors.default.imports = with config.flake.colors; [
-    gruvbox
-  ];
-
-  imports = [
-    ./module.nix
-    (importApply ./gruvbox.nix {inherit inputs;})
-  ];
+  imports = map (path: importApply path {inherit inputs;}) [./module.nix ./gruvbox.nix];
 }
