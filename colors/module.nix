@@ -20,7 +20,12 @@ localFlake: {
     types.submodule {
       options =
         {
-          primary = genAttrs (["background" "foreground"] ++ (if enableAlternateBackground then ["alternate-background"] else [])) (name: createStringOption "000000" "Set the ${name}");
+          primary = genAttrs (["background" "foreground"]
+            ++ (
+              if enableAlternateBackground
+              then ["alternate-background"]
+              else []
+            )) (name: createStringOption "000000" "Set the ${name}");
         }
         // genAttrs ["bright" "normal"] (categoryName:
           mkOption {
