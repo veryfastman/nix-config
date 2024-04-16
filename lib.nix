@@ -2,7 +2,7 @@
   inherit (builtins) mapAttrs;
   inherit (inputs.nixpkgs.lib) mkOption types;
 in {
-  specifyHexFormat = colors: precedingSymbol: mapAttrs (_name: value: mapAttrs (_name: value: precedingSymbol + value) value) colors;
+  specifyHexFormat = colors: precedingSymbol: mapAttrs (_: value: mapAttrs (_: value: precedingSymbol + value) value) colors;
   createListOfStringsOption = description:
     mkOption {
       type = types.listOf types.str;

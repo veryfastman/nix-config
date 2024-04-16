@@ -66,7 +66,5 @@ in {
     };
   in {
     inherit colors gtk pointerCursor; # neovim;
-    alacrittyCompatibleColorFormat = specifyHexFormat (colors // {primary = builtins.removeAttrs colors.primary ["alternate-background"];}) "0x";
-    normalHexColorFormat = specifyHexFormat colors "#";
   };
 }
