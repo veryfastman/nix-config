@@ -27,6 +27,7 @@ localFlake: {
           ".ssh"
           ".local/share/keyrings"
           ".local/share/direnv"
+	  ".local/share/Trash"
           ".mozilla"
 
           ".local/state/wireplumber"
