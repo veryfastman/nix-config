@@ -19,6 +19,21 @@
           default_shell = cfg.shell;
           default_layout = "compact";
           pane_frames = false;
+          theme = "my-theme";
+
+          themes = {
+            my-theme = let
+              inherit (config.theme.normalHexColorFormat) normal;
+              inherit (config.theme.normalHexColorFormat.extra) orange;
+              inherit (config.theme.normalHexColorFormat.primary) background foreground;
+            in
+              {
+                bg = background;
+                fg = foreground;
+                orange = orange.normal;
+              }
+              // normal;
+          };
         };
       };
     };

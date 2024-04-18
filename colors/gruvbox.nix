@@ -59,9 +59,16 @@ in {
       };
 
       primary = {
-        alternate-background = "282828";
         background = "1D2021";
         foreground = "ebdbb2";
+      };
+
+      extra = {
+        alternate-background = "282828";
+        orange = {
+          bright = "fe8019";
+          normal = "d65d0e";
+        };
       };
     };
   in {

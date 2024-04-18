@@ -19,7 +19,7 @@
     config.programs.alacritty = mkIf cfg.enable {
       enable = true;
       settings = {
-        colors = config.theme.alacrittyCompatibleColorFormat;
+        colors = builtins.removeAttrs config.theme.alacrittyCompatibleColorFormat ["extra"];
         shell.program = cfg.shell;
 
         font = {

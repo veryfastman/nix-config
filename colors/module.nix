@@ -5,7 +5,7 @@ localFlake: {
   myLib,
   ...
 }: let
-  inherit (builtins) concatStringsSep substring;
+  inherit (builtins) concatStringsSep;
   inherit (lib) genAttrs mkEnableOption mkIf mkOption types;
 
   pkgs = localFlake.inputs.nixpkgs.legacyPackages.x86_64-linux;
@@ -16,34 +16,32 @@ localFlake: {
       inherit default description;
     };
 
-  colorLayout = enableAlternateBackground:
-    types.submodule {
-      options =
-        {
-          primary = genAttrs (["background" "foreground"]
-            ++ (
-              if enableAlternateBackground
-              then ["alternate-background"]
-              else []
-            )) (name: createStringOption "000000" "Set the ${name}");
-        }
-        // genAttrs ["bright" "normal"] (categoryName:
-          mkOption {
-            type = types.submodule {
-              options = genAttrs [
-                "black"
-                "blue"
-                "cyan"
-                "green"
-                "magenta"
-                "red"
-                "white"
-                "yellow"
-              ] (name: createStringOption "000000" ("Color hex value for " + concatStringsSep " " [categoryName name]));
-            };
-            description = "Colors that are ${categoryName}";
-          });
-    };
+  colorLayout = types.submodule {
+    options =
+      {
+        primary = genAttrs ["background" "foreground"] (name: createStringOption "000000" "Set the ${name}");
+        extra = {
+          alternate-background = createStringOption "000000" "Set another background";
+          orange = genAttrs ["bright" "normal"] (name: createStringOption "000000" "Set the ${name} variant of the color orange");
+        };
+      }
+      // genAttrs ["bright" "normal"] (categoryName:
+        mkOption {
+          type = types.submodule {
+            options = genAttrs [
+              "black"
+              "blue"
+              "cyan"
+              "green"
+              "magenta"
+              "red"
+              "white"
+              "yellow"
+            ] (name: createStringOption "000000" ("Color hex value for " + concatStringsSep " " [categoryName name]));
+          };
+          description = "Colors that are ${categoryName}";
+        });
+  };
 
   themeModule = {
     nameDefault,
@@ -82,7 +80,7 @@ in {
             options = let
               inherit (myLib) specifyHexFormat;
               colors = mkOption {
-                type = colorLayout true;
+                type = colorLayout;
                 default = {};
                 description = "Colors to be used by various configurations";
                 example = ''
@@ -109,9 +107,16 @@ in {
                   };
 
                   primary = {
-                    alternate-background = "282828";
                     background = "1D2021";
                     foreground = "ebdbb2";
+                  };
+
+                  extra = {
+                    alternate-background = "282828";
+                    orange = {
+                      bright = "fe8019";
+                      normal = "d65d0e";
+                    };
                   };
                 '';
               };
@@ -119,13 +124,13 @@ in {
               inherit colors;
 
               alacrittyCompatibleColorFormat = mkOption {
-                type = colorLayout false;
-                default = specifyHexFormat (config.colors // {primary = builtins.removeAttrs config.colors.primary ["alternate-background"];}) "0x";
-                description = "Hex colors that integrate seamlessly with Alacritty";
+                type = colorLayout;
+                default = specifyHexFormat config.colors "0x";
+                description = "Hex colors that are compatible with Alacritty";
               };
 
               normalHexColorFormat = mkOption {
-                type = colorLayout true;
+                type = colorLayout;
                 default = specifyHexFormat config.colors "#";
                 description = "General purpose hex color codes";
               };
