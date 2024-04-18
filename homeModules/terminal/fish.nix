@@ -15,7 +15,6 @@
         enable = true;
 
         shellAliases = {
-          vim = "nvim";
           cb = "cargo build";
           cch = "cargo check";
           cv = "cargo run";
