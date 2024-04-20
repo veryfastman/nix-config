@@ -8,6 +8,8 @@
     cfg = config.services.keyd;
   in
     mkIf cfg.enable {
+      # Do backspace+escape+enter if keyd breaks keyboard
+      systemd.services.keyd.restartIfChanged = false;
       services.keyd.keyboards.default = {
         ids = ["*"];
         settings.main = {
