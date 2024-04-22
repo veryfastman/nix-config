@@ -1,8 +1,7 @@
-localFlake: {
-  lib,
-  pkgs,
-  ...
-}: {
+localFlake: { lib
+            , pkgs
+            , ...
+            }: {
   imports = [
     ./hardware-configuration.nix
     localFlake.config.flake.nixosModules.default
@@ -29,7 +28,7 @@ localFlake: {
     wget
   ];
 
-  home-manager.users.donny = {config, ...}: {
+  home-manager.users.donny = { config, ... }: {
     theme = localFlake.config.flake.themes.gruvbox;
 
     home.packages = with pkgs; [
@@ -51,13 +50,14 @@ localFlake: {
       yt-dlp
       zip
 
-      (callPackage ../../pkgs/tex.nix {})
+      localFlake.self.packages.${pkgs.system}.nvim
+      (callPackage ../../pkgs/tex.nix { })
 
       (wrapMpv
         (mpv-unwrapped.override {
           ffmpeg = ffmpeg_6-full;
         })
-        {scripts = [mpvScripts.mpris];})
+        { scripts = [ mpvScripts.mpris ]; })
     ];
 
     desktop = {
@@ -67,9 +67,9 @@ localFlake: {
         enableBlur = true;
         blurSize = 10;
         roundBorders.enable = true;
-        startupCommands = ["${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg"];
+        startupCommands = [ "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg" ];
 
-        monitor = ["eDP-1, 1920x1080@60,0x0,1"];
+        monitor = [ "eDP-1, 1920x1080@60,0x0,1" ];
 
         extraKeybindings = [
           "SUPER, RETURN, exec, alacritty"
@@ -115,30 +115,32 @@ localFlake: {
       zathura.enable = true;
     };
 
-    terminal = let
-      enableAndShell = shell: {
-        enable = true;
-        inherit shell;
-      };
-    in {
-      bash.enable = true;
-      direnv.enable = true;
-      fish.enable = true;
-      git.enable = true;
-      nushell.enable = false;
-      starship.enable = true;
-      yazi.enable = true;
-      zellij = enableAndShell "fish";
-
-      alacritty =
-        (enableAndShell "fish")
-        // {
-          font = {
-            name = "JetBrainsMonoNerdFont";
-            size = 11.5;
-          };
+    terminal =
+      let
+        enableAndShell = shell: {
+          enable = true;
+          inherit shell;
         };
-    };
+      in
+      {
+        bash.enable = true;
+        direnv.enable = true;
+        fish.enable = true;
+        git.enable = true;
+        nushell.enable = false;
+        starship.enable = true;
+        yazi.enable = true;
+        zellij = enableAndShell "fish";
+
+        alacritty =
+          (enableAndShell "fish")
+          // {
+            font = {
+              name = "JetBrainsMonoNerdFont";
+              size = 11.5;
+            };
+          };
+      };
   };
 
   networking.networkmanager.enable = true;

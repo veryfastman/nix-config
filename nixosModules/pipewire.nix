@@ -1,12 +1,13 @@
 {
-  flake.nixosModules.pipewire = {
-    config,
-    lib,
-    ...
-  }: let
-    inherit (lib) mkIf;
-    cfg = config.services.pipewire;
-  in
+  flake.nixosModules.pipewire =
+    { config
+    , lib
+    , ...
+    }:
+    let
+      inherit (lib) mkIf;
+      cfg = config.services.pipewire;
+    in
     mkIf cfg.enable {
       security.rtkit.enable = true;
       services.pipewire = {

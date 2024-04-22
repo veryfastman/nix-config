@@ -1,8 +1,7 @@
-{
-  config,
-  flake-parts-lib,
-  inputs,
-  ...
+{ config
+, flake-parts-lib
+, inputs
+, ...
 }: {
   flake.nixosModules.default = {
     imports = with config.flake.nixosModules; [
@@ -22,10 +21,10 @@
     programs.dconf.enable = true;
     security.polkit.enable = true;
     nixpkgs.config.allowUnfree = true;
-    nix.settings.experimental-features = ["nix-command" "flakes"];
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
-  flake.nixosModules.home-manager = flake-parts-lib.importApply ./home-manager.nix {inherit config inputs;};
+  flake.nixosModules.home-manager = flake-parts-lib.importApply ./home-manager.nix { inherit config inputs; };
 
   imports = [
     ./impermanence

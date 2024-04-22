@@ -1,4 +1,4 @@
-localFlake: {config, ...}: {
+localFlake: { config, ... }: {
   imports = [
     localFlake.inputs.home-manager.nixosModules.home-manager
   ];
@@ -9,7 +9,7 @@ localFlake: {config, ...}: {
   home-manager.sharedModules = [
     {
       home.stateVersion = config.system.stateVersion;
-      imports = [localFlake.config.flake.homeModules.default];
+      imports = [ localFlake.config.flake.homeModules.default ];
     }
   ];
 }

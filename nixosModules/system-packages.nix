@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.system-packages = {pkgs, ...}: {
+  flake.nixosModules.system-packages = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
       curl
       gcc

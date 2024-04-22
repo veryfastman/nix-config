@@ -1,7 +1,6 @@
-{
-  config,
-  lib,
-  ...
+{ config
+, lib
+, ...
 }: {
   flake.homeModules.desktop.imports = with config.flake.homeModules; [
     desktop-packages
@@ -10,31 +9,33 @@
     # sway
   ];
 
-  flake.homeModules.desktop-packages = {
-    lib,
-    pkgs,
-    ...
-  }: let
-    inherit (lib) mkOption types;
-  in {
-    options.desktop.windowManagerPackages = mkOption {
-      type = types.listOf types.package;
-      default = with pkgs; [
-        bluetuith
-        brightnessctl
-        grim
-        imv
-        pavucontrol
-        pcmanfm
-        playerctl
-        polkit_gnome
-        slurp
-        wl-clipboard
-        wlr-randr
-      ];
-      description = "List of packages to be installed when using a window manager";
+  flake.homeModules.desktop-packages =
+    { lib
+    , pkgs
+    , ...
+    }:
+    let
+      inherit (lib) mkOption types;
+    in
+    {
+      options.desktop.windowManagerPackages = mkOption {
+        type = types.listOf types.package;
+        default = with pkgs; [
+          bluetuith
+          brightnessctl
+          grim
+          imv
+          pavucontrol
+          pcmanfm
+          playerctl
+          polkit_gnome
+          slurp
+          wl-clipboard
+          wlr-randr
+        ];
+        description = "List of packages to be installed when using a window manager";
+      };
     };
-  };
 
   imports = [
     # ./river.nix

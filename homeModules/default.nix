@@ -1,4 +1,4 @@
-{config, ...}: {
+{ config, ... }: {
   flake.homeModules.default.imports = with config.flake.homeModules; [
     desktop
     graphic

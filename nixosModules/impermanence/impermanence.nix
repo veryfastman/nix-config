@@ -1,11 +1,12 @@
-localFlake: {
-  config,
-  lib,
-  ...
-}: let
+localFlake: { config
+            , lib
+            , ...
+            }:
+let
   inherit (lib) mkAfter mkEnableOption mkIf;
   cfg = config.impermanence;
-in {
+in
+{
   imports = [
     localFlake.inputs.impermanence.nixosModules.impermanence
   ];

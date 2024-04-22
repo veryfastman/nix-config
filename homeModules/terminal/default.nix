@@ -1,4 +1,4 @@
-{config, ...}: {
+{ config, ... }: {
   flake.homeModules.terminal.imports = with config.flake.homeModules; [
     alacritty
     bash

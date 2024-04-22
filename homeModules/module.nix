@@ -1,14 +1,15 @@
+{ lib
+, flake-parts-lib
+, ...
+}:
+let
+  inherit (lib) mkOption types;
+in
 {
-  lib,
-  flake-parts-lib,
-  ...
-}: let
-  inherit (lib) mapAttrs mkOption types;
-in {
   options.flake = flake-parts-lib.mkSubmoduleOptions {
     homeModules = mkOption {
       type = types.lazyAttrsOf types.unspecified;
-      default = {};
+      default = { };
       description = "Home manager modules";
     };
   };

@@ -1,10 +1,11 @@
-{
-  config,
-  flake-parts-lib,
-  inputs,
-  ...
-}: let
+{ config
+, flake-parts-lib
+, inputs
+, ...
+}:
+let
   inherit (flake-parts-lib) importApply;
-in {
-  imports = map (path: importApply path {inherit inputs;}) [./module.nix ./gruvbox.nix];
+in
+{
+  imports = map (path: importApply path { inherit inputs; }) [ ./module.nix ./gruvbox.nix ];
 }

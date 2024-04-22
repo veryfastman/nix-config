@@ -1,5 +1,5 @@
 # https://raw.githubusercontent.com/vimjoyer/impermanent-setup/main/final/disko.nix
-{device ? throw "Set this to your disk device, e.g. /dev/sda", ...}: {
+{ device ? throw "Set this to your disk device, e.g. /dev/sda", ... }: {
   disko.devices = {
     disk.main = {
       inherit device;
@@ -48,7 +48,7 @@
             size = "100%FREE";
             content = {
               type = "btrfs";
-              extraArgs = ["-f"];
+              extraArgs = [ "-f" ];
 
               subvolumes = {
                 "/root" = {
@@ -56,12 +56,12 @@
                 };
 
                 "/persist" = {
-                  mountOptions = ["subvol=persist" "noatime"];
+                  mountOptions = [ "subvol=persist" "noatime" ];
                   mountpoint = "/persist";
                 };
 
                 "/nix" = {
-                  mountOptions = ["subvol=nix" "noatime"];
+                  mountOptions = [ "subvol=nix" "noatime" ];
                   mountpoint = "/nix";
                 };
               };
