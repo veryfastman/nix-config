@@ -2,11 +2,11 @@
   plugins.telescope = {
     enable = true;
     keymaps = {
+      "<leader>b" = {
+        action = "buffers";
+      };
       "<leader>ff" = {
         action = "find_files";
-      };
-      "<leader>fb" = {
-        action = "buffers";
       };
       "<leader>fo" = {
         action = "oldfiles";

@@ -2,4 +2,9 @@
 * Disko and impermanence - DONE
 * Secrets
 * Flake templates as programming templates
-* Neovim config - DONE
+
+* Neovim config
+    - Write a function that creates a silent normal mode keybinding
+    - Adjust Floaterm keybindings
+    - Make Neorg work
+    - Add vimtex
