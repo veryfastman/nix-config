@@ -12,6 +12,13 @@ in
       inherit description;
     };
 
+  silentNormalKeymappings = keymap: map
+    (x: x // {
+      mode = "n";
+      options.silent = true;
+    })
+    keymap;
+
   commonOptions =
     let
       inherit (inputs.nixpkgs.lib) mkOption types;

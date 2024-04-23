@@ -1,3 +1,4 @@
+{ myLib, ... }:
 let
   myKeymaps = [
     {
@@ -52,13 +53,5 @@ let
 in
 {
   globals.mapleader = " ";
-  keymaps =
-    map
-      (x:
-        x
-        // {
-          mode = "n";
-          options.silent = true;
-        })
-      myKeymaps;
+  keymaps = myLib.silentNormalKeymappings myKeymaps;
 }

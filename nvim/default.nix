@@ -1,5 +1,6 @@
 { self
 , inputs
+, myLib
 , ...
 }: {
   perSystem =
@@ -19,7 +20,7 @@
           // {
             extraPlugins = self.nixosConfigurations.laptop.config.home-manager.users.donny.theme.extraNeovimPlugins;
           };
-        extraSpecialArgs = { };
+        extraSpecialArgs = { inherit myLib; };
       };
     in
     {

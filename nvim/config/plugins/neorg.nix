@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }: {
+{ lib, myLib, pkgs, ... }: {
   plugins.neorg = {
     enable = true;
     package = pkgs.vimPlugins.neorg;
@@ -8,7 +8,7 @@
     } // lib.genAttrs [ "core.defaults" "core.concealer" "core.summary" ] (_: { __empty = null; });
   };
 
-  keymaps = [
+  keymaps = myLib.silentNormalKeymappings [
     {
       key = "<leader>nn";
       action = "<cmd>Neorg workspace neorg<CR>";
