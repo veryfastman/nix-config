@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   imports = [
     ./bufferline.nix
     ./cmp.nix
@@ -16,5 +16,6 @@
     nvim-autopairs.enable = true;
     treesitter.enable = true;
     trouble.enable = true;
+    # vimtex.enable = true;
   };
 }
