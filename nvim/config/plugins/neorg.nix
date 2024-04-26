@@ -4,7 +4,10 @@
     package = pkgs.vimPlugins.neorg;
     modules = {
       "core.completion".config.engine = "nvim-cmp";
-      "core.dirman".config.workpaces.default = "~/Documents/notes";
+      "core.dirman".config = {
+        workspaces.notes = "~/Documents/notes";
+        default_workspace = "notes";
+      };
     } // lib.genAttrs [ "core.defaults" "core.concealer" "core.summary" ] (_: { __empty = null; });
   };
 
