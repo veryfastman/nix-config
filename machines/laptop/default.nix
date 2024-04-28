@@ -86,7 +86,7 @@ localFlake: { lib
           "tile, class:^(firefox)\$"
           "tile, class:^(Chromium-browser)\$"
           "tile, class:^(Alacritty)\$"
-          "opacity 0.9 0.9, class:^(Alacritty)\$"
+          # "opacity 0.9 0.9, class:^(Alacritty)\$"
         ];
       };
     };
