@@ -10,6 +10,6 @@
       cfg = config.hardware.opengl;
     in
     mkIf cfg.enable {
-      hardware.opengl.extraPackages = [ pkgs.mesa_drivers ];
+      hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
     };
 }

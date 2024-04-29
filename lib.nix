@@ -32,8 +32,8 @@ in
         };
 
         size = mkOption {
-          type = types.float;
-          default = 12.0;
+          type = types.either types.float types.int;
+          default = 12;
           description = "Set the font size";
         };
       };

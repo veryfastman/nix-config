@@ -94,6 +94,14 @@ localFlake: { lib
     graphic = {
       rofi.enable = true;
 
+      mako = {
+        enable = true;
+        font = {
+          name = "JetBrainsMonoNerdFont";
+          size = 10;
+        };
+      };
+
       waybar = {
         enable = true;
         barHeight = 30;
@@ -136,8 +144,9 @@ localFlake: { lib
           (enableAndShell "fish")
           // {
             font = {
-              name = "JetBrainsMonoNerdFont";
-              size = 11.5;
+              # name = "JetBrainsMonoNerdFont";
+              name = "HackNerdFont";
+              size = 11.25;
             };
           };
       };

@@ -35,7 +35,7 @@
           enable = mkEnableOption "Enable rounded borders";
           roundingAmount = mkOption {
             type = types.int;
-            default = 5;
+            default = if cfg.enable then 5 else 0; # Mako configuration uses this value for rounding
             description = "Amount of rounding to applied to window borders";
           };
         };

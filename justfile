@@ -26,6 +26,10 @@ debug:
 update:
   nix flake update
 
+# update the lock file and switch to the new configuration (Make sure Mako is running for the notification to work)
+upgrade CONFIGURATION: update
+  just switch {{CONFIGURATION}} && notify-send "Finished switching to the upgraded configuration!"
+
 # generate a hardware configuration file for the current system
 generate-hardware-config TARGET_FILE:
   nixos-generate-config --no-filesystems --show-hardware-config > {{TARGET_FILE}}

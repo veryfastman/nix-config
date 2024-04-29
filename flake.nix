@@ -55,6 +55,7 @@
               just
               nixos-install-tools
               nixos-rebuild
+              libnotify
             ];
           };
 
