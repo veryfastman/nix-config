@@ -25,6 +25,7 @@ localFlake: {
             "Pictures"
             "Documents"
             "Videos"
+            ".cargo"
             ".gnupg"
             ".ssh"
             ".local/share/keyrings"

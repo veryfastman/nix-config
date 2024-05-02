@@ -28,9 +28,11 @@
                 "FiraCode"
                 "Hack"
                 "Inconsolata"
-                "Iosevka"
+                "IosevkaTerm"
                 "JetBrainsMono"
+                "LiberationMono"
                 "Meslo"
+                "Noto"
                 "RobotoMono"
               ];
             })

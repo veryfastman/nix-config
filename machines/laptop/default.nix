@@ -67,7 +67,10 @@ localFlake: { lib
         enableBlur = true;
         blurSize = 10;
         roundBorders.enable = true;
-        startupCommands = [ "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg" ];
+        startupCommands = [
+          "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg"
+          "${config.services.mako.package}/bin/mako"
+        ];
 
         monitor = [ "eDP-1, 1920x1080@60,0x0,1" ];
 
@@ -144,9 +147,8 @@ localFlake: { lib
           (enableAndShell "fish")
           // {
             font = {
-              # name = "JetBrainsMonoNerdFont";
-              name = "HackNerdFont";
-              size = 11.25;
+              name = "IosevkaTermNerdFontMono";
+              size = 12;
             };
           };
       };

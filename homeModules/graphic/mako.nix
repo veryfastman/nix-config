@@ -37,14 +37,15 @@
     config = mkIf cfg.enable {
       services.mako =
       let
-        inherit (config.theme.normalHexColorFormat.primary) background foreground;
+        inherit (config.theme.normalHexColorFormat.extra) alternate-background;
+        inherit (config.theme.normalHexColorFormat.primary) foreground;
         inherit (config.theme.normalHexColorFormat.normal) blue;
       in {
         enable = true;
         font = "${cfg.font.name} ${toString cfg.font.size}";
         defaultTimeout = cfg.timeout;
         borderRadius = config.desktop.hyprland.roundBorders.roundingAmount;
-        backgroundColor = background;
+        backgroundColor = alternate-background;
         borderColor = blue;
         textColor = foreground;
         inherit (cfg) margin padding;
