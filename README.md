@@ -11,10 +11,10 @@ This is my work-in-progress configuration for NixOS.
 - Automatic disk partitioning by Disko (UEFI systems only)
 - And more
 
-## [Install Guide](INSTALL.md)
-
-## Future Plans
+## Plans
 
 - [ ] Secrets management
 - [ ] More colorschemes
 - [ ] More window manager configurations (especially X window managers like dwm, awesome, xmonad, etc.)
+
+## [Installation Guide](INSTALL.md)
