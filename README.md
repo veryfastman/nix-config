@@ -1,6 +1,6 @@
 # My NixOS Configuration
 
-This is my work-in-progress flakes-based configuration for NixOS.
+This is my work-in-progress configuration for NixOS.
 
 ## Features
 

@@ -29,8 +29,8 @@ nix --experimental-features "nix-command flakes" run github:nix-community/disko 
 ## Move configuration to mounted disk
 
 ```
-cd ../ # Move to previous directory
-sudo mv nix-config /mnt/etc/nixos # Copy the directory to the disk
+cd ../ # cd into previous directory
+sudo mv nix-config /mnt/etc/nixos # Move config to the disk
 cd /mnt/etc/nixos # cd back into the config
 ```
 
@@ -41,12 +41,12 @@ cd /mnt/etc/nixos # cd back into the config
 ```
 cd machines # cd into directory holding device-specific configurations
 cp -r laptop your_machine # Create new config by duplicating a present one
-cd machines/your_machine # cd into new config
+cd your_machine # cd into new config
 rm -rf hardware-configuration.nix # Remove useless hardware config
 nixos-generate-config --show-hardware-config > hardware-configuration.nix # Generate a new hardware config
 ```
 
-- Add the new machine to "machines/default.nix"
+- Add the new configuration to "machines/default.nix"
 
 ```
 machines/default.nix
@@ -68,16 +68,16 @@ flake.nixosConfigurations = {
 
 ## Install
 
-- Copy the config to /mnt/persist so it doesn't get deleted by impermanence
+- Copy the config to /mnt/persist so it doesn't get erased by impermanence
 
 ```
 cd /mnt
 cp -r etc/nixos persist
 ```
 
-- Finally, install the system and reboot after the installation is finished
+- Install the system and reboot after the installation is finished
 
 ```
-nixos-install --root /mnt --flake /mnt/etc/nixos#your-machine
+nixos-install --root /mnt --flake /mnt/etc/nixos#your_machine
 reboot
 ```
