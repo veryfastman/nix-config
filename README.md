@@ -11,9 +11,7 @@ This is my work-in-progress configuration for NixOS.
 - Automatic disk partitioning by Disko (UEFI systems only)
 - And more
 
-## Installation
-
-[Install Guide](INSTALL.md)
+## [Install Guide](INSTALL.md)
 
 ## Future Plans
 
