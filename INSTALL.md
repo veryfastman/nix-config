@@ -3,7 +3,7 @@
 - First obtain a NixOS ISO and boot into a live environment
     - [NixOS Download](https://nixos.org/download/)
     - [Tutorial for booting a live environment](https://www.linux.com/training-tutorials/live-booting-linux/)
-- Also make sure you have a working internet connection. Get started by opening a terminal and cloning this repository
+- Once you're in the live OS, make sure you have a working internet connection. Get started by opening a terminal and cloning this repository
 
 ```
 git clone https://github.com/veryfastman/nix-config && cd nix-config
