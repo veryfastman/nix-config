@@ -47,7 +47,7 @@ cd /mnt/etc/nixos # cd back into the config
 cd machines # cd into directory holding device-specific configurations
 cp -r laptop your_machine # Create new config by duplicating a present one
 cd your_machine # cd into new config
-nixos-generate-config --show-hardware-config > hardware-configuration.nix # Generate a new hardware config
+nixos-generate-config --no-filesystems --show-hardware-config > hardware-configuration.nix # Generate a new hardware config
 git add .
 ```
 
