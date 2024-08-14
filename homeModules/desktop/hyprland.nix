@@ -135,6 +135,7 @@
                   "SUPER $mainMod SHIFT, 0, movetoworkspace, 10"
                   "SUPER $mainMod, c, movetoworkspacesilent, special"
                   "SUPER $mainMod, grave, togglespecialworkspace"
+                  "SUPER $mainMod, w, exec, [float; move 0 0] alacritty"
                 ]
                 ++ cfg.extraKeybindings;
 
