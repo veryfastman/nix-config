@@ -94,7 +94,7 @@
 
               bind =
                 [
-                  "SUPER, W, killactive"
+                  "SUPER, Q, killactive"
                   "SUPER CTRL, Q, exit"
 
                   "SUPER, F, togglefloating"
