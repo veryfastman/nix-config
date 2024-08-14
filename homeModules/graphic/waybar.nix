@@ -72,7 +72,7 @@
               disk = {
                 format = "󰨣 {percentage_free}%";
                 format-alt = "󰨣 {free} free";
-                on-click-right = "${pkgs.cinnamon.nemo}/bin/nemo";
+                on-click-right = "${pkgs.nemo}/bin/nemo";
                 path = "/";
               };
 

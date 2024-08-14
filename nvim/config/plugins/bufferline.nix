@@ -1,12 +1,13 @@
 {
   plugins.bufferline = {
     enable = true;
-    offsets = [
-      {
-        filetype = "neo-tree";
-        text = "File Explorer";
-        highlight = "Directory";
-      }
-    ];
+    # settings.offsets = [
+    #   {
+    #     filetype = "neo-tree";
+    #     text = "File Explorer";
+    #     text_align = "center";
+    #     highlight = "Directory";
+    #   }
+    # ];
   };
 }

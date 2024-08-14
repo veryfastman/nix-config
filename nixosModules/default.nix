@@ -5,6 +5,7 @@
 }: {
   flake.nixosModules.default = {
     imports = with config.flake.nixosModules; [
+      agenix
       fonts
       home-manager
       garbage-collection
@@ -27,6 +28,7 @@
   flake.nixosModules.home-manager = flake-parts-lib.importApply ./home-manager.nix { inherit config inputs; };
 
   imports = [
+    ./agenix
     ./impermanence
 
     ./fonts.nix
@@ -34,7 +36,7 @@
     ./keyd.nix
     ./location.nix
     ./pipewire.nix
-    ./opengl.nix
+    ./graphics.nix
     ./system-packages.nix
     ./systemd-boot.nix
     ./users.nix

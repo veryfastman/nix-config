@@ -8,8 +8,9 @@ localFlake: { lib
   ];
 
   boot.loader.systemd-boot.enable = true;
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   impermanence.enable = true;
+  agenix.enable = false;
   services.keyd.enable = true;
   services.pipewire.enable = true;
   fonts.enable = true;
@@ -20,6 +21,7 @@ localFlake: { lib
     curl
     gcc
     git
+    gnupg
     neovim
     nix-prefetch-git
     pulseaudio
@@ -53,11 +55,13 @@ localFlake: { lib
       localFlake.self.packages.${pkgs.system}.nvim
       (callPackage ../../pkgs/tex.nix { })
 
-      (wrapMpv
-        (mpv-unwrapped.override {
-          ffmpeg = ffmpeg_6-full;
-        })
-        { scripts = [ mpvScripts.mpris ]; })
+      (mpv-unwrapped.wrapper {
+        mpv = (mpv-unwrapped.override {
+          ffmpeg = ffmpeg_7-full;
+        });
+        youtubeSupport = true;
+        scripts = [ mpvScripts.mpris ];
+      })
     ];
 
     desktop = {
@@ -162,7 +166,7 @@ localFlake: { lib
   services.udisks2.enable = true;
   services.upower.enable = true;
 
-  sound.mediaKeys.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = lib.trivial.release;
   nixpkgs.hostPlatform = "x86_64-linux";

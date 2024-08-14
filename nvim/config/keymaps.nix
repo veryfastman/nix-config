@@ -49,6 +49,10 @@ let
       key = "td";
       action = "<cmd>bd<CR>";
     }
+    {
+      key = "<leader>d";
+      action = "<cmd>noh<CR>";
+    }
   ];
 in
 {

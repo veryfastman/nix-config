@@ -7,6 +7,11 @@
     nur.url = "github:nix-community/nur";
     impermanence.url = "github:nix-community/impermanence";
 
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
