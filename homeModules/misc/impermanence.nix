@@ -29,7 +29,6 @@ localFlake: {
             ".cargo"
             ".gnupg"
             ".ssh"
-            ".local/share/fish/fish_history"
             ".local/share/keyrings"
             ".local/share/direnv"
             ".local/share/Trash"
@@ -44,9 +43,9 @@ localFlake: {
             # }
           ];
 
-          # files = [
-          #   ".screenrc"
-          # ];
+          files = [
+            ".local/share/fish/fish_history"
+          ];
 
           allowOther = true;
         };
