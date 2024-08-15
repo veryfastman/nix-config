@@ -40,6 +40,11 @@ in
         x11.enable = true;
       };
 
+      sddmTheme = {
+        name = "gruvbox-sddm-theme";
+        package = pkgs.callPackage ../pkgs/gruvbox-sddm-theme.nix {};
+      };
+
       colors = {
         bright = {
           black = "928374";
@@ -78,6 +83,6 @@ in
       };
     in
     {
-      inherit colors extraNeovimPlugins gtk pointerCursor;
+      inherit colors extraNeovimPlugins gtk pointerCursor sddmTheme;
     };
 }

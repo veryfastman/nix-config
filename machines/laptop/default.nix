@@ -30,6 +30,9 @@ localFlake: { lib
     wget
   ];
 
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
+
   home-manager.users.donny = { config, ... }: {
     theme = localFlake.config.flake.themes.gruvbox;
 

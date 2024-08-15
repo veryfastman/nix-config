@@ -14,6 +14,8 @@
       location
       opengl
       pipewire
+      sddm
+      syncthing
       system-packages
       systemd-boot
       users
@@ -30,6 +32,7 @@
   imports = [
     ./agenix
     ./impermanence
+    ./sddm
 
     ./fonts.nix
     ./garbage-collection.nix
@@ -37,6 +40,7 @@
     ./location.nix
     ./pipewire.nix
     ./graphics.nix
+    ./syncthing.nix
     ./system-packages.nix
     ./systemd-boot.nix
     ./users.nix

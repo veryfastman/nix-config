@@ -30,6 +30,7 @@
             se = "sudoedit";
             snip = "grim -g $(slurp)";
             strcam = "mpv av://v4l2:/dev/video0 --profile=low-latency --untimed";
+            v = "nvim";
           };
 
           shellInit = ''

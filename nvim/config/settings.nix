@@ -1,5 +1,4 @@
 {
-  vimAlias = true;
   luaLoader.enable = true;
   clipboard.providers.wl-copy.enable = true;
 

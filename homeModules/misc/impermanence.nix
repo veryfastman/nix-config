@@ -25,6 +25,7 @@ localFlake: {
             "Pictures"
             "Documents"
             "Videos"
+            "Sync"
             ".cargo"
             ".gnupg"
             ".ssh"
