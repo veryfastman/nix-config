@@ -30,8 +30,8 @@ localFlake: { lib
     wget
   ];
 
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   home-manager.users.donny = { config, ... }: {
     theme = localFlake.config.flake.themes.gruvbox;
@@ -154,11 +154,18 @@ localFlake: { lib
           (enableAndShell "fish")
           // {
             font = {
-              name = "IosevkaTermNerdFontMono";
-              size = 12;
+              name = "JetBrainsMonoNerdFont";
+              size = 10.5;
             };
           };
       };
+  };
+
+  services.syncthing.enable = true;
+  services.syncthing.settings = {
+    devices = {
+      "phone" = { id = "IXHKWJV-QKEROLG-FUYQ5JH-T3L5JA4-GL2ITBF-XD7XR23-A4HOYPF-E7UYVQG"; };
+    };
   };
 
   networking.networkmanager.enable = true;

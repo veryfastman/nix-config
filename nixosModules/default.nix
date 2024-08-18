@@ -15,7 +15,6 @@
       opengl
       pipewire
       sddm
-      syncthing
       system-packages
       systemd-boot
       users
@@ -40,7 +39,6 @@
     ./location.nix
     ./pipewire.nix
     ./graphics.nix
-    ./syncthing.nix
     ./system-packages.nix
     ./systemd-boot.nix
     ./users.nix
