@@ -33,6 +33,7 @@ localFlake: {
             ".local/share/direnv"
             ".local/share/Trash"
             ".mozilla"
+            ".wine"
 
             ".local/state/wireplumber"
             # ".local/state/nvim"
