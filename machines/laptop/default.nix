@@ -51,6 +51,8 @@ localFlake: { lib
       streamlink
       trash-cli
       unzip
+      winetricks
+      wineWowPackages.waylandFull
       yewtube
       yt-dlp
       zip
