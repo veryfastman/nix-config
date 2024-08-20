@@ -42,7 +42,7 @@ in
 
       sddmTheme = {
         name = "gruvbox-sddm-theme";
-        package = pkgs.callPackage ../pkgs/gruvbox-sddm-theme.nix {};
+        package = pkgs.callPackage ../pkgs/gruvbox-sddm-theme.nix { };
       };
 
       colors = {

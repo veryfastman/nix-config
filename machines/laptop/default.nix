@@ -10,7 +10,7 @@ localFlake: { lib
   boot.loader.systemd-boot.enable = true;
   hardware.graphics.enable = true;
   impermanence.enable = true;
-  agenix.enable = false;
+  agenix.enable = true;
   services.keyd.enable = true;
   services.pipewire.enable = true;
   fonts.enable = true;
@@ -30,11 +30,14 @@ localFlake: { lib
     wget
   ];
 
+  services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
 
   home-manager.users.donny = { config, ... }: {
     theme = localFlake.config.flake.themes.gruvbox;
+
+    home.stateVersion = lib.mkDefault "21.11";
 
     home.packages = with pkgs; [
       ani-cli
@@ -42,6 +45,7 @@ localFlake: { lib
       cava
       cmus
       fastfetch
+      fd
       fzf
       gimp
       htop
@@ -59,19 +63,11 @@ localFlake: { lib
 
       localFlake.self.packages.${pkgs.system}.nvim
       (callPackage ../../pkgs/tex.nix { })
-
-      (mpv-unwrapped.wrapper {
-        mpv = (mpv-unwrapped.override {
-          ffmpeg = ffmpeg_7-full;
-        });
-        youtubeSupport = true;
-        scripts = [ mpvScripts.mpris ];
-      })
     ];
 
     desktop = {
       hyprland = {
-        enable = true;
+        enable = false;
         enableAnimations = true;
         enableBlur = true;
         blurSize = 10;
@@ -130,6 +126,7 @@ localFlake: { lib
     misc = {
       firefox.enable = true;
       impermanence.enable = true;
+      mpv.enable = true;
       scripts.enable = true;
       wallpapers.enable = true;
       zathura.enable = true;

@@ -10,6 +10,7 @@ in
   flake.homeModules.misc.imports = with config.flake.homeModules; [
     firefox
     impermanence
+    mpv
     scripts
     theme
     wallpapers
@@ -18,6 +19,7 @@ in
 
   imports = [
     ./firefox.nix
+    ./mpv.nix
     ./scripts.nix
     ./zathura.nix
     (importApply ./impermanence.nix { inherit inputs; })
