@@ -10,7 +10,7 @@ localFlake: { lib
   boot.loader.systemd-boot.enable = true;
   hardware.graphics.enable = true;
   impermanence.enable = true;
-  agenix.enable = true;
+  agenix.enable = false;
   services.keyd.enable = true;
   services.pipewire.enable = true;
   fonts.enable = true;
