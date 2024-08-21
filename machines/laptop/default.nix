@@ -67,7 +67,7 @@ localFlake: { lib
 
     desktop = {
       hyprland = {
-        enable = false;
+        enable = true;
         enableAnimations = true;
         enableBlur = true;
         blurSize = 10;
