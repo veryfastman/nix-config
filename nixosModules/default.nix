@@ -31,6 +31,7 @@
   imports = [
     ./agenix
     ./impermanence
+    ./users
     ./sddm
 
     ./fonts.nix
@@ -41,6 +42,5 @@
     ./graphics.nix
     ./system-packages.nix
     ./systemd-boot.nix
-    ./users.nix
   ];
 }

@@ -94,6 +94,7 @@ localFlake: { lib
           "tile, class:^(firefox)\$"
           "tile, class:^(Chromium-browser)\$"
           "tile, class:^(Alacritty)\$"
+          "tile, class:^(zathura)\$"
           # "opacity 0.9 0.9, class:^(Alacritty)\$"
         ];
       };
@@ -160,9 +161,12 @@ localFlake: { lib
       };
   };
 
-  services.syncthing.enable = true;
-  services.syncthing.settings = {
-    devices = {
+  services.syncthing = {
+    enable = true;
+    user = "donny";
+    dataDir = "/home/donny/Sync";
+    configDir = "/home/donny/Sync/.config/syncthing";
+    settings.devices = {
       "phone" = { id = "IXHKWJV-QKEROLG-FUYQ5JH-T3L5JA4-GL2ITBF-XD7XR23-A4HOYPF-E7UYVQG"; };
     };
   };

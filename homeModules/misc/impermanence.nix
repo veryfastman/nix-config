@@ -32,6 +32,7 @@ localFlake: {
             ".local/share/keyrings"
             ".local/share/direnv"
             ".local/share/Trash"
+            ".local/share/fish"
             ".mozilla"
             ".wine"
 
@@ -44,9 +45,7 @@ localFlake: {
             # }
           ];
 
-          files = [
-            ".local/share/fish/fish_history"
-          ];
+          files = [ ];
 
           allowOther = true;
         };
