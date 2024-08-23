@@ -43,6 +43,11 @@ in
       sddmTheme = {
         name = "gruvbox-sddm-theme";
         package = pkgs.callPackage ../pkgs/gruvbox-sddm-theme.nix { };
+        dependencies = with pkgs; [
+          libsForQt5.qt5.qtgraphicaleffects
+          libsForQt5.qt5.qtquick3d
+          kdePackages.libplasma
+        ];
       };
 
       colors = {

@@ -6,6 +6,6 @@ let
   cfg = config.services.displayManager.sddm;
 in
 mkIf cfg.enable {
-  environment.systemPackages = [ sddmTheme.package ];
+  environment.systemPackages = [ sddmTheme.package ] ++ sddmTheme.dependencies;
   services.displayManager.sddm.theme = sddmTheme.name;
 }

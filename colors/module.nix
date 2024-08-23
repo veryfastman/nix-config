@@ -238,7 +238,7 @@ in
                 };
 
                 sddmTheme = mkOption {
-                  type = themeModule
+                  type = (themeModule
                     {
                       nameDefault = "gruvbox-sddm-theme";
                       nameDescription = "Name of the sddm theme";
@@ -246,7 +246,15 @@ in
                     {
                       packageDefault = pkgs.callPackage ../pkgs/gruvbox-sddm-theme.nix { };
                       packageDescription = "sddm theme package";
+                    }) // types.submodule {
+                    options = {
+                      dependencies = mkOption {
+                        type = types.listOf types.package;
+                        default = [ ];
+                        desription = "Dependencies for SDDM theme";
+                      };
                     };
+                  };
                 };
               };
           }
