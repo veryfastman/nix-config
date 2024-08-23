@@ -4,15 +4,15 @@ build CONFIGURATION:
 
 # test a nixos configuration
 test CONFIGURATION:
-  sudo nixos-rebuild test --flake .#{{CONFIGURATION}}
+  nixos-rebuild test --flake .#{{CONFIGURATION}} --use-remote-sudo
 
 # switch to a nixos configuration
 switch CONFIGURATION:
-  sudo nixos-rebuild switch --flake .#{{CONFIGURATION}}
+  nixos-rebuild switch --flake .#{{CONFIGURATION}} --use-remote-sudo
 
 # build and set a nixos configuration as the boot default for the current system
 boot CONFIGURATION:
-  sudo nixos-rebuild boot --flake .#{{CONFIGURATION}}
+  nixos-rebuild boot --flake .#{{CONFIGURATION}} --use-remote-sudo
 
 # check the current flake
 check:
