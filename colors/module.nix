@@ -251,7 +251,7 @@ in
                       dependencies = mkOption {
                         type = types.listOf types.package;
                         default = [ ];
-                        desription = "Dependencies for SDDM theme";
+                        description = "Dependencies for SDDM theme";
                       };
                     };
                   };
