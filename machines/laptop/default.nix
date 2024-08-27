@@ -31,6 +31,8 @@ localFlake: { lib
   ];
 
   services.displayManager.ly.enable = true;
+  services.xserver.enable = true;
+  services.xserver.windowManager.icewm.enable = true;
 
   home-manager.users.donny = { config, ... }: {
     theme = localFlake.config.flake.themes.gruvbox;
