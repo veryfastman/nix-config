@@ -14,7 +14,6 @@
       location
       opengl
       pipewire
-      sddm
       system-packages
       systemd-boot
       users
@@ -32,7 +31,6 @@
     ./agenix
     ./impermanence
     ./users
-    ./sddm
 
     ./fonts.nix
     ./garbage-collection.nix

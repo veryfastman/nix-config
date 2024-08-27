@@ -40,16 +40,6 @@ in
         x11.enable = true;
       };
 
-      sddmTheme = {
-        name = "gruvbox-sddm-theme";
-        package = pkgs.callPackage ../pkgs/gruvbox-sddm-theme.nix { };
-        dependencies = with pkgs; [
-          libsForQt5.qt5.qtgraphicaleffects
-          libsForQt5.qt5.qtquick3d
-          kdePackages.libplasma
-        ];
-      };
-
       colors = {
         bright = {
           black = "928374";
@@ -88,6 +78,6 @@ in
       };
     in
     {
-      inherit colors extraNeovimPlugins gtk pointerCursor sddmTheme;
+      inherit colors extraNeovimPlugins gtk pointerCursor;
     };
 }

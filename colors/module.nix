@@ -236,26 +236,6 @@ in
                   };
                   description = "Options for the \"pointerCursor\" Home Manager module";
                 };
-
-                sddmTheme = mkOption {
-                  type = (themeModule
-                    {
-                      nameDefault = "gruvbox-sddm-theme";
-                      nameDescription = "Name of the sddm theme";
-                    }
-                    {
-                      packageDefault = pkgs.callPackage ../pkgs/gruvbox-sddm-theme.nix { };
-                      packageDescription = "sddm theme package";
-                    }) // types.submodule {
-                    options = {
-                      dependencies = mkOption {
-                        type = types.listOf types.package;
-                        default = [ ];
-                        description = "Dependencies for SDDM theme";
-                      };
-                    };
-                  };
-                };
               };
           }
         )

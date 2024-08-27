@@ -25,6 +25,7 @@
           });
 
           config = {
+            hwdec = "auto";
             ytdl-format = "ytdl";
           };
         };
