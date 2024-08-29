@@ -13,6 +13,7 @@ localFlake: { lib
   agenix.enable = false;
   services.keyd.enable = true;
   services.pipewire.enable = true;
+  services.printing.enable = true;
   fonts.enable = true;
 
   hardware.bluetooth.enable = true;
@@ -31,8 +32,6 @@ localFlake: { lib
   ];
 
   services.displayManager.ly.enable = true;
-  services.xserver.enable = true;
-  services.xserver.windowManager.icewm.enable = true;
 
   home-manager.users.donny = { config, ... }: {
     theme = localFlake.config.flake.themes.gruvbox;
@@ -175,7 +174,6 @@ localFlake: { lib
 
   security.sudo.extraConfig = "Defaults lecture=\"never\"";
 
-  services.printing.enable = true;
   services.udisks2.enable = true;
   services.upower.enable = true;
 

@@ -14,6 +14,7 @@
       location
       opengl
       pipewire
+      printing
       system-packages
       systemd-boot
       users
@@ -37,6 +38,7 @@
     ./keyd.nix
     ./location.nix
     ./pipewire.nix
+    ./printing.nix
     ./graphics.nix
     ./system-packages.nix
     ./systemd-boot.nix
