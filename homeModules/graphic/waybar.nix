@@ -155,8 +155,8 @@
                      }
 
                      #workspaces {
-                margin-left: 4px;
-              }
+                      margin-left: 4px;
+                     }
 
                      #workspaces button.active label {
                        color: ${blue};

@@ -1,5 +1,5 @@
 { config
-, lib
+, flake-parts-lib
 , ...
 }: {
   flake.homeModules.desktop.imports = with config.flake.homeModules; [
@@ -39,6 +39,6 @@
 
   imports = [
     # ./river.nix
-    ./hyprland.nix
+    (flake-parts-lib.importApply ./hyprland.nix { inherit config; })
   ];
 }

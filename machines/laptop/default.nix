@@ -10,7 +10,7 @@ localFlake: { lib
   boot.loader.systemd-boot.enable = true;
   hardware.graphics.enable = true;
   impermanence.enable = true;
-  agenix.enable = false;
+  sops.enable = true;
   services.keyd.enable = true;
   services.pipewire.enable = true;
   services.printing.enable = true;
@@ -41,7 +41,7 @@ localFlake: { lib
     home.packages = with pkgs; [
       ani-cli
       bluetuith
-      cava
+      # cava
       cmus
       fastfetch
       fd

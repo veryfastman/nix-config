@@ -36,6 +36,7 @@ localFlake: {
             ".mozilla"
             ".wine"
 
+            ".config/sops"
             ".local/state/wireplumber"
             # ".local/state/nvim"
 

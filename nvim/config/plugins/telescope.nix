@@ -6,7 +6,7 @@
         action = "buffers";
       };
       "<leader>ff" = {
-        action = "find_files";
+        action = "find_files hidden=true";
       };
       "<leader>fo" = {
         action = "oldfiles";

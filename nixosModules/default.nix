@@ -5,7 +5,6 @@
 }: {
   flake.nixosModules.default = {
     imports = with config.flake.nixosModules; [
-      agenix
       fonts
       home-manager
       garbage-collection
@@ -15,6 +14,7 @@
       opengl
       pipewire
       printing
+      sops
       system-packages
       systemd-boot
       users
@@ -27,9 +27,9 @@
   };
 
   flake.nixosModules.home-manager = flake-parts-lib.importApply ./home-manager.nix { inherit config inputs; };
+  flake.nixosModules.sops = flake-parts-lib.importApply ./sops.nix { inherit inputs; };
 
   imports = [
-    ./agenix
     ./impermanence
     ./users
 

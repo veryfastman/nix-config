@@ -17,5 +17,6 @@
     # treesitter.enable = true;
     trouble.enable = true;
     # vimtex.enable = true;
+    web-devicons.enable = true;
   };
 }

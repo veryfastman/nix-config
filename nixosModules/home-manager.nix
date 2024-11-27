@@ -11,5 +11,6 @@ localFlake: { config, ... }: {
       home.stateVersion = config.system.stateVersion;
       imports = [ localFlake.config.flake.homeModules.default ];
     }
+    localFlake.inputs.sops-nix.homeManagerModules.sops
   ];
 }

@@ -2,6 +2,7 @@
   flake.homeModules.git =
     { config
     , lib
+    , pkgs
     , ...
     }:
     let
@@ -12,10 +13,15 @@
       options.terminal.git.enable = mkEnableOption "Enable Git settings";
 
       config = mkIf cfg.enable {
-        programs.git = {
-          enable = true;
-          userName = "veryfastman";
-          userEmail = "dony357@outlook.com";
+        programs = {
+          git = {
+            enable = true;
+            package = pkgs.gitFull;
+            userName = "veryfastman";
+            userEmail = "dony357@outlook.com";
+          };
+
+          # git-credential-oauth.enable = true;
         };
       };
     };

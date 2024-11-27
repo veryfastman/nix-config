@@ -35,14 +35,14 @@
 
     servers = {
       bashls.enable = true;
-      # java-language-server.enable = true;
-      lua-ls.enable = true;
-      nil-ls.enable = true;
+      jdtls.enable = true;
+      lua_ls.enable = true;
+      nil_ls.enable = true;
       ccls.enable = true;
       # gopls.enable = true;
       # tsserver.enable = true;
       # zls.enable = true;
-      rust-analyzer = {
+      rust_analyzer = {
         enable = true;
         installCargo = true;
         installRustc = true;

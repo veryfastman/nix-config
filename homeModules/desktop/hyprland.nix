@@ -1,7 +1,8 @@
-{ myLib, ... }: {
+localFlake: { myLib, ... }: {
   flake.homeModules.hyprland =
     { config
     , lib
+    , pkgs
     , ...
     }:
     let
@@ -44,6 +45,7 @@
       config = mkIf cfg.enable {
         home.packages = config.desktop.windowManagerPackages;
         graphic.waybar.wmModules = [ "hyprland/workspaces" "hyprland/window" ];
+        # localFlake.
         wayland.windowManager.hyprland =
           let
             inherit (config.theme.colors.primary) background;
@@ -64,6 +66,8 @@
                   (mkIf config.graphic.waybar.enable "waybar")
                 ]
                 ++ cfg.startupCommands;
+
+              # plugins = [ pkgs.hyprlandPlugins.hy3 ];
 
               input = {
                 follow_mouse = 1;
