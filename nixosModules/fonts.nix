@@ -19,23 +19,19 @@
             noto-fonts
             noto-fonts-cjk-sans
             noto-fonts-emoji
-            (nerdfonts.override {
-              fonts = [
-                "BigBlueTerminal"
-                "CascadiaCode"
-                "DroidSansMono"
-                "Gohu"
-                "FiraCode"
-                "Hack"
-                "Inconsolata"
-                "IosevkaTerm"
-                "JetBrainsMono"
-                "LiberationMono"
-                "Meslo"
-                "Noto"
-                "RobotoMono"
-              ];
-            })
+            nerd-fonts.bigblue-terminal
+            nerd-fonts.caskaydia-mono
+            nerd-fonts.droid-sans-mono
+            nerd-fonts.gohufont
+            nerd-fonts.fira-code
+            nerd-fonts.hack
+            nerd-fonts.inconsolata
+            nerd-fonts.iosevka-term
+            nerd-fonts.jetbrains-mono
+            nerd-fonts.liberation
+            nerd-fonts.meslo-lg
+            nerd-fonts.noto
+            nerd-fonts.roboto-mono
           ];
 
           enableDefaultPackages = false;

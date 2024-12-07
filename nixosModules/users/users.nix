@@ -1,9 +1,10 @@
 localFlake: { config, ... }:
 {
+  sops.secrets.donny_password.neededForUsers = true;
   users.users.donny = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
     home = "/home/donny";
-    initialPassword = "p";
+    hashedPasswordFile = config.sops.secrets.donny_password.path;
   };
 }

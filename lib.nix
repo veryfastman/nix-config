@@ -1,10 +1,8 @@
 { inputs }:
 let
-  inherit (inputs.nixpkgs.lib) mapAttrsRecursive mkOption types;
+  inherit (inputs.nixpkgs.lib) mkOption types;
 in
 {
-  specifyHexFormat = colors: precedingSymbol: mapAttrsRecursive (_: value: precedingSymbol + value) colors;
-
   createListOfStringsOption = description:
     mkOption {
       type = types.listOf types.str;

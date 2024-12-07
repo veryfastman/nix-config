@@ -6,7 +6,7 @@
     , ...
     }:
     let
-      inherit (lib) mkEnableOption mkIf mkOption;
+      inherit (lib) mkEnableOption mkIf;
       cfg = config.graphic.rofi;
     in
     {
@@ -28,20 +28,17 @@
             display-run = " ";
             drun-display-format = "{icon} {name}";
             show-icons = true;
-            icon-theme = config.theme.gtk.iconTheme.name;
           };
           theme =
             let
               inherit (config.lib.formats.rasi) mkLiteral;
-              inherit (config.theme.normalHexColorFormat.primary) background foreground;
-              inherit (config.theme.normalHexColorFormat.extra) alternate-background;
-              inherit (config.theme.normalHexColorFormat.normal) blue;
+              inherit (config.theme.palette) base00 base02 base05 base0D;
             in
             {
               "*" = {
-                bg = mkLiteral background;
-                bg-selected = mkLiteral alternate-background;
-                fg = mkLiteral foreground;
+                bg = mkLiteral "#${base00}";
+                bg-selected = mkLiteral "#${base02}";
+                fg = mkLiteral "#${base05}";
                 border-color = mkLiteral "@bg-selected";
                 border-radius = mkLiteral "0px"; # Maybe later add option for border-radius?
                 border = 1;
@@ -65,7 +62,7 @@
               };
 
               "element selected" = {
-                text-color = mkLiteral blue;
+                text-color = mkLiteral "#${base0D}";
                 background-color = mkLiteral "@bg-selected";
                 border = mkLiteral "0px solid";
                 border-radius = mkLiteral "0px";

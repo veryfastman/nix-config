@@ -45,11 +45,9 @@ localFlake: { myLib, ... }: {
       config = mkIf cfg.enable {
         home.packages = config.desktop.windowManagerPackages;
         graphic.waybar.wmModules = [ "hyprland/workspaces" "hyprland/window" ];
-        # localFlake.
         wayland.windowManager.hyprland =
           let
-            inherit (config.theme.colors.primary) background;
-            inherit (config.theme.colors.normal) blue;
+            inherit (config.theme.palette) base00 base0D;
           in
           {
             enable = true;
@@ -81,8 +79,8 @@ localFlake: { myLib, ... }: {
                 gaps_in = 6;
                 gaps_out = 8;
                 border_size = cfg.borderSize;
-                "col.inactive_border" = "rgb(${background})";
-                "col.active_border" = "rgb(${blue})";
+                "col.inactive_border" = "rgb(${base00})";
+                "col.active_border" = "rgb(${base0D})";
                 layout = "master";
               };
 

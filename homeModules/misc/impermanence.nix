@@ -36,7 +36,6 @@ localFlake: {
             ".mozilla"
             ".wine"
 
-            ".config/sops"
             ".local/state/wireplumber"
             # ".local/state/nvim"
 
@@ -46,7 +45,9 @@ localFlake: {
             # }
           ];
 
-          files = [ ];
+          files = [
+            ".config/sops/age/keys.txt"
+          ];
 
           allowOther = true;
         };

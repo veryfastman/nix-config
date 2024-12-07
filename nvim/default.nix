@@ -18,7 +18,16 @@
         module =
           import ./config
           // {
-            extraPlugins = self.nixosConfigurations.laptop.config.home-manager.users.donny.theme.extraNeovimPlugins;
+            extraPlugins =
+              let
+                inherit (self.nixosConfigurations.laptop.config.home-manager.users.donny) theme;
+              in
+              [
+                {
+                  plugin = (inputs.nix-colors.lib.contrib { inherit pkgs; }).vimThemeFromScheme { scheme = theme; };
+                  config = "colorscheme nix-${theme.slug}";
+                }
+              ];
           };
         extraSpecialArgs = { inherit myLib; };
       };

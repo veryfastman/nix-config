@@ -5,7 +5,7 @@
     , ...
     }:
     let
-      inherit (lib) mkEnableOption mkIf mkOption types;
+      inherit (lib) mkEnableOption mkIf;
       cfg = config.terminal.zellij;
     in
     {
@@ -26,16 +26,21 @@
             themes = {
               my-theme =
                 let
-                  inherit (config.theme.normalHexColorFormat) normal;
-                  inherit (config.theme.normalHexColorFormat.extra) orange;
-                  inherit (config.theme.normalHexColorFormat.primary) background foreground;
+                  inherit (config.theme) palette;
                 in
                 {
-                  bg = background;
-                  fg = foreground;
-                  orange = orange.normal;
-                }
-                // normal;
+                  fg = "#${palette.base05}";
+                  bg = "#${palette.base02}";
+                  black = "#${palette.base00}";
+                  red = "#${palette.base08}";
+                  green = "#${palette.base0B}";
+                  yellow = "#${palette.base0A}";
+                  blue = "#${palette.base0D}";
+                  magenta = "#${palette.base0E}";
+                  cyan = "#${palette.base0C}";
+                  white = "#${palette.base05}";
+                  orange = "#${palette.base09}";
+                };
             };
           };
         };

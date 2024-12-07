@@ -4,8 +4,10 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-colors.url = "github:misterio77/nix-colors";
     nur.url = "github:nix-community/nur";
     impermanence.url = "github:nix-community/impermanence";
+
 
     # lix-module = {
     #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
@@ -46,7 +48,6 @@
   outputs = inputs @ { flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
-        ./colors
         ./machines
         ./homeModules
         ./nixosModules
@@ -71,7 +72,7 @@
 
           _module.args.pkgs = import inputs.nixpkgs {
             inherit system;
-            overlays = [ inputs.nur.overlay ];
+            overlays = [ inputs.nur.overlays.default ];
           };
         };
     };

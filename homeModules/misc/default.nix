@@ -23,7 +23,7 @@ in
     ./scripts.nix
     ./zathura.nix
     (importApply ./impermanence.nix { inherit inputs; })
-    (importApply ./theme.nix { inherit config; })
+    (importApply ./theme.nix { inherit config inputs; })
     (importApply ./wallpapers.nix { inherit inputs; })
   ];
 }

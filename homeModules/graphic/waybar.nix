@@ -108,60 +108,59 @@
           };
           style =
             let
-              inherit (config.theme.normalHexColorFormat.primary) background foreground;
-              inherit (config.theme.normalHexColorFormat.normal) blue green;
+              inherit (config.theme.palette) base00 base05 base0D base0B;
               inherit (cfg) font;
             in
             ''
-                     * {
-                       background: ${background};
-                       border: none;
-                       border-radius: 0;
-                       color: ${foreground};
-                       font-family: ${font.name};
-                       font-size: ${toString font.size}px;
-                       margin: 0;
-                       padding: 0;
-                     }
+              * {
+                background: #${base00};
+                border: none;
+                border-radius: 0;
+                color: #${base05};
+                font-family: ${font.name};
+                font-size: ${toString font.size}px;
+                margin: 0;
+                padding: 0;
+              }
 
-                     #backlight,
-                     #clock,
-                     #disk,
-                     #memory,
-                     #pulseaudio,
-                     #tray,
-                     #window {
-                       margin-right: 8px;
-                       margin-left: 8px;
-                     }
+              #backlight,
+              #clock,
+              #disk,
+              #memory,
+              #pulseaudio,
+              #tray,
+              #window {
+                margin-right: 8px;
+                margin-left: 8px;
+              }
 
-                     #tags button {
-                       margin: -10px;
-                     }
+              #tags button {
+                margin: -10px;
+              }
 
-                     #battery,
-                     #network {
-                       margin-right: 5px;
-                       margin-left: 5px;
-                       font-size: ${toString (font.size + 2)}px;
-                     }
+              #battery,
+              #network {
+                margin-right: 5px;
+                margin-left: 5px;
+                font-size: ${toString (font.size + 2)}px;
+              }
 
-                     #tags button.occupied label {
-                       color: ${green};
-                     }
+              #tags button.occupied label {
+                color: #${base0B};
+              }
 
-                     #tags button.focused label {
-                       color: ${blue};
-                     }
+              #tags button.focused label {
+                color: #${base0D};
+              }
 
-                     #workspaces {
-                      margin-left: 4px;
-                     }
+              #workspaces {
+               margin-left: 4px;
+              }
 
-                     #workspaces button.active label {
-                       color: ${blue};
-                       font-weight: bold;
-                     }
+              #workspaces button.active label {
+                color: #${base0D};
+                font-weight: bold;
+              }
             '';
         };
       };

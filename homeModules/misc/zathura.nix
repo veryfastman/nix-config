@@ -18,11 +18,11 @@
           enable = true;
           options =
             let
-              inherit (config.theme.normalHexColorFormat.primary) background foreground;
+              inherit (config.theme.palette) base00 base05;
             in
             {
-              default-bg = background;
-              default-fg = foreground;
+              default-bg = base00;
+              default-fg = base05;
             };
         };
       };

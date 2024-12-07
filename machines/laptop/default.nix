@@ -19,6 +19,7 @@ localFlake: { lib
   hardware.bluetooth.enable = true;
 
   environment.systemPackages = with pkgs; [
+    age
     curl
     gcc
     git
@@ -27,14 +28,16 @@ localFlake: { lib
     nix-prefetch-git
     pulseaudio
     python3
+    sops
     tree
     wget
   ];
 
   services.displayManager.ly.enable = true;
+  programs.hyprland.enable = true;
 
   home-manager.users.donny = { config, ... }: {
-    theme = localFlake.config.flake.themes.gruvbox;
+    theme = localFlake.inputs.nix-colors.colorschemes.dracula;
 
     home.stateVersion = lib.mkDefault "21.11";
 
@@ -71,10 +74,20 @@ localFlake: { lib
         enableBlur = true;
         blurSize = 10;
         roundBorders.enable = true;
-        startupCommands = [
-          "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/gruvy_seaside.jpg"
-          "${config.services.mako.package}/bin/mako"
-        ];
+        startupCommands =
+          let
+            wallpaper = (localFlake.inputs.nix-colors.lib.contrib { inherit pkgs; }).nixWallpaperFromScheme {
+              scheme = config.theme;
+              width = 1920;
+              height = 1080;
+              logoScale = 5.0;
+            };
+          in
+          [
+            "${pkgs.swaybg}/bin/swaybg -i ${wallpaper}"
+            # "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/dark_city_morning.jpg"
+            "${config.services.mako.package}/bin/mako"
+          ];
 
         monitor = [ "eDP-1, 1920x1080@60,0x0,1" ];
 
@@ -161,7 +174,7 @@ localFlake: { lib
   };
 
   services.syncthing = {
-    enable = true;
+    enable = false;
     user = "donny";
     dataDir = "/home/donny/Sync";
     configDir = "/home/donny/Sync/.config/syncthing";
