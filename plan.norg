@@ -1,5 +1,0 @@
-* Things to keep
-    - Neovim plugin
-    - Maybe icons and cursor?
-* TODO - convert files from old theme to nix-colors - DONE
-* Make nix-colors module and define modified colorschemes in there (Define extra stuff like neovim colorschemes, icon themes, cursor themes, and wallpaper)
