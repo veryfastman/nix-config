@@ -13,9 +13,9 @@ This is my work-in-progress configuration for NixOS.
 
 ## Plans
 
-- [ ] Secrets management
-- [ ] Use [nix-colors](https://github.com/Misterio77/nix-colors) instead of own module
-- [ ] More window manager configurations (especially X window managers like dwm, awesome, xmonad, etc.)
+- [x] Secrets management
+- [x] Use [nix-colors](https://github.com/Misterio77/nix-colors) instead of own module
+- [x] More window manager configurations (especially X window managers like dwm, awesome, xmonad, etc.)
 
 ## [Installation Guide](INSTALL.md)
 
