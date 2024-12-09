@@ -108,7 +108,7 @@
           };
           style =
             let
-              inherit (config.theme.palette) base00 base05 base0D base0B;
+              inherit (config.theme.colors.palette) base00 base05 base0D base0B;
               inherit (cfg) font;
             in
             ''

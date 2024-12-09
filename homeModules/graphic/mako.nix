@@ -38,7 +38,7 @@
       config = mkIf cfg.enable {
         services.mako =
           let
-            inherit (config.theme.palette) base02 base05 base0D;
+            inherit (config.theme.colors.palette) base02 base05 base0D;
           in
           {
             enable = true;

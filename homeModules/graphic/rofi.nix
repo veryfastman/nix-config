@@ -32,7 +32,7 @@
           theme =
             let
               inherit (config.lib.formats.rasi) mkLiteral;
-              inherit (config.theme.palette) base00 base02 base05 base0D;
+              inherit (config.theme.colors.palette) base00 base02 base05 base0D;
             in
             {
               "*" = {

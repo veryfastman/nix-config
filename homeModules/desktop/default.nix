@@ -5,6 +5,7 @@
   flake.homeModules.desktop.imports = with config.flake.homeModules; [
     desktop-packages
     hyprland
+    # xmonad
     # river
     # sway
   ];

@@ -18,7 +18,7 @@
           enable = true;
           options =
             let
-              inherit (config.theme.palette) base00 base05;
+              inherit (config.theme.colors.palette) base00 base05;
             in
             {
               default-bg = base00;

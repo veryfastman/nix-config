@@ -26,7 +26,7 @@
             themes = {
               my-theme =
                 let
-                  inherit (config.theme) palette;
+                  inherit (config.theme.colors) palette;
                 in
                 {
                   fg = "#${palette.base05}";

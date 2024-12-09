@@ -47,7 +47,7 @@ localFlake: { myLib, ... }: {
         graphic.waybar.wmModules = [ "hyprland/workspaces" "hyprland/window" ];
         wayland.windowManager.hyprland =
           let
-            inherit (config.theme.palette) base00 base0D;
+            inherit (config.theme.colors.palette) base00 base0D;
           in
           {
             enable = true;

@@ -25,7 +25,7 @@
         settings = {
           colors =
             let
-              inherit (config.theme) palette;
+              inherit (config.theme.colors) palette;
             in
             {
               draw_bold_text_with_bright_colors = false;

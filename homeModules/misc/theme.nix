@@ -19,17 +19,10 @@ localFlake: {
       config = rec {
         gtk = {
           enable = true;
+          inherit (cfg) cursorTheme iconTheme;
           theme = {
-            name = "dracula";
-            package = (localFlake.inputs.nix-colors.lib.contrib { inherit pkgs; }).gtkThemeFromScheme { scheme = cfg; };
-          };
-          cursorTheme = {
-            name = "Capitaine Cursors (Palenight)";
-            package = pkgs.capitaine-cursors-themed;
-          };
-          iconTheme = {
-            name = "Dracula";
-            package = pkgs.dracula-icon-theme;
+            name = cfg.colors.slug;
+            package = (localFlake.inputs.nix-colors.lib.contrib { inherit pkgs; }).gtkThemeFromScheme { scheme = cfg.colors; };
           };
         };
         home.pointerCursor = {

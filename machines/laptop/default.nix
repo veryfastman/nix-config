@@ -37,7 +37,7 @@ localFlake: { lib
   programs.hyprland.enable = true;
 
   home-manager.users.donny = { config, ... }: {
-    theme = localFlake.inputs.nix-colors.colorschemes.dracula;
+    theme = localFlake.config.flake.themes.gruvbox;
 
     home.stateVersion = lib.mkDefault "21.11";
 
@@ -75,17 +75,8 @@ localFlake: { lib
         blurSize = 10;
         roundBorders.enable = true;
         startupCommands =
-          let
-            wallpaper = (localFlake.inputs.nix-colors.lib.contrib { inherit pkgs; }).nixWallpaperFromScheme {
-              scheme = config.theme;
-              width = 1920;
-              height = 1080;
-              logoScale = 5.0;
-            };
-          in
           [
-            "${pkgs.swaybg}/bin/swaybg -i ${wallpaper}"
-            # "${pkgs.swaybg}/bin/swaybg -i ~/Pictures/wallpapers/dark_city_morning.jpg"
+            "${pkgs.swaybg}/bin/swaybg -i ${config.theme.wallpaper}"
             "${config.services.mako.package}/bin/mako"
           ];
 
