@@ -62,6 +62,7 @@ localFlake: { myLib, ... }: {
               exec-once =
                 [
                   (mkIf config.graphic.waybar.enable "waybar")
+                  "brightnessctl set 9600"
                 ]
                 ++ cfg.startupCommands;
 
