@@ -12,7 +12,14 @@
       options.terminal.yazi.enable = mkEnableOption "Enable Yazi";
 
       config = mkIf cfg.enable {
-        programs.yazi.enable = true;
+        programs.yazi = {
+          enable = true;
+          settings = {
+            manager = {
+              show_hidden = true;
+            };
+          };
+        };
       };
     };
 }

@@ -53,6 +53,7 @@ localFlake: { lib
       htop
       lazygit
       ncdu
+      obs-studio
       ripgrep
       streamlink
       trash-cli
