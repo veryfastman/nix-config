@@ -16,7 +16,11 @@
     nvim-autopairs.enable = true;
     treesitter.enable = true;
     trouble.enable = true;
-    vimtex.enable = true;
     web-devicons.enable = true;
+
+    vimtex = {
+      enable = true;
+      settings.view_method = "zathura";
+    };
   };
 }
