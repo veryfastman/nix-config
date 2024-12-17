@@ -14,9 +14,9 @@
   plugins = {
     comment.enable = true;
     nvim-autopairs.enable = true;
-    # treesitter.enable = true;
+    treesitter.enable = true;
     trouble.enable = true;
-    # vimtex.enable = true;
+    vimtex.enable = true;
     web-devicons.enable = true;
   };
 }
