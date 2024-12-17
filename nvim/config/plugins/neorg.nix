@@ -2,7 +2,7 @@
   plugins.neorg = {
     enable = false;
     package = pkgs.vimPlugins.neorg;
-    modules = {
+    settings.load = {
       "core.completion".config.engine = "nvim-cmp";
       "core.dirman".config = {
         workspaces.notes = "~/Documents/notes";
