@@ -98,7 +98,7 @@ localFlake: { lib
           "tile, class:^(firefox)\$"
           "tile, class:^(Chromium-browser)\$"
           "tile, class:^(Alacritty)\$"
-          "tile, class:^(zathura)\$"
+          "tile, class:^(org.pwmt.zathura)\$"
           # "opacity 0.9 0.9, class:^(Alacritty)\$"
         ];
       };
