@@ -1,6 +1,7 @@
 {
   plugins = {
     luasnip.enable = true;
+    friendly-snippets.enable = true;
     cmp = {
       enable = true;
       autoEnableSources = true;
