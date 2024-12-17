@@ -37,7 +37,7 @@ localFlake: { lib
   programs.hyprland.enable = true;
 
   home-manager.users.donny = { config, ... }: {
-    theme = localFlake.config.flake.themes.gruvbox;
+    theme = localFlake.config.flake.themes.onedark;
 
     home.stateVersion = lib.mkDefault "21.11";
 
