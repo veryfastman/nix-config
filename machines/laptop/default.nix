@@ -56,6 +56,7 @@ localFlake: { lib
       obs-studio
       ripgrep
       streamlink
+      texliveFull
       trash-cli
       unzip
       winetricks
@@ -65,7 +66,7 @@ localFlake: { lib
       zip
 
       localFlake.self.packages.${pkgs.system}.nvim
-      (callPackage ../../pkgs/tex.nix { })
+      # (callPackage ../../pkgs/tex.nix { })
     ];
 
     desktop = {
