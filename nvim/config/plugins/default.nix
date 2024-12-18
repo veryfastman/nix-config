@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [
     ./bufferline.nix
     ./cmp.nix
@@ -20,6 +20,7 @@
 
     vimtex = {
       enable = true;
+      texlivePackage = pkgs.texliveFull;
       settings.view_method = "zathura";
     };
   };
