@@ -30,6 +30,17 @@
             $env.EDITOR = "nvim"
             $env.VISUAL = $env.EDITOR
 
+            # lamu = (la)zy (mu)sic
+            def lamu [name: string] {
+              ls ~/Music/**/*
+                | where type == file
+                | filter {|x| $x.name | str contains $name}
+                | get name
+                | first
+                | echo
+                | mpv $in
+            }
+
             alias v = nvim
             alias cb = cargo build
             alias cch = cargo check
