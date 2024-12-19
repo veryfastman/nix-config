@@ -148,15 +148,15 @@ localFlake: { lib
       {
         bash.enable = true;
         direnv.enable = true;
-        fish.enable = true;
+        fish.enable = false;
         git.enable = true;
-        nushell.enable = false;
+        nushell.enable = true;
         starship.enable = true;
         yazi.enable = true;
-        zellij = enableAndShell "fish";
+        zellij = enableAndShell "nu";
 
         alacritty =
-          (enableAndShell "fish")
+          (enableAndShell "nu")
           // {
             font = {
               name = "JetBrainsMonoNerdFont";
