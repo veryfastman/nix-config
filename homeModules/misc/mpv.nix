@@ -27,6 +27,7 @@
           config = {
             hwdec = "auto";
             ytdl-format = "ytdl";
+            term-playing-msg = "Now playing: \${media-title}";
           };
         };
       };
