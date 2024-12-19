@@ -30,7 +30,7 @@
             $env.EDITOR = "nvim"
             $env.VISUAL = $env.EDITOR
 
-            alias vim = nvim
+            alias v = nvim
             alias cb = cargo build
             alias cch = cargo check
             alias cv = cargo run
