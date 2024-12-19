@@ -37,7 +37,6 @@
                 | filter {|x| $x.name | str contains $name}
                 | get name
                 | first
-                | echo $in
                 | mpv $in
             }
 
