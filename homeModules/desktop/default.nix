@@ -55,11 +55,11 @@
           description = "List of packages to be installed when using an X window manager.";
         };
       };
-
-      imports = [
-        # ./river.nix
-        ./hyprland.nix
-        ./xmonad.nix
-      ];
     };
+
+    imports = [
+      # ./river.nix
+      ./hyprland.nix
+      ./xmonad.nix
+    ];
 }
