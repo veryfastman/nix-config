@@ -1,6 +1,6 @@
 { lib, myLib, pkgs, ... }: {
   plugins.neorg = {
-    enable = false;
+    enable = true;
     package = pkgs.vimPlugins.neorg;
     settings.load = {
       "core.completion".config.engine = "nvim-cmp";
