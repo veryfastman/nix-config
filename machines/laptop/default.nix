@@ -103,6 +103,10 @@ localFlake: { lib
           # "opacity 0.9 0.9, class:^(Alacritty)\$"
         ];
       };
+
+      xmonad = {
+        enable = false;
+      };
     };
 
     graphic = {

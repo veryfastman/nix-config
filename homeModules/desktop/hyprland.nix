@@ -1,4 +1,4 @@
-localFlake: { myLib, ... }: {
+{ myLib, ... }: {
   flake.homeModules.hyprland =
     { config
     , lib

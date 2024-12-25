@@ -10,8 +10,8 @@ in
     };
 
     iconTheme = {
-name = "Gruvbox-Plus-Dark";
-          package = pkgs.gruvbox-plus-icons;
+      name = "Gruvbox-Plus-Dark";
+      package = pkgs.gruvbox-plus-icons;
     };
 
     colors = localFlake.inputs.nix-colors.colorschemes.gruvbox-dark-hard;
