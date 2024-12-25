@@ -7,11 +7,11 @@
     }:
     let
       cfg = config.desktop.xmonad;
-      inherit (lib) mkEnableOptions mkIf;
+      inherit (lib) mkEnableOption mkIf;
     in
     {
       options.desktop.xmonad = {
-        enable = mkEnableOptions "Enable Xmonad";
+        enable = mkEnableOption "Enable Xmonad";
         # windowRules
         # extraKeybindings
       };
