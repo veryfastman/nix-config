@@ -1,8 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./bufferline.nix
     ./cmp.nix
     ./floaterm.nix
+    ./format.nix
     ./lsp.nix
     ./lualine.nix
     ./neorg.nix
