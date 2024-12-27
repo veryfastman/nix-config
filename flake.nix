@@ -8,11 +8,6 @@
     nur.url = "github:nix-community/nur";
     impermanence.url = "github:nix-community/impermanence";
 
-    # lix-module = {
-    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,6 +33,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    devshell = {
+      url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     git-hooks-nix = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,6 +54,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.git-hooks-nix.flakeModule
+        ./shell.nix
         ./colors
         ./machines
         ./homeModules
@@ -64,28 +65,9 @@
       flake.formatter.x86_64-linux = inputs.nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
       _module.args.myLib = import ./lib.nix { inherit inputs; };
       perSystem =
-        {
-          config,
-          pkgs,
-          system,
-          ...
-        }:
+        { system, ... }:
         {
           pre-commit.settings.hooks.nixfmt-rfc-style.enable = true;
-
-          devShells.default = pkgs.mkShell {
-            buildInputs = with pkgs; [
-              just
-              nixos-install-tools
-              nixos-rebuild
-              libnotify
-            ];
-
-            shellHook = ''
-              ${config.pre-commit.installationScript}
-            '';
-          };
-
           _module.args.pkgs = import inputs.nixpkgs {
             inherit system;
             overlays = [ inputs.nur.overlays.default ];
