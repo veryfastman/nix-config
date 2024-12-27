@@ -11,6 +11,7 @@
         packages = [
           "nixos-install-tools"
           "nixos-rebuild"
+          "nixfmt-rfc-style"
           "libnotify"
         ];
 
