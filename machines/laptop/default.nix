@@ -1,7 +1,10 @@
-localFlake: { lib
-            , pkgs
-            , ...
-            }: {
+localFlake:
+{
+  lib,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ./hardware-configuration.nix
     localFlake.config.flake.nixosModules.default
@@ -35,140 +38,147 @@ localFlake: { lib
 
   services.displayManager.ly.enable = true;
   programs.hyprland.enable = true;
+  programs.river.enable = true;
 
-  home-manager.users.donny = { config, ... }: {
-    theme = localFlake.config.flake.themes.onedark;
+  home-manager.users.donny =
+    { config, ... }:
+    {
+      theme = localFlake.config.flake.themes.onedark;
 
-    home.stateVersion = lib.mkDefault "21.11";
+      home.stateVersion = lib.mkDefault "21.11";
 
-    home.packages = with pkgs; [
-      ani-cli
-      bluetuith
-      # cava
-      cmus
-      fastfetch
-      fd
-      fzf
-      gimp
-      htop
-      lazygit
-      ncdu
-      obs-studio
-      ripgrep
-      streamlink
-      texliveFull
-      trash-cli
-      unzip
-      winetricks
-      wineWowPackages.waylandFull
-      yewtube
-      yt-dlp
-      zip
+      home.packages = with pkgs; [
+        ani-cli
+        bluetuith
+        # cava
+        cmus
+        fastfetch
+        fd
+        fzf
+        gimp
+        htop
+        lazygit
+        ncdu
+        obs-studio
+        ripgrep
+        streamlink
+        texliveFull
+        trash-cli
+        unzip
+        winetricks
+        wineWowPackages.waylandFull
+        yewtube
+        yt-dlp
+        zip
 
-      localFlake.self.packages.${pkgs.system}.nvim
-      # (callPackage ../../pkgs/tex.nix { })
-    ];
+        localFlake.self.packages.${pkgs.system}.nvim
+        # (callPackage ../../pkgs/tex.nix { })
+      ];
 
-    desktop = {
-      hyprland = {
-        enable = true;
-        enableAnimations = true;
-        enableBlur = true;
-        blurSize = 10;
-        roundBorders.enable = true;
-        startupCommands =
-          [
+      desktop = {
+        hyprland = {
+          enable = true;
+          enableAnimations = true;
+          enableBlur = true;
+          blurSize = 10;
+          roundBorders.enable = true;
+          startupCommands = [
             "${pkgs.swaybg}/bin/swaybg -i ${config.theme.wallpaper}"
             "${config.services.mako.package}/bin/mako"
           ];
 
-        monitor = [ "eDP-1, 1920x1080@60,0x0,1" ];
+          monitor = [ "eDP-1, 1920x1080@60,0x0,1" ];
 
-        extraKeybindings = [
-          "SUPER, RETURN, exec, alacritty"
-          "SUPER, S, exec, firefox"
-          "SUPER SHIFT, S, exec, firefox -p"
-          "SUPER, R, exec, rofi -show drun"
-          "SUPER SHIFT, R, exec, rofi -show run"
-          "SUPER, P, exec, rofimoji"
-          "SUPER, E, exec, pcmanfm"
-        ];
+          extraKeybindings = [
+            "SUPER, RETURN, exec, alacritty"
+            "SUPER, S, exec, firefox"
+            "SUPER SHIFT, S, exec, firefox -p"
+            "SUPER, R, exec, rofi -show drun"
+            "SUPER SHIFT, R, exec, rofi -show run"
+            "SUPER, P, exec, rofimoji"
+            "SUPER, E, exec, pcmanfm"
+          ];
 
-        windowRules = [
-          "float, class:.*"
-          "tile, class:^(firefox)\$"
-          "tile, class:^(Chromium-browser)\$"
-          "tile, class:^(Alacritty)\$"
-          "tile, class:^(org.pwmt.zathura)\$"
-          # "opacity 0.9 0.9, class:^(Alacritty)\$"
-        ];
-      };
-
-      xmonad = {
-        enable = false;
-      };
-    };
-
-    graphic = {
-      rofi.enable = true;
-
-      mako = {
-        enable = true;
-        font = {
-          name = "JetBrainsMonoNerdFont";
-          size = 10;
+          windowRules = [
+            "float, class:.*"
+            "tile, class:^(firefox)\$"
+            "tile, class:^(Chromium-browser)\$"
+            "tile, class:^(Alacritty)\$"
+            "tile, class:^(org.pwmt.zathura)\$"
+            # "opacity 0.9 0.9, class:^(Alacritty)\$"
+          ];
         };
-      };
 
-      waybar = {
-        enable = true;
-        barHeight = 30;
-        terminal = "alacritty";
-        soundControl = "pavucontrol";
-
-        font = {
-          name = "JetBrainsMonoNerdFont";
-          size = 12.0;
+        xmonad = {
+          enable = false;
         };
-      };
-    };
 
-    misc = {
-      firefox.enable = true;
-      impermanence.enable = true;
-      mpv.enable = true;
-      scripts.enable = true;
-      wallpapers.enable = true;
-      zathura.enable = true;
-    };
-
-    terminal =
-      let
-        enableAndShell = shell: {
+        river = {
           enable = true;
-          inherit shell;
+          startupCommands = [
+            "waybar"
+          ];
         };
-      in
-      {
-        bash.enable = true;
-        direnv.enable = true;
-        fish.enable = false;
-        git.enable = true;
-        nushell.enable = true;
-        starship.enable = true;
-        yazi.enable = true;
-        zellij = enableAndShell "nu";
+      };
 
-        alacritty =
-          (enableAndShell "nu")
-          // {
+      graphic = {
+        rofi.enable = true;
+
+        mako = {
+          enable = true;
+          font = {
+            name = "JetBrainsMonoNerdFont";
+            size = 10;
+          };
+        };
+
+        waybar = {
+          enable = true;
+          barHeight = 30;
+          terminal = "alacritty";
+          soundControl = "pavucontrol";
+
+          font = {
+            name = "JetBrainsMonoNerdFont";
+            size = 12.0;
+          };
+        };
+      };
+
+      misc = {
+        firefox.enable = true;
+        impermanence.enable = true;
+        mpv.enable = true;
+        scripts.enable = true;
+        wallpapers.enable = true;
+        zathura.enable = true;
+      };
+
+      terminal =
+        let
+          enableAndShell = shell: {
+            enable = true;
+            inherit shell;
+          };
+        in
+        {
+          bash.enable = true;
+          direnv.enable = true;
+          fish.enable = false;
+          git.enable = true;
+          nushell.enable = true;
+          starship.enable = true;
+          yazi.enable = true;
+          zellij = enableAndShell "nu";
+
+          alacritty = (enableAndShell "nu") // {
             font = {
               name = "JetBrainsMonoNerdFont";
               size = 10.5;
             };
           };
-      };
-  };
+        };
+    };
 
   services.syncthing = {
     enable = false;
@@ -176,7 +186,9 @@ localFlake: { lib
     dataDir = "/home/donny/Sync";
     configDir = "/home/donny/Sync/.config/syncthing";
     settings.devices = {
-      "phone" = { id = "IXHKWJV-QKEROLG-FUYQ5JH-T3L5JA4-GL2ITBF-XD7XR23-A4HOYPF-E7UYVQG"; };
+      "phone" = {
+        id = "IXHKWJV-QKEROLG-FUYQ5JH-T3L5JA4-GL2ITBF-XD7XR23-A4HOYPF-E7UYVQG";
+      };
     };
   };
 

@@ -1,19 +1,23 @@
-{ config
-, flake-parts-lib
-, ...
-}: {
+{
+  config,
+  flake-parts-lib,
+  ...
+}:
+{
   flake.homeModules.desktop.imports = with config.flake.homeModules; [
     desktop-packages
     hyprland
     xmonad
+    river
     # river
     # sway
   ];
 
   flake.homeModules.desktop-packages =
-    { lib
-    , pkgs
-    , ...
+    {
+      lib,
+      pkgs,
+      ...
     }:
     let
       inherit (lib) mkOption types;
@@ -57,9 +61,9 @@
       };
     };
 
-    imports = [
-      # ./river.nix
-      ./hyprland.nix
-      ./xmonad.nix
-    ];
+  imports = [
+    ./river.nix
+    ./hyprland.nix
+    ./xmonad.nix
+  ];
 }

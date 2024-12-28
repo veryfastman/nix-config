@@ -49,29 +49,5 @@
     };
   };
 
-  outputs =
-    inputs@{ flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        inputs.git-hooks-nix.flakeModule
-        ./shell.nix
-        ./colors
-        ./machines
-        ./homeModules
-        ./nixosModules
-        ./nvim
-      ];
-      systems = [ "x86_64-linux" ];
-      flake.formatter.x86_64-linux = inputs.nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
-      _module.args.myLib = import ./lib.nix { inherit inputs; };
-      perSystem =
-        { system, ... }:
-        {
-          pre-commit.settings.hooks.nixfmt-rfc-style.enable = true;
-          _module.args.pkgs = import inputs.nixpkgs {
-            inherit system;
-            overlays = [ inputs.nur.overlays.default ];
-          };
-        };
-    };
+  outputs = args: import ./outputs.nix args;
 }
