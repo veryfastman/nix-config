@@ -1,14 +1,22 @@
-{ myLib, ... }: {
+{ myLib, ... }:
+{
   flake.homeModules.waybar =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
-      inherit (lib) mkEnableOption mkIf mkOption types;
+      inherit (lib)
+        mkEnableOption
+        mkIf
+        mkOption
+        types
+        ;
       cfg = config.graphic.waybar;
-      createNullOrStringOption = description:
+      createNullOrStringOption =
+        description:
         mkOption {
           type = types.nullOr types.str;
           default = null;
@@ -45,19 +53,40 @@
               layer = "top";
               position = cfg.barPosition;
               height = cfg.barHeight;
-              output = [ "eDP-1" "HDMI-A-1" ];
+              output = [
+                "eDP-1"
+                "HDMI-A-1"
+              ];
               modules-left = cfg.wmModules;
-              modules-right = [ "tray" "network" "battery" "disk" "memory" "backlight" "pulseaudio" "clock" ];
+              modules-right = [
+                "tray"
+                "network"
+                "battery"
+                "disk"
+                "memory"
+                "backlight"
+                "pulseaudio"
+                "clock"
+              ];
 
               backlight = {
                 format = "{icon} {percent}%";
-                format-icons = [ "" "" ];
+                format-icons = [
+                  ""
+                  ""
+                ];
               };
 
               battery = {
                 format = "{icon} ";
                 format-alt = "{icon} {capacity}%";
-                format-icons = [ " " " " " " " " " " ];
+                format-icons = [
+                  " "
+                  " "
+                  " "
+                  " "
+                  " "
+                ];
                 states = {
                   warning = 30;
                   critical = 10;
@@ -85,7 +114,13 @@
               network = {
                 format = "{icon}";
                 format-alt = "{essid} ({signalStrength}%) {icon}";
-                format-icons = [ "󰤯" "󰤟" "󰤢" "󰤢" "󰤨" ];
+                format-icons = [
+                  "󰤯"
+                  "󰤟"
+                  "󰤢"
+                  "󰤢"
+                  "󰤨"
+                ];
                 on-click-right = "${pkgs.alacritty}/bin/alacritty -e nmcli";
               };
 
@@ -95,20 +130,38 @@
                 format-bluetooth = "{icon}󰂯 {volume}%";
                 format-muted = "󰝟";
                 format-icons = {
-                  default = [ "" "" ];
+                  default = [
+                    ""
+                    ""
+                  ];
                 };
                 on-click-right = "${pkgs.pavucontrol}/bin/pavucontrol";
               };
 
               river.tags = {
                 num-tags = 9;
-                tag-labels = [ "1" "2" "3" "4" "5" "6" "7" "8" "9" ];
+                tag-labels = [
+                  "1"
+                  "2"
+                  "3"
+                  "4"
+                  "5"
+                  "6"
+                  "7"
+                  "8"
+                  "9"
+                ];
               };
             };
           };
           style =
             let
-              inherit (config.theme.colors.palette) base00 base05 base0D base0B;
+              inherit (config.theme.colors.palette)
+                base00
+                base05
+                base0D
+                base0B
+                ;
               inherit (cfg) font;
             in
             ''
@@ -134,15 +187,19 @@
                 margin-left: 8px;
               }
 
-              #tags button {
-                margin: -10px;
-              }
-
               #battery,
               #network {
                 margin-right: 5px;
                 margin-left: 5px;
                 font-size: ${toString (font.size + 2)}px;
+              }
+
+              #tags button {
+                margin: -11px;
+              }
+
+              #tags {
+                padding: 0px 5px;
               }
 
               #tags button.occupied label {
@@ -154,7 +211,7 @@
               }
 
               #workspaces {
-               margin-left: 4px;
+                margin-left: 4px;
               }
 
               #workspaces button.active label {

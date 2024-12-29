@@ -125,7 +125,7 @@
             in
             ''
               riverctl map normal Super Return spawn alacritty
-              riverctl map normal Super W close
+              riverctl map normal Super Q close
               riverctl map normal Super+Control Q exit
               riverctl map normal Super J focus-view next
               riverctl map normal Super K focus-view previous
