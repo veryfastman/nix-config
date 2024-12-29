@@ -173,8 +173,8 @@ localFlake:
 
           alacritty = (enableAndShell "nu") // {
             font = {
-              name = "JetBrainsMonoNerdFont";
-              size = 10.5;
+              name = "IosevkaTermNerdFont";
+              size = 12.0;
             };
           };
         };
