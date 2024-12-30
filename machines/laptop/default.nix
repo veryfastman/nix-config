@@ -118,6 +118,17 @@ localFlake:
           startupCommands = [
             "waybar"
           ];
+          extraCustomConfig = ''
+            riverctl map normal Super Return spawn alacritty
+            riverctl map normal Super R spawn 'rofi -show drun'
+            riverctl map normal Super P spawn rofimoji
+            riverctl map normal Super I spawn 'grim -g $(slurp)'
+            riverctl map normal Super S spawn firefox
+            riverctl map normal Super+Shift S spawn 'firefox -p'
+            riverctl map normal Super+Control R ~/.config/river/init
+
+            riverctl rule-add -title "OpenGLGame" float
+          '';
         };
       };
 
@@ -173,8 +184,8 @@ localFlake:
 
           alacritty = (enableAndShell "nu") // {
             font = {
-              name = "IosevkaTermNerdFont";
-              size = 12.0;
+              name = "InconsolataNerdFont";
+              size = 12.5;
             };
           };
         };

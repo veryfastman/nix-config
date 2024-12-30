@@ -8,7 +8,12 @@
       ...
     }:
     let
-      inherit (lib) mkEnableOption mkIf;
+      inherit (lib)
+        mkEnableOption
+        mkIf
+        mkOption
+        types
+        ;
       inherit (myLib) createListOfStringsOption;
       cfg = config.desktop.river;
     in
@@ -16,6 +21,11 @@
       options.desktop.river = {
         enable = mkEnableOption "Enable River";
         startupCommands = createListOfStringsOption "Commands to be automatically executed when River launches";
+        extraCustomConfig = mkOption {
+          type = types.str;
+          default = "";
+          description = "Extra configuration to be added (e.g. keybindings, window rules)";
+        };
       };
 
       config = mkIf cfg.enable {
@@ -124,7 +134,6 @@
               inherit (config.theme.colors.palette) base00 base0D;
             in
             ''
-              riverctl map normal Super Return spawn alacritty
               riverctl map normal Super Q close
               riverctl map normal Super+Control Q exit
               riverctl map normal Super J focus-view next
@@ -203,16 +212,11 @@
 
               riverctl input pointer-2-14-ETPS/2_Elantech_Touchpad tap enabled
 
-              riverctl map normal Super R spawn 'rofi -show drun'
-              riverctl map normal Super P spawn rofimoji
-              riverctl map normal Super+Control I spawn 'bookmark-type'
-              riverctl map normal Super I spawn 'grim -g $(slurp)'
-              riverctl map normal Super S spawn firefox
-              riverctl map normal Super+Shift S spawn 'firefox -p'
-
               riverctl map normal Super grave toggle-focused-tags $((1 << 20))
               riverctl map normal Super C set-view-tags $((1 << 20))
               riverctl spawn-tagmask $(( ((1 << 32) - 1) ^ $((1 << 20)) ))
+
+              ${cfg.extraCustomConfig}
             '';
         };
       };

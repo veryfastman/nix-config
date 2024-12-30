@@ -32,7 +32,7 @@
             grim
             imv
             pavucontrol
-            pcmanfm
+            # pcmanfm
             playerctl
             polkit_gnome
             slurp

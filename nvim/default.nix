@@ -1,25 +1,26 @@
-{ self
-, inputs
-, myLib
-, ...
-}: {
+{
+  self,
+  inputs,
+  myLib,
+  ...
+}:
+{
   perSystem =
-    { pkgs
-    , system
-    , ...
+    {
+      pkgs,
+      system,
+      ...
     }:
     let
       nvim = inputs.nixvim.legacyPackages."${system}".makeNixvimWithModule nixvimModule;
       nixvimModule = {
         pkgs = import inputs.nixpkgs {
           inherit system;
-          overlays = [ inputs.neorg-overlay.overlays.default ];
         };
-        module =
-          import ./config
-          // {
-            extraPlugins = self.nixosConfigurations.laptop.config.home-manager.users.donny.theme.extraNeovimPlugins;
-          };
+        module = import ./config // {
+          extraPlugins =
+            self.nixosConfigurations.laptop.config.home-manager.users.donny.theme.extraNeovimPlugins;
+        };
         extraSpecialArgs = { inherit myLib; };
       };
     in
