@@ -217,6 +217,7 @@
               riverctl spawn-tagmask $(( ((1 << 32) - 1) ^ $((1 << 20)) ))
 
               ${cfg.extraCustomConfig}
+              riverctl spawn "brightnessctl set 9600"
             '';
         };
       };
