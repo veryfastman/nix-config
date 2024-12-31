@@ -53,6 +53,14 @@ let
       key = "<leader>d";
       action = "<cmd>noh<CR>";
     }
+    {
+      key = "j";
+      action = "gj";
+    }
+    {
+      key = "k";
+      action = "gk";
+    }
   ];
 in
 {
