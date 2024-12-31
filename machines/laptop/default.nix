@@ -98,6 +98,7 @@ localFlake:
             "SUPER SHIFT, R, exec, rofi -show run"
             "SUPER, P, exec, rofimoji"
             "SUPER, E, exec, pcmanfm"
+            "SUPER, B, exec, firefox https://127.0.0.1:8384"
           ];
 
           windowRules = [
@@ -127,6 +128,7 @@ localFlake:
             riverctl map normal Super I spawn 'grim -g $(slurp)'
             riverctl map normal Super S spawn firefox
             riverctl map normal Super+Shift S spawn 'firefox -p'
+            riverctl map normal Super B spawn "firefox https://127.0.0.1:8384"
             riverctl map normal Super+Control R ~/.config/river/init
 
             riverctl rule-add -title "OpenGLGame" float
