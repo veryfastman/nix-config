@@ -6,7 +6,7 @@
       workspaces = [
         {
           name = "personal_vault";
-          path = "~/Documents/personal_vault";
+          path = "~/Sync/personal_vault";
         }
       ];
       note_path_func = ''
