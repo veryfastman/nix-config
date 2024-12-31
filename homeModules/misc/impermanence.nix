@@ -1,8 +1,9 @@
 localFlake: {
   flake.homeModules.impermanence =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       inherit (lib) mkEnableOption mkIf;
@@ -27,6 +28,7 @@ localFlake: {
             "Videos"
             "Sync"
             ".cargo"
+            ".config/obsidian"
             ".gnupg"
             ".ssh"
             ".local/share/keyrings"

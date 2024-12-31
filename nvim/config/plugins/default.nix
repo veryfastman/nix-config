@@ -9,6 +9,7 @@
     ./lualine.nix
     ./neorg.nix
     ./neo-tree.nix
+    ./obsidian-nvim.nix
     ./telescope.nix
     ./which-key.nix
   ];

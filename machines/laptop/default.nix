@@ -59,6 +59,7 @@ localFlake:
         htop
         lazygit
         ncdu
+        obsidian
         obs-studio
         ripgrep
         streamlink
@@ -105,6 +106,7 @@ localFlake:
             "tile, class:^(Chromium-browser)\$"
             "tile, class:^(Alacritty)\$"
             "tile, class:^(org.pwmt.zathura)\$"
+            "tile, class:^(obsidian)\$"
             # "opacity 0.9 0.9, class:^(Alacritty)\$"
           ];
         };
@@ -192,7 +194,7 @@ localFlake:
     };
 
   services.syncthing = {
-    enable = false;
+    enable = true;
     user = "donny";
     dataDir = "/home/donny/Sync";
     configDir = "/home/donny/Sync/.config/syncthing";
