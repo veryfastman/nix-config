@@ -129,7 +129,11 @@ localFlake:
             riverctl map normal Super S spawn firefox
             riverctl map normal Super+Shift S spawn 'firefox -p'
             riverctl map normal Super B spawn "firefox https://127.0.0.1:8384"
-            riverctl map normal Super+Shift F spawn "firefox ~/Misc/OpenGL-Refpages/gl4/html/\$(ls ~/Misc/OpenGL-Refpages/gl4/html/*.xhtml | xargs -n 1 basename | cut -d "." -f 1 | rofi -dmenu --case-sensitive).xhtml"
+            riverctl map normal Super+Shift F spawn "firefox \\
+              ~/Misc/OpenGL-Refpages/gl4/html/\$(ls ~/Misc/OpenGL-Refpages/gl4/html/*.xhtml \\
+                | xargs -n 1 basename \\
+                | cut -d "." -f 1 \\
+                | rofi -dmenu --case-sensitive).xhtml"
             riverctl map normal Super+Control R ~/.config/river/init
 
             riverctl rule-add -title "OpenGLGame" float
