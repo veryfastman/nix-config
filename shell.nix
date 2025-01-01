@@ -37,7 +37,7 @@
             command = "nixos-rebuild boot --flake .#$1 --use-remote-sudo";
           }
           {
-            name = "update";
+            name = "updatein";
             help = "update the flake inputs";
             command = "nix flake update";
           }
