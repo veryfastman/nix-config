@@ -1,4 +1,13 @@
 { texlive }:
 texlive.combine {
-  inherit (texlive) scheme-basic dvisvgm dvipng wrapfig amsmath ulem hyperref capt-of;
+  inherit (texlive)
+    scheme-basic
+    dvisvgm
+    dvipng
+    wrapfig
+    amsmath
+    ulem
+    hyperref
+    capt-of
+    ;
 }

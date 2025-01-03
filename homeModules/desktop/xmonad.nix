@@ -1,9 +1,11 @@
-{ myLib, ... }: {
+{ myLib, ... }:
+{
   flake.homeModules.xmonad =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
       cfg = config.desktop.xmonad;

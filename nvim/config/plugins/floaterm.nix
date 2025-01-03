@@ -1,4 +1,5 @@
-{ myLib, ... }: {
+{ myLib, ... }:
+{
   plugins.floaterm.enable = true;
   keymaps = myLib.silentNormalKeymappings [
     {

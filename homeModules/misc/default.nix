@@ -1,7 +1,8 @@
-{ config
-, flake-parts-lib
-, inputs
-, ...
+{
+  config,
+  flake-parts-lib,
+  inputs,
+  ...
 }:
 let
   inherit (flake-parts-lib) importApply;

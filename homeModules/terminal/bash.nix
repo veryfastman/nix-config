@@ -1,8 +1,9 @@
 {
   flake.homeModules.bash =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       inherit (lib) mkEnableOption mkIf;

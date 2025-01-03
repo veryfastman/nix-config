@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   flake.homeModules.terminal.imports = with config.flake.homeModules; [
     alacritty
     bash
@@ -7,6 +8,7 @@
     git
     nushell
     starship
+    tmux
     yazi
     zellij
   ];
@@ -19,6 +21,7 @@
     ./git.nix
     ./nushell.nix
     ./starship.nix
+    ./tmux.nix
     ./yazi.nix
     ./zellij.nix
   ];

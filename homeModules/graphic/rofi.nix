@@ -1,9 +1,11 @@
-{ myLib, ... }: {
+{ myLib, ... }:
+{
   flake.homeModules.rofi =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
       inherit (lib) mkEnableOption mkIf;
@@ -32,7 +34,12 @@
           theme =
             let
               inherit (config.lib.formats.rasi) mkLiteral;
-              inherit (config.theme.colors.palette) base00 base02 base05 base0D;
+              inherit (config.theme.colors.palette)
+                base00
+                base02
+                base05
+                base0D
+                ;
             in
             {
               "*" = {
@@ -94,7 +101,10 @@
               };
 
               inputbar = {
-                children = map mkLiteral [ "prompt" "entry" ];
+                children = map mkLiteral [
+                  "prompt"
+                  "entry"
+                ];
                 background-color = mkLiteral "@bg";
                 padding = 5;
                 border = mkLiteral "0px solid";
@@ -110,7 +120,10 @@
               };
 
               mainbox = {
-                children = map mkLiteral [ "inputbar" "listview" ];
+                children = map mkLiteral [
+                  "inputbar"
+                  "listview"
+                ];
                 background-color = mkLiteral "@bg";
                 border = mkLiteral "0px solid";
                 border-radius = mkLiteral "0px";

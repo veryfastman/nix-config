@@ -1,9 +1,11 @@
-{ myLib, ... }: {
+{ myLib, ... }:
+{
   flake.homeModules.alacritty =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
       inherit (lib) mkEnableOption mkIf;

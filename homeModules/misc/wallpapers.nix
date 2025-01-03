@@ -1,8 +1,9 @@
 localFlake: {
   flake.homeModules.wallpapers =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       inherit (lib) mkEnableOption mkIf;

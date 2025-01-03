@@ -1,8 +1,9 @@
 {
   flake.nixosModules.systemd-boot =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       inherit (lib) mkIf;

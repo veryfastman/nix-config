@@ -1,9 +1,11 @@
-{ config
-, flake-parts-lib
-, inputs
-, self
-, ...
-}: {
+{
+  config,
+  flake-parts-lib,
+  inputs,
+  self,
+  ...
+}:
+{
   flake.nixosConfigurations = {
     laptop = inputs.nixpkgs.lib.nixosSystem {
       modules = [

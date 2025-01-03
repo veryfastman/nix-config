@@ -1,4 +1,6 @@
-localFlake: { config, ... }: {
+localFlake:
+{ config, ... }:
+{
   imports = [
     localFlake.inputs.home-manager.nixosModules.home-manager
   ];

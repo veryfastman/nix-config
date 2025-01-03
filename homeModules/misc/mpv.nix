@@ -1,9 +1,10 @@
 {
   flake.homeModules.mpv =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
       inherit (lib) mkEnableOption mkIf;
@@ -16,13 +17,17 @@
         programs.mpv = {
           enable = true;
 
-          package = with pkgs; (mpv-unwrapped.wrapper {
-            mpv = (mpv-unwrapped.override {
-              ffmpeg = ffmpeg_7-full;
+          package =
+            with pkgs;
+            (mpv-unwrapped.wrapper {
+              mpv = (
+                mpv-unwrapped.override {
+                  ffmpeg = ffmpeg_7-full;
+                }
+              );
+              youtubeSupport = true;
+              scripts = [ mpvScripts.mpris ];
             });
-            youtubeSupport = true;
-            scripts = [ mpvScripts.mpris ];
-          });
 
           config = {
             hwdec = "auto";

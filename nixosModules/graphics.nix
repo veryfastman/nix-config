@@ -1,9 +1,10 @@
 {
   flake.nixosModules.opengl =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
       inherit (lib) mkIf;

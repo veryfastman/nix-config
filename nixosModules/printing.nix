@@ -1,8 +1,9 @@
 {
   flake.nixosModules.printing =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       inherit (lib) mkIf;

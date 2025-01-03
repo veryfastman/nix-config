@@ -1,8 +1,10 @@
-{ myLib, ... }: {
+{ myLib, ... }:
+{
   flake.homeModules.zellij =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       inherit (lib) mkEnableOption mkIf;

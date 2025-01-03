@@ -1,4 +1,5 @@
-localFlake: { myLib, ... }:
+localFlake:
+{ myLib, ... }:
 let
   pkgs = localFlake.inputs.nixpkgs.legacyPackages.x86_64-linux;
 in

@@ -1,9 +1,10 @@
 {
   flake.homeModules.fish =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
       inherit (lib) mkEnableOption mkIf;

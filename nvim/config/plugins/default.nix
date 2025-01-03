@@ -11,6 +11,7 @@
     ./neo-tree.nix
     ./obsidian-nvim.nix
     ./telescope.nix
+    ./trouble.nix
     ./which-key.nix
   ];
 

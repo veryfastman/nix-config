@@ -1,6 +1,7 @@
 inputs@{
   flake-parts,
   git-hooks-nix,
+  treefmt-nix,
   nixpkgs,
   nur,
   ...
@@ -8,6 +9,7 @@ inputs@{
 flake-parts.lib.mkFlake { inherit inputs; } {
   imports = [
     git-hooks-nix.flakeModule
+    treefmt-nix.flakeModule
     ./shell.nix
     ./colors
     ./machines
@@ -16,12 +18,19 @@ flake-parts.lib.mkFlake { inherit inputs; } {
     ./nvim
   ];
   systems = [ "x86_64-linux" ];
-  flake.formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+  # flake.formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
   _module.args.myLib = import ./lib.nix { inherit inputs; };
   perSystem =
-    { system, ... }:
+    { pkgs, system, ... }:
     {
       pre-commit.settings.hooks.nixfmt-rfc-style.enable = true;
+      treefmt = {
+        projectRootFile = "INSTALL.md";
+        programs.nixfmt = {
+          enable = true;
+          package = pkgs.nixfmt-rfc-style;
+        };
+      };
       _module.args.pkgs = import nixpkgs {
         inherit system;
         overlays = [ nur.overlays.default ];

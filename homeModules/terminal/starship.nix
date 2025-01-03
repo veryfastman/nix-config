@@ -1,8 +1,9 @@
 {
   flake.homeModules.starship =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       inherit (lib) mkEnableOption mkIf;

@@ -1,12 +1,19 @@
-{ myLib, ... }: {
+{ myLib, ... }:
+{
   flake.homeModules.hyprland =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
-      inherit (lib) mkEnableOption mkIf mkOption types;
+      inherit (lib)
+        mkEnableOption
+        mkIf
+        mkOption
+        types
+        ;
       inherit (myLib) createListOfStringsOption;
       cfg = config.desktop.hyprland;
     in
@@ -44,7 +51,10 @@
 
       config = mkIf cfg.enable {
         home.packages = config.desktop.windowManagerPackages;
-        graphic.waybar.wmModules = [ "hyprland/workspaces" "hyprland/window" ];
+        graphic.waybar.wmModules = [
+          "hyprland/workspaces"
+          "hyprland/window"
+        ];
         wayland.windowManager.hyprland =
           let
             inherit (config.theme.colors.palette) base00 base0D;
@@ -59,12 +69,10 @@
               misc.force_default_wallpaper = 0;
               windowrulev2 = cfg.windowRules;
 
-              exec-once =
-                [
-                  (mkIf config.graphic.waybar.enable "waybar")
-                  "brightnessctl set 9600"
-                ]
-                ++ cfg.startupCommands;
+              exec-once = [
+                (mkIf config.graphic.waybar.enable "waybar")
+                "brightnessctl set 9600"
+              ] ++ cfg.startupCommands;
 
               # plugins = [ pkgs.hyprlandPlugins.hy3 ];
 
@@ -95,52 +103,50 @@
                 };
               };
 
-              bind =
-                [
-                  "SUPER, Q, killactive"
-                  "SUPER CTRL, Q, exit"
+              bind = [
+                "SUPER, Q, killactive"
+                "SUPER CTRL, Q, exit"
 
-                  "SUPER, F, togglefloating"
-                  "SUPER, M, fullscreen"
+                "SUPER, F, togglefloating"
+                "SUPER, M, fullscreen"
 
-                  "SUPER, h, movefocus,l"
-                  "SUPER, l, movefocus,r"
-                  "SUPER, k, movefocus,u"
-                  "SUPER, j, movefocus,d"
-                  "SUPER SHIFT, H, movewindow, l"
-                  "SUPER SHIFT, L, movewindow, r"
-                  "SUPER SHIFT, K, movewindow, u"
-                  "SUPER SHIFT, J, movewindow, d"
-                  "SUPER CTRL, H, resizeactive, -100 0"
-                  "SUPER CTRL, L, resizeactive, 100 0"
-                  "SUPER CTRL, K, resizeactive, 0 -100"
-                  "SUPER CTRL, J, resizeactive, 0 100"
+                "SUPER, h, movefocus,l"
+                "SUPER, l, movefocus,r"
+                "SUPER, k, movefocus,u"
+                "SUPER, j, movefocus,d"
+                "SUPER SHIFT, H, movewindow, l"
+                "SUPER SHIFT, L, movewindow, r"
+                "SUPER SHIFT, K, movewindow, u"
+                "SUPER SHIFT, J, movewindow, d"
+                "SUPER CTRL, H, resizeactive, -100 0"
+                "SUPER CTRL, L, resizeactive, 100 0"
+                "SUPER CTRL, K, resizeactive, 0 -100"
+                "SUPER CTRL, J, resizeactive, 0 100"
 
-                  "SUPER $mainMod, 1, workspace, 1"
-                  "SUPER $mainMod, 2, workspace, 2"
-                  "SUPER $mainMod, 3, workspace, 3"
-                  "SUPER $mainMod, 4, workspace, 4"
-                  "SUPER $mainMod, 5, workspace, 5"
-                  "SUPER $mainMod, 6, workspace, 6"
-                  "SUPER $mainMod, 7, workspace, 7"
-                  "SUPER $mainMod, 8, workspace, 8"
-                  "SUPER $mainMod, 9, workspace, 9"
-                  "SUPER $mainMod, 0, workspace, 10"
-                  "SUPER $mainMod SHIFT, 1, movetoworkspace, 1"
-                  "SUPER $mainMod SHIFT, 2, movetoworkspace, 2"
-                  "SUPER $mainMod SHIFT, 3, movetoworkspace, 3"
-                  "SUPER $mainMod SHIFT, 4, movetoworkspace, 4"
-                  "SUPER $mainMod SHIFT, 5, movetoworkspace, 5"
-                  "SUPER $mainMod SHIFT, 6, movetoworkspace, 6"
-                  "SUPER $mainMod SHIFT, 7, movetoworkspace, 7"
-                  "SUPER $mainMod SHIFT, 8, movetoworkspace, 8"
-                  "SUPER $mainMod SHIFT, 9, movetoworkspace, 9"
-                  "SUPER $mainMod SHIFT, 0, movetoworkspace, 10"
-                  "SUPER $mainMod, c, movetoworkspacesilent, special"
-                  "SUPER $mainMod, grave, togglespecialworkspace"
-                  "SUPER $mainMod, w, exec, [workspace special; float] alacritty"
-                ]
-                ++ cfg.extraKeybindings;
+                "SUPER $mainMod, 1, workspace, 1"
+                "SUPER $mainMod, 2, workspace, 2"
+                "SUPER $mainMod, 3, workspace, 3"
+                "SUPER $mainMod, 4, workspace, 4"
+                "SUPER $mainMod, 5, workspace, 5"
+                "SUPER $mainMod, 6, workspace, 6"
+                "SUPER $mainMod, 7, workspace, 7"
+                "SUPER $mainMod, 8, workspace, 8"
+                "SUPER $mainMod, 9, workspace, 9"
+                "SUPER $mainMod, 0, workspace, 10"
+                "SUPER $mainMod SHIFT, 1, movetoworkspace, 1"
+                "SUPER $mainMod SHIFT, 2, movetoworkspace, 2"
+                "SUPER $mainMod SHIFT, 3, movetoworkspace, 3"
+                "SUPER $mainMod SHIFT, 4, movetoworkspace, 4"
+                "SUPER $mainMod SHIFT, 5, movetoworkspace, 5"
+                "SUPER $mainMod SHIFT, 6, movetoworkspace, 6"
+                "SUPER $mainMod SHIFT, 7, movetoworkspace, 7"
+                "SUPER $mainMod SHIFT, 8, movetoworkspace, 8"
+                "SUPER $mainMod SHIFT, 9, movetoworkspace, 9"
+                "SUPER $mainMod SHIFT, 0, movetoworkspace, 10"
+                "SUPER $mainMod, c, movetoworkspacesilent, special"
+                "SUPER $mainMod, grave, togglespecialworkspace"
+                "SUPER $mainMod, w, exec, [workspace special; float] alacritty"
+              ] ++ cfg.extraKeybindings;
 
               binde = [
                 ", xf86audioraisevolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +1%"

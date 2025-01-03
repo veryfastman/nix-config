@@ -1,7 +1,14 @@
-{ myLib, ... }: {
-  flake.homeModules.mako = { config, lib, ... }:
+{ myLib, ... }:
+{
+  flake.homeModules.mako =
+    { config, lib, ... }:
     let
-      inherit (lib) mkEnableOption mkIf mkOption types;
+      inherit (lib)
+        mkEnableOption
+        mkIf
+        mkOption
+        types
+        ;
       cfg = config.graphic.mako;
     in
     {

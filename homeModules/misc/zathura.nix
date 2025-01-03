@@ -1,8 +1,9 @@
 {
   flake.homeModules.zathura =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       inherit (lib) mkEnableOption mkIf;

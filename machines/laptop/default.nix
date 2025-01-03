@@ -189,6 +189,7 @@ localFlake:
           nushell.enable = true;
           starship.enable = true;
           yazi.enable = true;
+          tmux.enable = true;
           zellij = enableAndShell "nu";
 
           alacritty = (enableAndShell "nu") // {
@@ -200,14 +201,25 @@ localFlake:
         };
     };
 
+  # TODO: Fix this
   services.syncthing = {
     enable = true;
     user = "donny";
+    systemService = false;
     dataDir = "/home/donny/Sync";
     configDir = "/home/donny/Sync/.config/syncthing";
-    settings.devices = {
-      "phone" = {
-        id = "IXHKWJV-QKEROLG-FUYQ5JH-T3L5JA4-GL2ITBF-XD7XR23-A4HOYPF-E7UYVQG";
+    settings = {
+      devices = {
+        "phone" = {
+          id = "IXHKWJV-QKEROLG-FUYQ5JH-T3L5JA4-GL2ITBF-XD7XR23-A4HOYPF-E7UYVQG";
+        };
+      };
+      folders = {
+        "~/Sync/personal_vault" = {
+          devices = [ "phone" ];
+          label = "personal_vault";
+          id = "yjxtn-hj3q4";
+        };
       };
     };
   };

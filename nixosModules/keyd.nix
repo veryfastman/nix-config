@@ -1,8 +1,9 @@
 {
   flake.nixosModules.keyd =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       inherit (lib) mkIf;

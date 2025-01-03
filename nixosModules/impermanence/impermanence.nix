@@ -1,7 +1,9 @@
-localFlake: { config
-            , lib
-            , ...
-            }:
+localFlake:
+{
+  config,
+  lib,
+  ...
+}:
 let
   inherit (lib) mkAfter mkEnableOption mkIf;
   cfg = config.impermanence;

@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   flake.homeModules.graphic.imports = with config.flake.homeModules; [
     mako
     rofi

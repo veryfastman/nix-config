@@ -3,19 +3,24 @@ let
   inherit (inputs.nixpkgs.lib) mkOption types;
 in
 {
-  createListOfStringsOption = description:
+  createListOfStringsOption =
+    description:
     mkOption {
       type = types.listOf types.str;
       default = [ ];
       inherit description;
     };
 
-  silentNormalKeymappings = keymap: map
-    (x: x // {
-      mode = "n";
-      options.silent = true;
-    })
-    keymap;
+  silentNormalKeymappings =
+    keymap:
+    map (
+      x:
+      x
+      // {
+        mode = "n";
+        options.silent = true;
+      }
+    ) keymap;
 
   commonOptions =
     let
@@ -36,7 +41,8 @@ in
         };
       };
 
-      shell = program:
+      shell =
+        program:
         mkOption {
           type = types.str;
           default = "bash";

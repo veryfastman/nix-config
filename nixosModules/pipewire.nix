@@ -1,8 +1,9 @@
 {
   flake.nixosModules.pipewire =
-    { config
-    , lib
-    , ...
+    {
+      config,
+      lib,
+      ...
     }:
     let
       inherit (lib) mkIf;

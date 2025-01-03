@@ -1,9 +1,10 @@
 localFlake: {
   flake.homeModules.theme =
-    { config
-    , lib
-    , pkgs
-    , ...
+    {
+      config,
+      lib,
+      pkgs,
+      ...
     }:
     let
       inherit (lib) mkOption types;
@@ -22,7 +23,9 @@ localFlake: {
           inherit (cfg) cursorTheme iconTheme;
           theme = {
             name = cfg.colors.slug;
-            package = (localFlake.inputs.nix-colors.lib.contrib { inherit pkgs; }).gtkThemeFromScheme { scheme = cfg.colors; };
+            package = (localFlake.inputs.nix-colors.lib.contrib { inherit pkgs; }).gtkThemeFromScheme {
+              scheme = cfg.colors;
+            };
           };
         };
         home.pointerCursor = {
