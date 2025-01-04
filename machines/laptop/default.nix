@@ -55,6 +55,7 @@ localFlake:
         fastfetch
         fd
         fzf
+        ghostty
         gimp
         htop
         lazygit

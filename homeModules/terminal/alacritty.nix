@@ -74,6 +74,11 @@
               style = "Normal";
             };
           };
+
+          cursor.style = {
+            shape = "Underline";
+            blinking = "On";
+          };
         };
       };
     };
