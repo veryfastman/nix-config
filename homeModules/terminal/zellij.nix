@@ -21,7 +21,7 @@
           enable = true;
           settings = {
             default_shell = cfg.shell;
-            # default_layout = "compact";
+            default_layout = "compact";
             pane_frames = false;
             theme = "my-theme";
 
