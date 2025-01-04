@@ -75,9 +75,13 @@
             };
           };
 
-          cursor.style = {
-            shape = "Underline";
-            blinking = "On";
+          cursor = {
+            style = {
+              shape = "Underline";
+              blinking = "Always";
+            };
+            blink_interval = 500;
+            blink_timeout = 0;
           };
         };
       };
