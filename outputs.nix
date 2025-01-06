@@ -18,7 +18,6 @@ flake-parts.lib.mkFlake { inherit inputs; } {
     ./nvim
   ];
   systems = [ "x86_64-linux" ];
-  # flake.formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
   _module.args.myLib = import ./lib.nix { inherit inputs; };
   perSystem =
     { pkgs, system, ... }:

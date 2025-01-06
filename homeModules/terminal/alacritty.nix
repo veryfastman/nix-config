@@ -75,14 +75,14 @@
             };
           };
 
-          cursor = {
-            style = {
-              shape = "Underline";
-              blinking = "Always";
-            };
-            blink_interval = 500;
-            blink_timeout = 0;
-          };
+          # cursor = {
+          #   style = {
+          #     shape = "Underline";
+          #     blinking = "Always";
+          #   };
+          #   blink_interval = 500;
+          #   blink_timeout = 0;
+          # };
         };
       };
     };

@@ -1,5 +1,6 @@
 localFlake:
 {
+  config,
   lib,
   pkgs,
   ...
@@ -206,7 +207,6 @@ localFlake:
   services.syncthing = {
     enable = true;
     user = "donny";
-    systemService = false;
     dataDir = "/home/donny/Sync";
     configDir = "/home/donny/Sync/.config/syncthing";
     settings = {
@@ -225,6 +225,12 @@ localFlake:
     };
   };
 
+  systemd.services.syncthing.after = [
+    "network.target"
+    "local-fs.target"
+    "persist.mount"
+  ];
+
   networking.networkmanager.enable = true;
 
   security.sudo.extraConfig = "Defaults lecture=\"never\"";
@@ -237,3 +243,5 @@ localFlake:
   system.stateVersion = lib.trivial.release;
   nixpkgs.hostPlatform = "x86_64-linux";
 }
+# // lib.mkIf config.services.syncthing.enable {
+# }
