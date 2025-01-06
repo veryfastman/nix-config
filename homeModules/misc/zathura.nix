@@ -22,6 +22,8 @@
               inherit (config.theme.colors) palette;
             in
             {
+              selection-clipboard = "clipboard";
+
               default-bg = "#${palette.base00}";
               default-fg = "#${palette.base01}";
 
