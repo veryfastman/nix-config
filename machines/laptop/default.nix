@@ -118,6 +118,10 @@ localFlake:
           enable = false;
         };
 
+        sway = {
+          enable = true;
+        };
+
         river = {
           enable = true;
           startupCommands = [

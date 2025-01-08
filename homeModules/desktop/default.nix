@@ -10,7 +10,7 @@
     xmonad
     river
     # river
-    # sway
+    sway
   ];
 
   flake.homeModules.desktop-packages =
@@ -62,8 +62,9 @@
     };
 
   imports = [
-    ./river.nix
     ./hyprland.nix
+    ./river.nix
+    ./sway.nix
     ./xmonad.nix
   ];
 }
