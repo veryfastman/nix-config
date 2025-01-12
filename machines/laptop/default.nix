@@ -40,6 +40,7 @@ localFlake:
   services.displayManager.ly.enable = true;
   programs.hyprland.enable = true;
   programs.river.enable = true;
+  programs.sway.enable = true;
 
   home-manager.users.donny =
     { config, ... }:
@@ -73,6 +74,7 @@ localFlake:
         yewtube
         yt-dlp
         zip
+        zotero
 
         localFlake.self.packages.${pkgs.system}.nvim
         # (callPackage ../../pkgs/tex.nix { })
@@ -120,6 +122,7 @@ localFlake:
 
         sway = {
           enable = true;
+          inputConf."2:14:SynPS/2_Synaptics_TouchPad".tap = "enabled";
         };
 
         river = {
