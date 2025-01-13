@@ -45,7 +45,7 @@ localFlake:
   home-manager.users.donny =
     { config, ... }:
     {
-      theme = localFlake.config.flake.themes.onedark;
+      theme = localFlake.config.flake.themes.gruvbox;
 
       home.stateVersion = lib.mkDefault "21.11";
 
