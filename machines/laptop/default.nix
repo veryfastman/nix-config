@@ -228,6 +228,11 @@ localFlake:
           label = "personal_vault";
           id = "yjxtn-hj3q4";
         };
+        "~/Sync/homework_folder" = {
+          devices = [ "phone" ];
+          label = "homework folder";
+          id = "23pmq-ouc3s";
+        };
       };
     };
   };
