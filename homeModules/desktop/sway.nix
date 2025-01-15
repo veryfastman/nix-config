@@ -83,6 +83,12 @@
                 };
               }
             ];
+            window.commands = [
+              {
+                criteria.title = "OpenGLGame";
+                command = "floating enable";
+              }
+            ];
             keybindings =
               let
                 inherit (config.wayland.windowManager.sway.config)
