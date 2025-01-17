@@ -64,6 +64,7 @@ localFlake:
         ncdu
         obsidian
         obs-studio
+        qalculate-qt
         ripgrep
         streamlink
         texliveFull
