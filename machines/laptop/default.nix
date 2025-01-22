@@ -196,6 +196,7 @@ localFlake:
           direnv.enable = true;
           fish.enable = false;
           git.enable = true;
+          newsboat.enable = true;
           nushell.enable = true;
           starship.enable = true;
           yazi.enable = true;

@@ -6,6 +6,7 @@
     direnv
     fish
     git
+    newsboat
     nushell
     starship
     tmux
@@ -24,5 +25,7 @@
     ./tmux.nix
     ./yazi.nix
     ./zellij.nix
+
+    ./newsboat
   ];
 }
