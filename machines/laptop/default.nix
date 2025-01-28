@@ -79,6 +79,13 @@ localFlake:
 
         localFlake.self.packages.${pkgs.system}.nvim
         # (callPackage ../../pkgs/tex.nix { })
+        (writeShellScriptBin "glsearch" ''
+          firefox \
+              ~/Misc/OpenGL-Refpages/gl4/html/$(ls ~/Misc/OpenGL-Refpages/gl4/html/*.xhtml \
+                | xargs -n 1 basename \
+                | cut -d "." -f 1 \
+                | rofi -dmenu --case-sensitive).xhtml
+        '')
       ];
 
       desktop = {
@@ -205,7 +212,7 @@ localFlake:
 
           alacritty = (enableAndShell "nu") // {
             font = {
-              name = "InconsolataNerdFont";
+              name = "RobotoMonoNerdFont";
               size = 12.5;
             };
           };
