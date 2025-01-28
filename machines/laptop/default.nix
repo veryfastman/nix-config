@@ -213,7 +213,7 @@ localFlake:
           alacritty = (enableAndShell "nu") // {
             font = {
               name = "RobotoMonoNerdFont";
-              size = 12.5;
+              size = 12.0;
             };
           };
         };
