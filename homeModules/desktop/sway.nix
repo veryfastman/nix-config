@@ -163,6 +163,10 @@
                 "XF86AudioNext" = "exec 'playerctl next'";
                 "XF86MonBrightnessUp" = "exec 'brightnessctl set +2%'";
                 "XF86MonBrightnessDown" = "exec 'brightnessctl set 2%-'";
+
+                # Program keybinds
+                "${modifier}+Mod1+s" = "exec 'firefox -P fun'";
+                "${modifier}+Mod1+Shift+s" = "exec 'firefox -P school";
               };
           };
         };
