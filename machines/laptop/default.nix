@@ -213,7 +213,7 @@ localFlake:
           alacritty = (enableAndShell "nu") // {
             font = {
               name = "FiraCodeNerdFont";
-              size = 11.0;
+              size = 11.5;
             };
           };
         };
