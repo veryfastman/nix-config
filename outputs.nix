@@ -20,7 +20,11 @@ flake-parts.lib.mkFlake { inherit inputs; } {
   systems = [ "x86_64-linux" ];
   _module.args.myLib = import ./lib.nix { inherit inputs; };
   perSystem =
-    { pkgs, system, ... }:
+    {
+      pkgs,
+      system,
+      ...
+    }:
     {
       pre-commit.settings.hooks.nixfmt-rfc-style.enable = true;
       treefmt = {
