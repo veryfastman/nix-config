@@ -19,6 +19,9 @@
 
         programs.newsboat = {
           enable = true;
+          extraConfig = ''
+            macro v set browser "setsid -f mpv" ; open-in-browser ; set browse
+          '';
         };
       };
     };
