@@ -237,6 +237,11 @@ localFlake:
           label = "personal_vault";
           id = "yjxtn-hj3q4";
         };
+        "~/Sync/journal" = {
+          devices = [ "phone" ];
+          label = "journal";
+          id = "pfmr3-a5ttf";
+        };
         "~/Sync/homework_folder" = {
           devices = [ "phone" ];
           label = "homework folder";
