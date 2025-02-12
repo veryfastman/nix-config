@@ -105,7 +105,7 @@ localFlake:
           extraKeybindings = [
             "SUPER, RETURN, exec, alacritty"
             "SUPER, S, exec, firefox"
-            "SUPER SHIFT, S, exec, firefox -p"
+            "SUPER SHIFT, S, exec, firefox -p school"
             "SUPER, R, exec, rofi -show drun"
             "SUPER SHIFT, R, exec, rofi -show run"
             "SUPER, P, exec, rofimoji"
