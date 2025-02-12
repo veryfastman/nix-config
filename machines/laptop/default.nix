@@ -208,7 +208,8 @@ localFlake:
           starship.enable = true;
           yazi.enable = true;
           tmux.enable = true;
-          zellij = enableAndShell "nu";
+          # zellij = enableAndShell "nu";
+          zellij.enable = false;
 
           alacritty = (enableAndShell "nu") // {
             font = {
