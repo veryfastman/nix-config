@@ -248,6 +248,11 @@ localFlake:
           label = "homework folder";
           id = "23pmq-ouc3s";
         };
+        "~/Sync/books" = {
+          devices = [ "phone" ];
+          label = "books";
+          id = "rnhqo-q5ecc";
+        };
       };
     };
   };
