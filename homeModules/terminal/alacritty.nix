@@ -75,6 +75,8 @@
             };
           };
 
+          env.TERM = "xterm-256color";
+
           # cursor = {
           #   style = {
           #     shape = "Underline";

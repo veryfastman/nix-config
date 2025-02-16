@@ -79,6 +79,7 @@ localFlake:
 
         localFlake.self.packages.${pkgs.system}.nvim
         # (callPackage ../../pkgs/tex.nix { })
+        # TODO: Fix this
         (writeShellScriptBin "glsearch" ''
           firefox \
               ~/Misc/OpenGL-Refpages/gl4/html/$(ls ~/Misc/OpenGL-Refpages/gl4/html/*.xhtml \
@@ -204,14 +205,15 @@ localFlake:
           fish.enable = false;
           git.enable = true;
           newsboat.enable = true;
-          nushell.enable = true;
-          starship.enable = true;
+          nushell.enable = false;
+          starship.enable = false;
           yazi.enable = true;
-          tmux.enable = true;
-          # zellij = enableAndShell "nu";
+          tmux = enableAndShell "${pkgs.zsh}/bin/zsh";
+          # zellij = enableAndShell "zsh";
           zellij.enable = false;
+          zsh.enable = true;
 
-          alacritty = (enableAndShell "nu") // {
+          alacritty = (enableAndShell "zsh") // {
             font = {
               name = "FiraCodeNerdFont";
               size = 11.5;

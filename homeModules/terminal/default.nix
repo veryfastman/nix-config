@@ -12,6 +12,7 @@
     tmux
     yazi
     zellij
+    zsh
   ];
 
   imports = [
@@ -25,6 +26,7 @@
     ./tmux.nix
     ./yazi.nix
     ./zellij.nix
+    ./zsh.nix
 
     ./newsboat
   ];
