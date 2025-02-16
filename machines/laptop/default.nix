@@ -255,6 +255,11 @@ localFlake:
           label = "books";
           id = "rnhqo-q5ecc";
         };
+        "~/Sync/templates" = {
+          devices = [ "phone" ];
+          label = "templates";
+          id = "atgwt-mawp5";
+        };
       };
     };
   };
