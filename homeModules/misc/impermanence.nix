@@ -31,15 +31,18 @@ localFlake: {
             ".config/obsidian"
             ".gnupg"
             ".ssh"
-            ".local/share/keyrings"
-            ".local/share/direnv"
-            ".local/share/Trash"
-            ".local/share/fish"
+            # ".local/share/keyrings"
+            # ".local/share/direnv"
+            # ".local/share/Trash"
+            # ".local/share/fish"
+            # ".local/share/nvim"
+            ".local/share"
+            # ".local/state" This is problematic
             ".mozilla"
             ".wine"
 
-            ".local/state/wireplumber"
-            ".local/share/Anki2"
+            # ".local/state/wireplumber"
+            # ".local/share/Anki2"
             # ".local/state/nvim"
 
             # {
@@ -50,6 +53,7 @@ localFlake: {
 
           files = [
             ".config/sops/age/keys.txt"
+            ".zsh_history"
           ];
 
           allowOther = true;

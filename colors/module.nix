@@ -65,6 +65,19 @@ in
                   description = "Color palette";
                 };
 
+                # qtTheme = mkOption {
+                #   type =
+                #     themeModule
+                #       {
+                #         nameDefault = "Gruvbox-Plus-Dark";
+                #         nameDescription = "Name of the icon theme to be used";
+                #       }
+                #       {
+                #         packageDefault = pkgs.gruvbox-plus-icons;
+                #         packageDescription = "Icon theme package";
+                #       };
+                # };
+
                 cursorTheme = mkOption {
                   type = types.submodule {
                     options = {
