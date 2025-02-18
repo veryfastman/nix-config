@@ -51,6 +51,7 @@ localFlake:
 
       home.packages = with pkgs; [
         ani-cli
+        anki
         bluetuith
         # cava
         cmus

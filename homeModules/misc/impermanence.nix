@@ -39,6 +39,7 @@ localFlake: {
             ".wine"
 
             ".local/state/wireplumber"
+            ".local/share/Anki2"
             # ".local/state/nvim"
 
             # {
