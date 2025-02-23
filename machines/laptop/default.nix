@@ -88,6 +88,19 @@ localFlake:
                 | cut -d "." -f 1 \
                 | rofi -dmenu --case-sensitive).xhtml
         '')
+        (writeShellScriptBin "tp" ''
+          if [ -n "$1" ]; then
+              SESSION_NAME=$1
+          else
+              SESSION_NAME="coding"
+          fi
+
+          tmux new -d -s "$SESSION_NAME"
+          tmux rename-window code
+          tmux new-window -n cli
+          tmux previous-window
+          tmux attach-session -t "$SESSION_NAME"
+        '')
       ];
 
       desktop = {
