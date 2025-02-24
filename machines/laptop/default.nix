@@ -229,7 +229,7 @@ localFlake:
 
           alacritty = (enableAndShell "zsh") // {
             font = {
-              name = "FiraCodeNerdFont";
+              name = "JetBrainsMonoNerdFont";
               size = 11.5;
             };
           };
