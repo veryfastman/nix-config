@@ -40,6 +40,7 @@ localFlake: {
             # ".local/state" This is problematic
             ".mozilla"
             ".wine"
+            ".zen"
 
             # ".local/state/wireplumber"
             # ".local/share/Anki2"

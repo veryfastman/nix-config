@@ -78,6 +78,7 @@ localFlake:
         zip
         zotero
 
+        localFlake.inputs.zen-browser.packages."${pkgs.system}".default
         localFlake.self.packages.${pkgs.system}.nvim
         # (callPackage ../../pkgs/tex.nix { })
         # TODO: Fix this
