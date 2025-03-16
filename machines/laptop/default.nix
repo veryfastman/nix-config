@@ -3,6 +3,7 @@ localFlake:
   config,
   lib,
   pkgs,
+  flake-parts-lib,
   ...
 }:
 {
@@ -22,6 +23,11 @@ localFlake:
 
   hardware.bluetooth.enable = true;
 
+  nix.settings.trusted-users = [
+    "root"
+    "donny"
+  ];
+
   environment.systemPackages = with pkgs; [
     age
     curl
@@ -36,6 +42,10 @@ localFlake:
     tree
     wget
   ];
+
+  programs.niri.enable = true;
+  nixpkgs.overlays = [ localFlake.inputs.niri.overlays.niri ];
+  programs.niri.package = pkgs.niri-unstable;
 
   services.displayManager.ly.enable = true;
   programs.hyprland.enable = true;
@@ -243,6 +253,7 @@ localFlake:
     user = "donny";
     dataDir = "/home/donny/Sync";
     configDir = "/home/donny/Sync/.config/syncthing";
+    # systemService = false;
     settings = {
       devices = {
         "phone" = {
@@ -279,10 +290,9 @@ localFlake:
     };
   };
 
-  systemd.services.syncthing.after = [
-    "network.target"
-    "local-fs.target"
+  systemd.services.syncthing.after = lib.mkForce [
     "persist.mount"
+    "network.target"
   ];
 
   networking.networkmanager.enable = true;
