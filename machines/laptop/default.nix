@@ -45,10 +45,10 @@ localFlake:
 
   programs.niri.enable = true;
   nixpkgs.overlays = [ localFlake.inputs.niri.overlays.niri ];
-  programs.niri.package = pkgs.niri-unstable;
+  programs.niri.package = pkgs.niri;
 
   services.displayManager.ly.enable = true;
-  programs.hyprland.enable = true;
+  programs.hyprland.enable = false;
   programs.river.enable = true;
   programs.sway.enable = true;
 
@@ -116,7 +116,7 @@ localFlake:
 
       desktop = {
         hyprland = {
-          enable = true;
+          enable = false;
           enableAnimations = true;
           enableBlur = true;
           blurSize = 10;
@@ -160,7 +160,7 @@ localFlake:
         };
 
         river = {
-          enable = true;
+          enable = false;
           startupCommands = [
             "waybar"
           ];
@@ -200,6 +200,7 @@ localFlake:
           barHeight = 30;
           terminal = "alacritty";
           soundControl = "pavucontrol";
+          wmModules = [ "niri/workspaces" ];
 
           font = {
             name = "JetBrainsMonoNerdFont";

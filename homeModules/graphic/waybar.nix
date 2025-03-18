@@ -212,6 +212,7 @@
 
               #workspaces {
                 margin-left: 4px;
+                margin-right: -16px;
               }
 
               #workspaces button.active label {

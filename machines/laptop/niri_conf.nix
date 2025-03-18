@@ -213,7 +213,7 @@ localFlake:
 
       # Needed for running X11 applications
       (leaf "spawn-at-startup" [ "${pkgs.xwayland-satellite}" ])
-      (leaf "spawn-at-startup" [ "${pkgs.waybar}" ])
+      (leaf "spawn-at-startup" [ "waybar" ])
 
       # You can override environment variables for processes spawned by niri.
       (plain "environment" [
@@ -408,8 +408,8 @@ localFlake:
         (plain "Mod+Return" [
           (leaf "spawn" [
             "alacritty"
-            "\--option"
-            "'window.decorations''=\"None\"'"
+            # "--option"
+            # "'window.decorations'='\"None\"'"
           ])
         ])
         (plain "Mod+D" [

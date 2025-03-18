@@ -11,6 +11,6 @@
       cfg = config.hardware.graphics;
     in
     mkIf cfg.enable {
-      hardware.graphics.extraPackages = [ pkgs.mesa.drivers ];
+      hardware.graphics.extraPackages = [ pkgs.mesa ];
     };
 }
