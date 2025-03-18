@@ -32,6 +32,9 @@
             strcam = "mpv av://v4l2:/dev/video0";
             zh = "zathura";
           };
+          sessionVariables = {
+            EDITOR = "nvim";
+          };
           oh-my-zsh = {
             enable = true;
             theme = "robbyrussell";
