@@ -54,7 +54,8 @@
                 always = true;
               }
             ]; # ++ cfg.startupCommands;
-            defaultWorkspace = "1";
+            defaultWorkspace = "workspace number 1";
+            workspaceLayout = "tabbed";
             modifier = "Mod4";
             left = "h";
             down = "j";
