@@ -253,8 +253,8 @@
 
         search = {
           force = true;
-          default = "DuckDuckGo";
-          privateDefault = "DuckDuckGo";
+          default = "ddg";
+          privateDefault = "ddg";
         };
 
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
@@ -277,21 +277,27 @@
           profiles = {
             fun = commonProfileSettings // {
               isDefault = true;
-              bookmarks = [
-                {
-                  name = "youtube";
-                  url = "https://youtube.com";
-                }
-              ];
+              bookmarks = {
+                force = true;
+                settings = [
+                  {
+                    name = "youtube";
+                    url = "https://youtube.com";
+                  }
+                ];
+              };
             };
             school = commonProfileSettings // {
               id = 1;
-              bookmarks = [
-                {
-                  name = "gmail";
-                  url = "https://gmail.com";
-                }
-              ];
+              bookmarks = {
+                force = true;
+                settings = [
+                  {
+                    name = "gmail";
+                    url = "https://gmail.com";
+                  }
+                ];
+              };
             };
           };
         };
