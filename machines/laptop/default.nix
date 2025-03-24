@@ -291,9 +291,8 @@ localFlake:
     };
   };
 
-  systemd.services.syncthing.after = lib.mkForce [
+  systemd.services.syncthing.wants = lib.mkForce [
     "persist.mount"
-    "network.target"
   ];
 
   networking.networkmanager.enable = true;
@@ -308,5 +307,3 @@ localFlake:
   system.stateVersion = lib.trivial.release;
   nixpkgs.hostPlatform = "x86_64-linux";
 }
-# // lib.mkIf config.services.syncthing.enable {
-# }
