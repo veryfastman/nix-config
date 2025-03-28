@@ -254,7 +254,6 @@ localFlake:
     user = "donny";
     dataDir = "/home/donny/Sync";
     configDir = "/home/donny/Sync/.config/syncthing";
-    # systemService = false;
     settings = {
       devices = {
         "phone" = {
@@ -291,9 +290,10 @@ localFlake:
     };
   };
 
-  systemd.services.syncthing.wants = lib.mkForce [
-    "persist.mount"
+  systemd.services.syncthing.after = [
+    "multi-user.target"
   ];
+  systemd.services.syncthing-init.unitConfig.DefaultDependencies = false;
 
   networking.networkmanager.enable = true;
 
