@@ -6,6 +6,7 @@
     direnv
     fish
     git
+    lazygit
     newsboat
     nushell
     starship
@@ -21,6 +22,7 @@
     ./direnv.nix
     ./fish.nix
     ./git.nix
+    ./lazygit.nix
     ./nushell.nix
     ./starship.nix
     ./tmux.nix

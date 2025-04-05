@@ -71,7 +71,6 @@ localFlake:
         ghostty
         gimp
         htop
-        lazygit
         ncdu
         obsidian
         obs-studio
@@ -230,6 +229,7 @@ localFlake:
           direnv.enable = true;
           fish.enable = false;
           git.enable = true;
+          lazygit.enable = true;
           newsboat.enable = true;
           nushell.enable = false;
           starship.enable = false;
