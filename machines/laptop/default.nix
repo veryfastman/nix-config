@@ -96,7 +96,7 @@ localFlake:
               ~/Misc/OpenGL-Refpages/gl4/html/$(ls ~/Misc/OpenGL-Refpages/gl4/html/*.xhtml \
                 | xargs -n 1 basename \
                 | cut -d "." -f 1 \
-                | rofi -dmenu --case-sensitive).xhtml
+                | rofi -dmenu).xhtml
         '')
         (writeShellScriptBin "tp" ''
           if [ -n "$1" ]; then
