@@ -286,6 +286,11 @@ localFlake:
           label = "templates";
           id = "atgwt-mawp5";
         };
+        "~/Music" = {
+          devices = [ "phone" ];
+          label = "music";
+          id = "mrg45-dnnc3";
+        };
       };
     };
   };
