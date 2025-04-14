@@ -155,7 +155,7 @@ localFlake:
 
         sway = {
           enable = true;
-          inputConf."2:14:SynPS/2_Synaptics_TouchPad".tap = "enabled";
+          inputConf."type:touchpad".tap = "enabled";
         };
 
         river = {
