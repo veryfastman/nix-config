@@ -159,7 +159,7 @@ localFlake:
         };
 
         river = {
-          enable = false;
+          enable = true;
           startupCommands = [
             "waybar"
           ];
