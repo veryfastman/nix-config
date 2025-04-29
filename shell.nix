@@ -41,6 +41,11 @@
             command = "nix flake update";
           }
           {
+            name = "upgrade";
+            help = "initiate a full upgrade of the system, consisting of updating the lockfile and git repo, and subsequently switching to the new system";
+            command = "nix flake update && git add . && git commit -m \"nix flake update\" && nixos-rebuild switch --flake .#$1 --use-remote-sudo";
+          }
+          {
             name = "checks";
             help = "run checks";
             command = "nix flake check --show-trace";
