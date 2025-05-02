@@ -77,7 +77,7 @@ localFlake:
         qalculate-qt
         ripgrep
         streamlink
-        texliveFull
+        # texliveFull
         trash-cli
         unzip
         winetricks
