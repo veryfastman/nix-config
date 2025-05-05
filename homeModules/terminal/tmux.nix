@@ -21,6 +21,7 @@
         programs.tmux = {
           enable = true;
           prefix = "C-a";
+          keyMode = "vi";
           baseIndex = 1;
           escapeTime = 10;
           plugins = with pkgs; [
