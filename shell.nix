@@ -43,7 +43,7 @@
           {
             name = "upgrade";
             help = "initiate a full upgrade of the system, consisting of updating the lockfile and git repo, and subsequently switching to the new system";
-            command = "nix flake update && git add . && git commit -m \"nix flake update\" && nixos-rebuild switch --flake .#$1 --use-remote-sudo";
+            command = "nix flake update --commit-lock-file && git push && nixos-rebuild switch --flake .#$1 --use-remote-sudo";
           }
           {
             name = "checks";
