@@ -28,7 +28,7 @@ localFlake:
     "donny"
   ];
 
-  system.autoUpgrades = {
+  system.autoUpgrade = {
     enable = true;
     flake = "${localFlake.inputs.self.outPath}#laptop";
     flags = [
