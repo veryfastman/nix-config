@@ -28,6 +28,23 @@ localFlake:
     "donny"
   ];
 
+  system.autoUpgrades = {
+    enable = true;
+    flake = "${localFlake.inputs.self.outPath}#laptop";
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--commit-lock-file"
+    ];
+  };
+
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     age
     curl
