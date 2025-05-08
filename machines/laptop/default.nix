@@ -38,20 +38,13 @@ localFlake:
     ];
   };
 
-  nix = {
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
-    };
-  };
-
   environment.systemPackages = with pkgs; [
     age
     curl
     gcc
     git
     gnupg
+    libnotify
     neovim
     nix-prefetch-git
     pulseaudio

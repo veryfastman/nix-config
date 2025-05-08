@@ -49,13 +49,15 @@
           in
           {
             enable = true;
-            font = "${cfg.font.name} ${toString cfg.font.size}";
-            defaultTimeout = cfg.timeout;
-            borderRadius = config.desktop.hyprland.roundBorders.roundingAmount;
-            backgroundColor = "#${base02}";
-            borderColor = "#${base0D}";
-            textColor = "#${base05}";
-            inherit (cfg) margin padding;
+            settings = {
+              font = "${cfg.font.name} ${toString cfg.font.size}";
+              defaultTimeout = cfg.timeout;
+              borderRadius = config.desktop.hyprland.roundBorders.roundingAmount;
+              backgroundColor = "#${base02}";
+              borderColor = "#${base0D}";
+              textColor = "#${base05}";
+              inherit (cfg) margin padding;
+            };
           };
       };
     };
