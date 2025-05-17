@@ -27,6 +27,7 @@ localFlake: {
             "Documents"
             "Videos"
             "Sync"
+            "Games"
             ".cargo"
             ".config/obsidian"
             ".gnupg"

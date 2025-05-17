@@ -7,6 +7,7 @@
 {
   flake.nixosModules.default = {
     imports = with config.flake.nixosModules; [
+      dolphin
       fonts
       home-manager
       garbage-collection
@@ -40,6 +41,7 @@
     ./impermanence
     ./users
 
+    ./dolphin.nix
     ./fonts.nix
     ./garbage-collection.nix
     ./keyd.nix
