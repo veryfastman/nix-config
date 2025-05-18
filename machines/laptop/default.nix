@@ -284,6 +284,11 @@ localFlake:
           label = "journal";
           id = "pfmr3-a5ttf";
         };
+        "~/Sync/running_log" = {
+          devices = [ "phone" ];
+          label = "running_log";
+          id = "m9nax-aldai";
+        };
         "~/Sync/homework_folder" = {
           devices = [ "phone" ];
           label = "homework folder";
