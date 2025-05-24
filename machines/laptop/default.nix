@@ -10,6 +10,7 @@ localFlake:
   imports = [
     ./hardware-configuration.nix
     localFlake.config.flake.nixosModules.default
+    localFlake.inputs.slippi.nixosModules.default
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -67,6 +68,13 @@ localFlake:
   home-manager.users.donny =
     { config, ... }:
     {
+      imports = [
+        localFlake.inputs.slippi.homeManagerModules.default
+        {
+          slippi-launcher.isoPath = "/home/donny/Games/Super Smash Bros. Melee (USA) (En,Ja) (Rev 2).iso";
+        }
+      ];
+
       theme = localFlake.config.flake.themes.dracula;
 
       home.stateVersion = lib.mkDefault "21.11";

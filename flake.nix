@@ -53,6 +53,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    slippi = {
+      url = "github:lytedev/slippi-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     wallpaper-collection = {
       url = "github:veryfastman/wallpaper-collection";
       flake = false;
