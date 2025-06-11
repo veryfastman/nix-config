@@ -88,6 +88,7 @@ localFlake:
         dolphin-emu
         fastfetch
         fd
+        ffmpeg_6-full
         fzf
         ghostty
         gimp

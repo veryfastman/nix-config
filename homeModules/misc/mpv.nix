@@ -22,7 +22,7 @@
             (mpv-unwrapped.wrapper {
               mpv = (
                 mpv-unwrapped.override {
-                  ffmpeg = ffmpeg_7-full;
+                  ffmpeg = ffmpeg_6-full;
                 }
               );
               youtubeSupport = true;

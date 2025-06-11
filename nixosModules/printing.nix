@@ -3,6 +3,7 @@
     {
       config,
       lib,
+      pkgs,
       ...
     }:
     let
@@ -15,5 +16,7 @@
         nssmdns4 = true;
         openFirewall = true;
       };
+
+      services.printing.drivers = [ pkgs.hplipWithPlugin ];
     };
 }

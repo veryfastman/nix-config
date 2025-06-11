@@ -26,6 +26,7 @@ localFlake: {
             "Pictures"
             "Documents"
             "Videos"
+            "Slippi"
             "Sync"
             "Games"
             ".cargo"
