@@ -206,6 +206,7 @@ localFlake:
       };
 
       graphic = {
+        eww.enable = false;
         rofi.enable = true;
 
         mako = {
