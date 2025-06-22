@@ -13,7 +13,7 @@
         inputs.niri.nixosModules.niri
         (import ../disko.nix { device = "/dev/nvme0n1"; })
         (flake-parts-lib.importApply ./laptop { inherit config inputs self; })
-        (flake-parts-lib.importApply ./laptop/niri_conf.nix { inherit config inputs; })
+        # (flake-parts-lib.importApply ./laptop/niri_conf.nix { inherit config inputs; })
       ];
     };
   };
