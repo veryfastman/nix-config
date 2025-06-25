@@ -168,7 +168,8 @@
                 # Program keybinds
                 "${modifier}+Mod1+s" = "exec 'firefox -P fun'";
                 "${modifier}+Mod1+Shift+s" = "exec 'firefox -P school";
-                "${modifier}+Mod1+o" = "exec obsidian";
+                "${modifier}+Mod1+o" =
+                  "exec 'obsidian --ozone-platform=wayland --enable-features=UseOzonePlatform,WaylandWindowDecorations'";
               };
           };
         };
