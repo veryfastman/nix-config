@@ -75,6 +75,14 @@
           #   };
           # };
 
+          font = lib.mkForce {
+            size = 13.5;
+            normal = {
+              family = "ZedMonoNerdFont";
+              style = "Normal";
+            };
+          };
+
           env.TERM = "xterm-256color";
 
           # cursor = {

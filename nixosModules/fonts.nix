@@ -33,6 +33,7 @@
             nerd-fonts.meslo-lg
             nerd-fonts.noto
             nerd-fonts.roboto-mono
+            nerd-fonts.zed-mono
           ];
 
           enableDefaultPackages = false;
