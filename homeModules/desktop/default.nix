@@ -9,7 +9,7 @@
     hyprland
     xmonad
     river
-    # niri
+    niri
     sway
   ];
 
@@ -62,7 +62,7 @@
     };
 
   imports = [
-    # ./niri
+    ./niri
 
     ./hyprland.nix
     ./river.nix

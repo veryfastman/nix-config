@@ -31,6 +31,7 @@ localFlake: {
             "Games"
             ".cargo"
             ".config/obsidian"
+            ".config/obs-studio"
             ".config/SlippiPlayback"
             ".config/SlippiOnline"
             ".config/Slippi Launcher"

@@ -1,7 +1,8 @@
 localFlake:
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   # I have to put my Niri configuration here since there's problems when I put it in a separate module :/
+  # TODO: Never mind, the niri-flake docs state that I can't set niri.config when using stylix because it overrides niri.settings :(
   home-manager.users.donny.programs.niri.config =
     let
       inherit (localFlake.inputs.niri.lib.kdl)

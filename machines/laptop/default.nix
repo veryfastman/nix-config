@@ -58,7 +58,7 @@ localFlake:
 
   programs.niri.enable = true;
   nixpkgs.overlays = [ localFlake.inputs.niri.overlays.niri ];
-  programs.niri.package = pkgs.niri;
+  # programs.niri.package = pkgs.niri;
 
   services.displayManager.ly.enable = true;
   programs.hyprland.enable = false;
@@ -70,6 +70,7 @@ localFlake:
     {
       imports = [
         localFlake.inputs.stylix.homeModules.stylix
+        localFlake.inputs.niri.homeModules.stylix
         localFlake.inputs.slippi.homeManagerModules.default
         {
           slippi-launcher.isoPath = "/home/donny/Games/Super Smash Bros. Melee (USA) (En,Ja) (Rev 2).iso";
@@ -186,6 +187,8 @@ localFlake:
           enable = true;
           inputConf."type:touchpad".tap = "enabled";
         };
+
+        niri.enable = true;
 
         river = {
           enable = true;

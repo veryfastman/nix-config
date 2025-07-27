@@ -18,22 +18,22 @@
           {
             name = "build";
             help = "build the configuration";
-            command = "nixos-rebuild build --flake .#$1 --use-remote-sudo";
+            command = "nixos-rebuild build --flake .#$1 --sudo";
           }
           {
             name = "testconf";
             help = "test out the configuration without creating a new generation";
-            command = "nixos-rebuild test --flake .#$1 --use-remote-sudo";
+            command = "nixos-rebuild test --flake .#$1 --sudo";
           }
           {
             name = "switch";
             help = "create a new generation with the configuration";
-            command = "nixos-rebuild switch --flake .#$1 --use-remote-sudo";
+            command = "nixos-rebuild switch --flake .#$1 --sudo";
           }
           {
             name = "boot";
             help = "build and set the configuration as the boot default without switching";
-            command = "nixos-rebuild boot --flake .#$1 --use-remote-sudo";
+            command = "nixos-rebuild boot --flake .#$1 --sudo";
           }
           {
             name = "updatein";
@@ -43,7 +43,7 @@
           {
             name = "upgrade";
             help = "initiate a full upgrade of the system, consisting of updating the lockfile and git repo, and subsequently switching to the new system";
-            command = "nix flake update --commit-lock-file && git push && nixos-rebuild switch --flake .#$1 --use-remote-sudo";
+            command = "nix flake update --commit-lock-file && git push && nixos-rebuild switch --flake .#$1 --sudo";
           }
           {
             name = "checks";
