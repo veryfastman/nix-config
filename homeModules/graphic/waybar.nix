@@ -154,72 +154,72 @@
               };
             };
           };
-          style =
-            let
-              inherit (config.theme.colors.palette)
-                base00
-                base05
-                base0D
-                base0B
-                ;
-              inherit (cfg) font;
-            in
-            ''
-              * {
-                background: #${base00};
-                border: none;
-                border-radius: 0;
-                color: #${base05};
-                font-family: ${font.name};
-                font-size: ${toString font.size}px;
-                margin: 0;
-                padding: 0;
-              }
-
-              #backlight,
-              #clock,
-              #disk,
-              #memory,
-              #pulseaudio,
-              #tray,
-              #window {
-                margin-right: 8px;
-                margin-left: 8px;
-              }
-
-              #battery,
-              #network {
-                margin-right: 5px;
-                margin-left: 5px;
-                font-size: ${toString (font.size + 2)}px;
-              }
-
-              #tags button {
-                margin: -11px;
-              }
-
-              #tags {
-                padding: 0px 5px;
-              }
-
-              #tags button.occupied label {
-                color: #${base0B};
-              }
-
-              #tags button.focused label {
-                color: #${base0D};
-              }
-
-              #workspaces {
-                margin-left: 4px;
-                margin-right: -16px;
-              }
-
-              #workspaces button.active label {
-                color: #${base0D};
-                font-weight: bold;
-              }
-            '';
+          # style =
+          #   let
+          #     inherit (config.theme.colors.palette)
+          #       base00
+          #       base05
+          #       base0D
+          #       base0B
+          #       ;
+          #     inherit (cfg) font;
+          #   in
+          #   ''
+          #     * {
+          #       background: #${base00};
+          #       border: none;
+          #       border-radius: 0;
+          #       color: #${base05};
+          #       font-family: ${font.name};
+          #       font-size: ${toString font.size}px;
+          #       margin: 0;
+          #       padding: 0;
+          #     }
+          #
+          #     #backlight,
+          #     #clock,
+          #     #disk,
+          #     #memory,
+          #     #pulseaudio,
+          #     #tray,
+          #     #window {
+          #       margin-right: 8px;
+          #       margin-left: 8px;
+          #     }
+          #
+          #     #battery,
+          #     #network {
+          #       margin-right: 5px;
+          #       margin-left: 5px;
+          #       font-size: ${toString (font.size + 2)}px;
+          #     }
+          #
+          #     #tags button {
+          #       margin: -11px;
+          #     }
+          #
+          #     #tags {
+          #       padding: 0px 5px;
+          #     }
+          #
+          #     #tags button.occupied label {
+          #       color: #${base0B};
+          #     }
+          #
+          #     #tags button.focused label {
+          #       color: #${base0D};
+          #     }
+          #
+          #     #workspaces {
+          #       margin-left: 4px;
+          #       margin-right: -16px;
+          #     }
+          #
+          #     #workspaces button.active label {
+          #       color: #${base0D};
+          #       font-weight: bold;
+          #     }
+          #   '';
         };
       };
     };

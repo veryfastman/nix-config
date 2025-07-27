@@ -15,6 +15,6 @@
     guicursor = "";
     splitbelow = true;
     splitright = true;
-    guifont = "Inconsolata Nerd Font:h14";
+    # guifont = "Inconsolata Nerd Font:h14";
   };
 }

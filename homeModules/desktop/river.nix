@@ -130,9 +130,12 @@
           settings.spawn = cfg.startupCommands;
 
           extraConfig =
-            let
-              inherit (config.theme.colors.palette) base00 base0D;
-            in
+            # riverctl background-color 0x${base00}
+            # riverctl border-color-focused 0x${base0D}
+            # riverctl border-color-unfocused 0x${base00}
+            # let
+            #   inherit (config.theme.colors.palette) base00 base0D;
+            # in
             ''
               riverctl map normal Super Q close
               riverctl map normal Super+Control Q exit
@@ -198,10 +201,7 @@
                   riverctl map -repeat $mode None XF86MonBrightnessDown spawn 'brightnessctl set 2%-'
               done
 
-              riverctl background-color 0x${base00}
               riverctl border-width 1
-              riverctl border-color-focused 0x${base0D}
-              riverctl border-color-unfocused 0x${base00}
 
               riverctl focus-follows-cursor normal
               riverctl set-cursor-warp on-focus-change

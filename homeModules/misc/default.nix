@@ -13,7 +13,7 @@ in
     impermanence
     mpv
     scripts
-    theme
+    # theme
     wallpapers
     zathura
   ];
@@ -24,7 +24,7 @@ in
     ./scripts.nix
     ./zathura.nix
     (importApply ./impermanence.nix { inherit inputs; })
-    (importApply ./theme.nix { inherit config inputs; })
+    # (importApply ./theme.nix { inherit config inputs; })
     (importApply ./wallpapers.nix { inherit inputs; })
   ];
 }

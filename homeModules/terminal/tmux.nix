@@ -33,10 +33,10 @@
             let
               inherit (config.theme.colors) palette;
             in
+            # set -g status-style 'bg=#${palette.base02} fg=#${palette.base05}'
             ''
               set -g default-terminal "tmux-256color"
               set -g terminal-overrides ',xterm-256color:Tc'
-              set -g status-style 'bg=#${palette.base02} fg=#${palette.base05}'
 
               bind-key Q kill-session
             '';

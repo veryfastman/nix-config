@@ -17,10 +17,11 @@
         pkgs = import inputs.nixpkgs {
           inherit system;
         };
-        module = import ./config // {
-          extraPlugins =
-            self.nixosConfigurations.laptop.config.home-manager.users.donny.theme.extraNeovimPlugins;
-        };
+        # module = import ./config // {
+        #   extraPlugins =
+        #     self.nixosConfigurations.laptop.config.home-manager.users.donny.theme.extraNeovimPlugins;
+        # };
+        module = import ./config;
         extraSpecialArgs = { inherit myLib; };
       };
     in

@@ -69,13 +69,14 @@ localFlake:
     { config, ... }:
     {
       imports = [
+        localFlake.inputs.stylix.homeModules.stylix
         localFlake.inputs.slippi.homeManagerModules.default
         {
           slippi-launcher.isoPath = "/home/donny/Games/Super Smash Bros. Melee (USA) (En,Ja) (Rev 2).iso";
         }
       ];
 
-      theme = localFlake.config.flake.themes.dracula;
+      # theme = localFlake.config.flake.themes.dracula;
 
       home.stateVersion = lib.mkDefault "21.11";
 
@@ -110,7 +111,7 @@ localFlake:
         zotero
 
         localFlake.inputs.zen-browser.packages."${pkgs.system}".default
-        localFlake.self.packages.${pkgs.system}.nvim
+        ((localFlake.self.packages.${pkgs.system}.nvim).extend config.lib.stylix.nixvim.config)
         # (callPackage ../../pkgs/tex.nix { })
         # TODO: Fix this
         (writeShellScriptBin "glsearch" ''
@@ -135,6 +136,12 @@ localFlake:
         '')
       ];
 
+      stylix = {
+        enable = true;
+        # image = "${localFlake.inputs.wallpaper-collection}/abstract_blue.jpg";
+        base16Scheme = "${localFlake.inputs.base16-themes}/base16/gruvbox-dark-hard.yaml";
+      };
+
       desktop = {
         hyprland = {
           enable = false;
@@ -143,7 +150,7 @@ localFlake:
           blurSize = 10;
           roundBorders.enable = true;
           startupCommands = [
-            "${pkgs.swaybg}/bin/swaybg -i ${config.theme.wallpaper}"
+            # "${pkgs.swaybg}/bin/swaybg -i ${config.theme.wallpaper}"
             "${config.services.mako.package}/bin/mako"
           ];
 

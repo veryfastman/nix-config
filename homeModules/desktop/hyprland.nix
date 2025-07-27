@@ -56,9 +56,9 @@
           "hyprland/window"
         ];
         wayland.windowManager.hyprland =
-          let
-            inherit (config.theme.colors.palette) base00 base0D;
-          in
+          # let
+          #   inherit (config.theme.colors.palette) base00 base0D;
+          # in
           {
             enable = true;
             xwayland.enable = true;
@@ -72,7 +72,8 @@
               exec-once = [
                 (mkIf config.graphic.waybar.enable "waybar")
                 "brightnessctl set 9600"
-              ] ++ cfg.startupCommands;
+              ]
+              ++ cfg.startupCommands;
 
               # plugins = [ pkgs.hyprlandPlugins.hy3 ];
 
@@ -88,8 +89,8 @@
                 gaps_in = 6;
                 gaps_out = 8;
                 border_size = cfg.borderSize;
-                "col.inactive_border" = "rgb(${base00})";
-                "col.active_border" = "rgb(${base0D})";
+                # "col.inactive_border" = "rgb(${base00})";
+                # "col.active_border" = "rgb(${base0D})";
                 layout = "master";
               };
 
@@ -146,7 +147,8 @@
                 "SUPER $mainMod, c, movetoworkspacesilent, special"
                 "SUPER $mainMod, grave, togglespecialworkspace"
                 "SUPER $mainMod, w, exec, [workspace special; float] alacritty"
-              ] ++ cfg.extraKeybindings;
+              ]
+              ++ cfg.extraKeybindings;
 
               binde = [
                 ", xf86audioraisevolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +1%"

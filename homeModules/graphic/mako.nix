@@ -44,18 +44,18 @@
 
       config = mkIf cfg.enable {
         services.mako =
-          let
-            inherit (config.theme.colors.palette) base02 base05 base0D;
-          in
+          # let
+          #   inherit (config.theme.colors.palette) base02 base05 base0D;
+          # in
           {
             enable = true;
             settings = {
-              font = "${cfg.font.name} ${toString cfg.font.size}";
+              # font = "${cfg.font.name} ${toString cfg.font.size}";
               defaultTimeout = cfg.timeout;
               borderRadius = config.desktop.hyprland.roundBorders.roundingAmount;
-              backgroundColor = "#${base02}";
-              borderColor = "#${base0D}";
-              textColor = "#${base05}";
+              # backgroundColor = "#${base02}";
+              # borderColor = "#${base0D}";
+              # textColor = "#${base05}";
               inherit (cfg) margin padding;
             };
           };
