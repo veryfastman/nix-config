@@ -84,6 +84,7 @@
           };
 
           env.TERM = "xterm-256color";
+          window.decorations = "none";
 
           # cursor = {
           #   style = {

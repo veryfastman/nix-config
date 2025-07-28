@@ -107,6 +107,7 @@ localFlake:
         winetricks
         wineWowPackages.waylandFull
         yewtube
+        youtube-music
         yt-dlp
         zip
         zotero
@@ -141,6 +142,9 @@ localFlake:
         enable = true;
         # image = "${localFlake.inputs.wallpaper-collection}/abstract_blue.jpg";
         base16Scheme = "${localFlake.inputs.base16-themes}/base16/gruvbox-dark-hard.yaml";
+        # cursor = {
+        #   name = "";
+        # };
       };
 
       desktop = {
