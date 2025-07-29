@@ -52,7 +52,7 @@ in
         };
 
         spawn-at-startup = [
-          { command = [ "${pkgs.xwayland-satellite}" ]; }
+          # { command = [ "${pkgs.xwayland-satellite}" ]; }
           { command = [ "waybar" ]; }
         ];
 
