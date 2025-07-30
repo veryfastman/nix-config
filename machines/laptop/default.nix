@@ -30,15 +30,15 @@ localFlake:
     "donny"
   ];
 
-  system.autoUpgrade = {
-    enable = true;
-    flake = "${localFlake.inputs.self.outPath}#laptop";
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "--commit-lock-file"
-    ];
-  };
+  # system.autoUpgrade = {
+  #   enable = true;
+  #   flake = "${localFlake.inputs.self.outPath}#laptop";
+  #   flags = [
+  #     "--update-input"
+  #     "nixpkgs"
+  #     "--commit-lock-file"
+  #   ];
+  # };
 
   environment.systemPackages = with pkgs; [
     age
