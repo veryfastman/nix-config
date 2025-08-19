@@ -46,7 +46,7 @@ in
             { proportion = 2. / 3.; }
           ];
           default-column-width = {
-            proportion = 0.45;
+            proportion = 0.8;
           };
           struts = { };
         };
