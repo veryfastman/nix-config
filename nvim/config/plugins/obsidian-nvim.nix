@@ -1,7 +1,7 @@
 { config, lib, ... }:
 {
   plugins.obsidian = {
-    enable = true;
+    enable = false;
     settings = {
       workspaces = [
         {
