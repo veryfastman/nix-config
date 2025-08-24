@@ -88,6 +88,7 @@ localFlake:
       home.packages = with pkgs; [
         ani-cli
         anki
+        audacity
         bluetuith
         # cava
         cmus
@@ -99,6 +100,7 @@ localFlake:
         ghostty
         gimp
         htop
+        lmms
         ncdu
         obsidian
         obs-studio
