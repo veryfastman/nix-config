@@ -11,6 +11,7 @@ localFlake:
     ./hardware-configuration.nix
     localFlake.config.flake.nixosModules.default
     localFlake.inputs.slippi.nixosModules.default
+    localFlake.inputs.musnix.nixosModules.musnix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -24,6 +25,9 @@ localFlake:
   dolphinOptimization.enable = true;
 
   hardware.bluetooth.enable = true;
+
+  # Real-time audio
+  musnix.enable = true;
 
   nix.settings.trusted-users = [
     "root"
