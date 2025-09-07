@@ -62,6 +62,7 @@ localFlake:
 
   programs.niri.enable = true;
   nixpkgs.overlays = [ localFlake.inputs.niri.overlays.niri ];
+
   # programs.niri.package = pkgs.niri;
 
   services.displayManager.ly.enable = true;
@@ -100,7 +101,7 @@ localFlake:
         ghostty
         gimp
         htop
-        lmms
+        # lmms
         ncdu
         obsidian
         obs-studio
@@ -148,6 +149,14 @@ localFlake:
         enable = true;
         # image = "${localFlake.inputs.wallpaper-collection}/abstract_blue.jpg";
         base16Scheme = "${localFlake.inputs.base16-themes}/base16/gruvbox-dark-hard.yaml";
+        targets = {
+          firefox = {
+            profileNames = [
+              "fun"
+              "school"
+            ];
+          };
+        };
         # cursor = {
         #   name = "";
         # };
