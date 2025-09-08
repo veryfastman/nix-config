@@ -68,7 +68,8 @@
                 repeat_delay = "210";
                 repeat_rate = "110";
               };
-            } // cfg.inputConf;
+            }
+            // cfg.inputConf;
             bars = [
               {
                 position = "bottom";
@@ -166,8 +167,8 @@
                 "XF86MonBrightnessDown" = "exec 'brightnessctl set 2%-'";
 
                 # Program keybinds
-                "${modifier}+Mod1+s" = "exec 'firefox -P fun'";
-                "${modifier}+Mod1+Shift+s" = "exec 'firefox -P school";
+                "${modifier}+Mod1+s" = "exec 'zen -P fun'";
+                "${modifier}+Mod1+Shift+s" = "exec 'zen -P school";
                 "${modifier}+Mod1+o" =
                   "exec 'obsidian --ozone-platform=wayland --enable-features=UseOzonePlatform,WaylandWindowDecorations'";
               };

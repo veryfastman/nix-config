@@ -257,6 +257,7 @@
           privateDefault = "ddg";
         };
 
+        extensions.force = true;
         extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
           decentraleyes
           df-youtube
