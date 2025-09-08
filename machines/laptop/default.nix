@@ -67,7 +67,7 @@ localFlake:
 
   services.displayManager.ly.enable = true;
   programs.hyprland.enable = false;
-  programs.river.enable = true;
+  programs.river-classic.enable = true;
   programs.sway.enable = true;
 
   home-manager.users.donny =
@@ -151,11 +151,13 @@ localFlake:
         base16Scheme = "${localFlake.inputs.base16-themes}/base16/gruvbox-dark-hard.yaml";
         targets = {
           firefox = {
+            enable = true;
             profileNames = [
               "fun"
               "school"
             ];
           };
+          kde.enable = true;
         };
         # cursor = {
         #   name = "";

@@ -36,6 +36,7 @@
         ];
         wayland.windowManager.river = {
           enable = true;
+          package = pkgs.river-classic;
           # settings =
           #   let
           #     inherit (config.theme.colors.palette) base00 base0D;
