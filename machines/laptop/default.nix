@@ -61,8 +61,6 @@ localFlake:
   ];
 
   programs.niri.enable = true;
-  nixpkgs.overlays = [ localFlake.inputs.niri.overlays.niri ];
-
   # programs.niri.package = pkgs.niri;
 
   services.displayManager.ly.enable = true;
