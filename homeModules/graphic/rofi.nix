@@ -22,7 +22,7 @@
 
         programs.rofi = {
           enable = true;
-          package = pkgs.rofi-wayland;
+          package = pkgs.rofi;
           # font = cfg.font;
           terminal = mkIf config.terminal.alacritty.enable "${pkgs.alacritty}/bin/alacritty";
           extraConfig = {
