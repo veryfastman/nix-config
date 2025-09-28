@@ -30,6 +30,7 @@ localFlake: {
             "Sync"
             "Games"
             ".cargo"
+            ".config/cosmic"
             ".config/obsidian"
             ".config/obs-studio"
             ".config/Youtube Music"
@@ -45,6 +46,7 @@ localFlake: {
             # ".local/share/nvim"
             ".local/share"
             # ".local/state" This is problematic
+            ".local/state/cosmic"
             ".mozilla"
             ".wine"
             ".zen"
