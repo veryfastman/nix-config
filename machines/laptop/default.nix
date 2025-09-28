@@ -64,6 +64,7 @@ localFlake:
   # programs.niri.package = pkgs.niri;
 
   services.displayManager.ly.enable = true;
+  services.desktopManager.cosmic.enable = true;
   programs.hyprland.enable = false;
   programs.river-classic.enable = true;
   programs.sway.enable = true;
