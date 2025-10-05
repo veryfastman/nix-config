@@ -13,7 +13,10 @@ localFlake:
       nixpkgs.config = {
         allowUnfree = true;
       };
-      nixpkgs.overlays = [ localFlake.inputs.niri.overlays.niri ];
+      nixpkgs.overlays = [
+        localFlake.inputs.niri.overlays.niri
+        # localFlake.inputs.zig-overlay.overlays.default
+      ];
       home.stateVersion = config.system.stateVersion;
       imports = [ localFlake.config.flake.homeModules.default ];
     }
