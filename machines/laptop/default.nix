@@ -22,7 +22,7 @@ localFlake:
   services.pipewire.enable = true;
   services.printing.enable = true;
   fonts.enable = true;
-  dolphinOptimization.enable = true;
+  # dolphinOptimization.enable = true;
 
   hardware.bluetooth.enable = true;
 
@@ -92,7 +92,7 @@ localFlake:
         bluetuith
         # cava
         cmus
-        dolphin-emu
+        # dolphin-emu
         fastfetch
         fd
         ffmpeg_6-full
