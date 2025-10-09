@@ -39,7 +39,7 @@
       jdtls.enable = true;
       lua_ls.enable = true;
       nil_ls.enable = true;
-      ccls.enable = true;
+      # ccls.enable = true;
       ltex.enable = true;
       # gopls.enable = true;
       # tsserver.enable = true;
