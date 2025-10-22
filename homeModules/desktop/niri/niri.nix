@@ -139,7 +139,7 @@ in
           "Mod+C".action = center-column;
           "Print".action = screenshot;
           # "Ctrl+Print".action = screenshot-screen;
-          "Alt+Print".action = screenshot-window;
+          # "Alt+Print".action = screenshot-window;
           "Mod+Shift+E".action = quit;
           "Mod+Shift+P".action = power-off-monitors;
           "Mod+Minus".action = set-column-width "-10%";
