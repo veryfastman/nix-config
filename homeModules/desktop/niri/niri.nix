@@ -137,7 +137,7 @@ in
           "Mod+F".action = maximize-column;
           "Mod+Shift+F".action = fullscreen-window;
           "Mod+C".action = center-column;
-          "Print".action = screenshot;
+          # "Print".action = screenshot;
           # "Ctrl+Print".action = screenshot-screen;
           # "Alt+Print".action = screenshot-window;
           "Mod+Shift+E".action = quit;
