@@ -7,19 +7,19 @@
 {
   plugins.neorg = {
     enable = true;
-    settings.load =
-      {
-        "core.completion".config.engine = "nvim-cmp";
-        "core.dirman".config = {
-          workspaces.notes = "~/Documents/notes";
-          default_workspace = "notes";
-        };
-      }
-      // lib.genAttrs [ "core.defaults" "core.concealer" "core.summary" ] (_: {
-        __empty = null;
-      });
+    settings.load = {
+      "core.integration.treesitter".config.enable = false;
+      "core.completion".config.engine = "nvim-cmp";
+      "core.dirman".config = {
+        workspaces.notes = "~/Documents/notes";
+        default_workspace = "notes";
+      };
+    }
+    // lib.genAttrs [ "core.defaults" "core.concealer" "core.summary" ] (_: {
+      __empty = null;
+    });
   };
-  #
+
   # extraPlugins = with pkgs; [
   #   (vimUtils.buildVimPlugin {
   #     name = "lua-utils";
