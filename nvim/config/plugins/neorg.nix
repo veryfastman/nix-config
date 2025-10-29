@@ -8,7 +8,7 @@
   plugins.neorg = {
     enable = true;
     settings.load = {
-      "core.integration.treesitter".config.enable = false;
+      # "core.integration.treesitter".config.enable = false;
       "core.completion".config.engine = "nvim-cmp";
       "core.dirman".config = {
         workspaces.notes = "~/Documents/notes";
