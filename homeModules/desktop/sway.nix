@@ -67,6 +67,9 @@
               "type:keyboard" = {
                 repeat_delay = "210";
                 repeat_rate = "110";
+                xkb_layout = "us,es";
+                xkb_variant = "winkeys,intl";
+                xkb_options = "grp:sclk_toggle";
               };
             }
             // cfg.inputConf;
