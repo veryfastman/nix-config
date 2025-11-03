@@ -85,65 +85,75 @@ localFlake:
 
       home.stateVersion = lib.mkDefault "21.11";
 
-      home.packages = with pkgs; [
-        ani-cli
-        anki
-        audacity
-        bluetuith
-        # cava
-        cmus
-        # dolphin-emu
-        fastfetch
-        fd
-        ffmpeg_6-full
-        fzf
-        ghostty
-        gimp
-        htop
-        # lmms
-        ncdu
-        obsidian
-        obs-studio
-        qalculate-qt
-        ripgrep
-        streamlink
-        # texliveFull
-        trash-cli
-        unzip
-        winetricks
-        wineWowPackages.waylandFull
-        yewtube
-        youtube-music
-        yt-dlp
-        zip
-        zotero
-        zig_0_15
+      home.packages =
+        let
+          pkgs-stable = import (
+            builtins.fetchGit {
+              url = "https://github.com/nixos/nixpkgs";
+              rev = "11cb3517b3af6af300dd6c055aeda73c9bf52c48"; # 25.05
+            }
+          );
+        in
+        with pkgs;
+        [
+          ani-cli
+          anki
+          audacity
+          bluetuith
+          # cava
+          cmus
+          # dolphin-emu
+          fastfetch
+          fd
+          ffmpeg_6-full
+          fzf
+          ghostty
+          gimp
+          htop
+          # pkgs-stable.lmms # unstable version is broken
+          ncdu
+          obsidian
+          obs-studio
+          qalculate-qt
+          ripgrep
+          streamlink
+          # texliveFull
+          trash-cli
+          unzip
+          winetricks
+          wineWowPackages.waylandFull
+          yewtube
+          youtube-music
+          yt-dlp
+          zip
+          zotero
+          zig_0_15
 
-        localFlake.inputs.zen-browser.packages."${pkgs.system}".default
-        ((localFlake.self.packages.${pkgs.system}.nvim).extend config.lib.stylix.nixvim.config)
-        # (callPackage ../../pkgs/tex.nix { })
-        # TODO: Fix this
-        (writeShellScriptBin "glsearch" ''
-          firefox \
-              ~/Misc/OpenGL-Refpages/gl4/html/$(ls ~/Misc/OpenGL-Refpages/gl4/html/*.xhtml \
-                | xargs -n 1 basename \
-                | cut -d "." -f 1 \
-                | rofi -dmenu).xhtml
-        '')
-        (writeShellScriptBin "tp" ''
-          if [ -n "$1" ]; then
-              SESSION_NAME=$1
-          else
-              SESSION_NAME="coding"
-          fi
+          localFlake.inputs.zen-browser.packages."${pkgs.system}".default
+          ((localFlake.self.packages.${pkgs.system}.nvim).extend config.lib.stylix.nixvim.config)
+          # (callPackage ../../pkgs/tex.nix { })
+          # TODO: Fix this
+          (writeShellScriptBin "glsearch" ''
+            firefox \
+                ~/Misc/OpenGL-Refpages/gl4/html/$(ls ~/Misc/OpenGL-Refpages/gl4/html/*.xhtml \
+                  | xargs -n 1 basename \
+                  | cut -d "." -f 1 \
+                  | rofi -dmenu).xhtml
+          '')
+          (writeShellScriptBin "tp" ''
+            if [ -n "$1" ]; then
+                SESSION_NAME=$1
+            else
+                SESSION_NAME="coding"
+            fi
 
-          tmux new -d -s "$SESSION_NAME"
-          tmux rename-window code
-          tmux new-window -n cli
-          tmux previous-window
-          tmux attach-session -t "$SESSION_NAME"
-        '')
-      ];
+            tmux new -d -s "$SESSION_NAME"
+            tmux rename-window code
+            tmux new-window -n cli
+            tmux previous-window
+            tmux attach-session -t "$SESSION_NAME"
+          '')
+        ];
 
       stylix = {
         enable = true;
