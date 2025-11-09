@@ -112,6 +112,7 @@ localFlake:
           htop
           # pkgs-stable.lmms # unstable version is broken
           ncdu
+          nixfmt
           obsidian
           obs-studio
           qalculate-qt

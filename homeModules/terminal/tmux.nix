@@ -38,6 +38,8 @@
               set -g default-terminal "tmux-256color"
               set -g terminal-overrides ',xterm-256color:Tc'
 
+              set -g set-clipboard external
+
               bind-key Q kill-session
             '';
         };
