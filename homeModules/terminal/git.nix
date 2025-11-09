@@ -18,8 +18,10 @@
           git = {
             enable = true;
             package = pkgs.gitFull;
-            user.name = "veryfastman";
-            user.email = "dony357@outlook.com";
+            settings = {
+              user.name = "veryfastman";
+              user.email = "dony357@outlook.com";
+            };
           };
 
           # git-credential-oauth.enable = true;
