@@ -68,7 +68,7 @@
                 repeat_delay = "210";
                 repeat_rate = "110";
                 xkb_layout = "us,us";
-                xkb_variant = "basic,intl";
+                xkb_variant = ",intl";
                 xkb_options = "grp:sclk_toggle";
               };
             }
