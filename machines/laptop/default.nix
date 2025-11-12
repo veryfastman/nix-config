@@ -128,7 +128,7 @@ localFlake:
           yt-dlp
           zip
           zotero
-          zig_0_15
+          zig
 
           localFlake.inputs.zen-browser.packages."${pkgs.system}".default
           ((localFlake.self.packages.${pkgs.system}.nvim).extend config.lib.stylix.nixvim.config)
