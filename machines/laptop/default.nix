@@ -101,7 +101,7 @@ localFlake:
           audacity
           bluetuith
           # cava
-          cmus
+          # cmus
           # dolphin-emu
           fastfetch
           fd
