@@ -168,7 +168,7 @@ localFlake:
               "school"
             ];
           };
-          kde.enable = true;
+          # kde.enable = true;
         };
         # cursor = {
         #   name = "";
