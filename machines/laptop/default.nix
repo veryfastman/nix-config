@@ -276,6 +276,7 @@ localFlake:
       misc = {
         firefox.enable = true;
         impermanence.enable = true;
+        mime.enable = true;
         mpv.enable = true;
         scripts.enable = true;
         wallpapers.enable = true;

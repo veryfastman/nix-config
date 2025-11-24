@@ -11,6 +11,7 @@ in
   flake.homeModules.misc.imports = with config.flake.homeModules; [
     firefox
     impermanence
+    mime
     mpv
     scripts
     # theme
@@ -20,6 +21,7 @@ in
 
   imports = [
     ./firefox.nix
+    ./mime.nix
     ./mpv.nix
     ./scripts.nix
     ./zathura.nix
