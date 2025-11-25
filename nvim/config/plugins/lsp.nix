@@ -48,6 +48,11 @@
         enable = true;
         installCargo = true;
         installRustc = true;
+        extraOptions = {
+          diagnostics = {
+            underline = false;
+          };
+        };
       };
     };
   };
