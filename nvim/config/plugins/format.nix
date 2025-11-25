@@ -6,6 +6,7 @@
         c = [ "clang_format" ];
         cpp = [ "clang_format" ];
         nix = [ "nixfmt" ];
+        rust = [ "rustfmt" ];
         zig = [ "zigfmt" ];
       };
       formatters = {
