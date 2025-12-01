@@ -130,8 +130,10 @@ localFlake:
           zotero
           zig
 
-          localFlake.inputs.zen-browser.packages."${pkgs.system}".default
-          ((localFlake.self.packages.${pkgs.system}.nvim).extend config.stylix.targets.nixvim.exportedModule)
+          localFlake.inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
+          ((localFlake.self.packages.${pkgs.stdenv.hostPlatform.system}.nvim).extend
+            config.stylix.targets.nixvim.exportedModule
+          )
           # (callPackage ../../pkgs/tex.nix { })
           # TODO: Fix this
           (writeShellScriptBin "glsearch" ''
