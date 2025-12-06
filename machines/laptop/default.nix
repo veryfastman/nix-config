@@ -364,6 +364,11 @@ localFlake:
           label = "music";
           id = "mrg45-dnnc3";
         };
+        "~/Videos/yt" = {
+          devices = [ "phone" ];
+          label = "videos";
+          id = "ls6rq-l1zck";
+        };
       };
     };
   };
