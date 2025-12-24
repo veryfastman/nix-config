@@ -110,7 +110,7 @@ localFlake:
           ghostty
           gimp
           htop
-          # pkgs-stable.lmms # unstable version is broken
+          lmms
           ncdu
           nixfmt
           obsidian
