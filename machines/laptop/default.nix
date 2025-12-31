@@ -116,6 +116,7 @@ localFlake:
           obsidian
           obs-studio
           qalculate-qt
+          pear-desktop
           ripgrep
           streamlink
           # texliveFull
@@ -124,7 +125,6 @@ localFlake:
           winetricks
           wineWowPackages.waylandFull
           yewtube
-          youtube-music
           yt-dlp
           zip
           zotero
