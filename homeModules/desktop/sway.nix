@@ -170,6 +170,7 @@
                 "XF86MonBrightnessDown" = "exec 'brightnessctl set 2%-'";
 
                 # Program keybinds
+                "${modifier}+n" = "exec 'alacritty -e newsboat'";
                 "${modifier}+Mod1+s" = "exec 'zen -P fun'";
                 "${modifier}+Mod1+Shift+s" = "exec 'zen -P school";
                 "${modifier}+Mod1+o" =
