@@ -1,21 +1,29 @@
-https://www.ocregister.com/feed/
-https://feeds.washingtonpost.com/rss/world
-https://rss.nytimes.com/services/xml/rss/nyt/World.xml
-https://www.nasa.gov/feed/
-https://mitchellh.com/feed.xml
-https://www.gurwinder.blog/feed
-https://psyche.co/feed.rss
-https://hnrss.org/newest?points=100
-https://hnrss.org/bestcomments
-https://www.reddit.com/r/literature/.rss
-https://www.reddit.com/r/norwegiansinglesrun/.rss
-https://www.runnersworld.com/rss/default.xml
-https://www.youtube.com/feeds/videos.xml?channel_id=UCLM1XXI4A8e0DuIJLSTtDGg
-https://www.youtube.com/feeds/videos.xml?channel_id=UC3ubbgQcHt9Jhpt6JWbSRWw
-https://www.youtube.com/feeds/videos.xml?channel_id=UCMQEMrBjz7rbc9Rmc6P1CxQ
-https://www.youtube.com/feeds/videos.xml?channel_id=UCnI3TuOg8D3SCRPW8ET4EAg
-https://www.youtube.com/feeds/videos.xml?channel_id=UCPzWlhG7QM56Y8MYB3qMVnQ
-https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA
-https://www.youtube.com/feeds/videos.xml?channel_id=UC4lEyoJLamCzzWs_jSmoCCw
-https://www.youtube.com/feeds/videos.xml?channel_id=UCMv7Q5xvdeGpy2Qd9QX-tGg
-https://www.youtube.com/feeds/videos.xml?channel_id=UCUzQJ3JBuQ9w-po4TXRJHiA
+"query:News:tags # \"News\""
+https://lwn.net/headlines/rss "News"
+https://www.ocregister.com/feed/ "News"
+https://feeds.washingtonpost.com/rss/world "News"
+https://rss.nytimes.com/services/xml/rss/nyt/World.xml "News"
+https://www.nasa.gov/feed/ "News"
+https://psyche.co/feed.rss "News"
+https://www.runnersworld.com/rss/default.xml "News"
+https://hnrss.org/newest?points=100 "News"
+https://hnrss.org/bestcomments "News"
+
+"query:Blogs:tags # \"Blogs\""
+https://www.gurwinder.blog/feed "Blogs"
+https://mitchellh.com/feed.xml "Blogs"
+
+"query:Reddit:tags # \"Reddit\""
+https://www.reddit.com/r/literature/.rss "Reddit"
+https://www.reddit.com/r/norwegiansinglesrun/.rss "Reddit"
+
+"query:YouTube:tags # \"YouTube\""
+https://www.youtube.com/feeds/videos.xml?channel_id=UCLM1XXI4A8e0DuIJLSTtDGg "Youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3ubbgQcHt9Jhpt6JWbSRWw "Youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCMQEMrBjz7rbc9Rmc6P1CxQ "Youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCnI3TuOg8D3SCRPW8ET4EAg "Youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCPzWlhG7QM56Y8MYB3qMVnQ "Youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA "Youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC4lEyoJLamCzzWs_jSmoCCw "Youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCMv7Q5xvdeGpy2Qd9QX-tGg "Youtube"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUzQJ3JBuQ9w-po4TXRJHiA "Youtube"

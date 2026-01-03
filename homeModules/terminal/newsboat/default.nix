@@ -38,6 +38,17 @@
 
             macro v set browser "setsid -f mpv %u > /dev/null 2>&1" ; open-in-browser ; set browser "zen -p school"
             macro p set browser "zen -p school --private-window %u" ; open-in-browser ; set browser "zen -p school"
+
+            # highlights
+            highlight article "^(Feed|Link):.*$" color6 default bold
+            highlight article "^(Title|Date|Author):.*$" color6 default bold
+            highlight article "https?://[^ ]+" color10 default underline
+            highlight article "\\[[0-9]+\\]" color10 default bold
+            highlight article "\\[image\\ [0-9]+\\]" color10 default bold
+
+            feedlist-format "%?T?║%4i %n %8u %8T %t &╠═══════════════════════════════════════════════════════════════%t?"
+            highlight feedlist "[║│]" color3 color0
+            highlight feedlist "╠═.*" color3 color0
           '';
         };
       };
