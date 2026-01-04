@@ -19,12 +19,7 @@
 
           package =
             with pkgs;
-            (mpv-unwrapped.wrapper {
-              mpv = (
-                mpv-unwrapped.override {
-                  ffmpeg = ffmpeg_6-full;
-                }
-              );
+            (mpv.override {
               youtubeSupport = true;
               scripts = [ mpvScripts.mpris ];
             });
