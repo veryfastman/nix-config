@@ -7,7 +7,7 @@
     ./format.nix
     ./lsp.nix
     ./lualine.nix
-    ./neorg.nix
+    # ./neorg.nix
     ./neo-tree.nix
     ./obsidian-nvim.nix
     ./telescope.nix
