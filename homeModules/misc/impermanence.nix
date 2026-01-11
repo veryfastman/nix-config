@@ -10,14 +10,10 @@ localFlake: {
       cfg = config.misc.impermanence;
     in
     {
-      imports = [
-        localFlake.inputs.impermanence.nixosModules.home-manager.impermanence
-      ];
-
       options.misc.impermanence.enable = mkEnableOption "Enable impermanence home module";
 
       config = mkIf cfg.enable {
-        home.persistence."/persist/home/donny" = {
+        home.persistence."/persist" = {
           directories = [
             "Coding"
             "Downloads"
@@ -65,8 +61,6 @@ localFlake: {
             ".config/sops/age/keys.txt"
             ".zsh_history"
           ];
-
-          allowOther = true;
         };
       };
     };
