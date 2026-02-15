@@ -225,7 +225,7 @@ localFlake:
         niri.enable = true;
 
         river = {
-          enable = true;
+          enable = false;
           startupCommands = [
             "waybar"
           ];
