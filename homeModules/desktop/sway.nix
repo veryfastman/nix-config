@@ -171,8 +171,8 @@
 
                 # Program keybinds
                 "${modifier}+n" = "exec 'alacritty -e newsboat'";
-                "${modifier}+Mod1+s" = "exec 'zen -P fun'";
-                "${modifier}+Mod1+Shift+s" = "exec 'zen -P school";
+                "${modifier}+Mod1+s" = "exec 'zen-beta -P fun'";
+                "${modifier}+Mod1+Shift+s" = "exec 'zen-beta -P school";
                 "${modifier}+Mod1+o" =
                   "exec 'obsidian --ozone-platform=wayland --enable-features=UseOzonePlatform,WaylandWindowDecorations'";
               };
