@@ -19,7 +19,7 @@
 
         programs.newsboat = {
           enable = true;
-          browser = "\"zen -p school\"";
+          browser = "\"zen-beta -p school\"";
           reloadThreads = 100;
           extraConfig = ''
             refresh-on-startup yes
@@ -36,8 +36,8 @@
             bind-key SPACE macro-prefix
             bind-key b bookmark
 
-            macro v set browser "setsid -f mpv %u > /dev/null 2>&1" ; open-in-browser ; set browser "zen -p school"
-            macro p set browser "zen -p school --private-window %u" ; open-in-browser ; set browser "zen -p school"
+            macro v set browser "setsid -f mpv %u > /dev/null 2>&1" ; open-in-browser ; set browser "zen-beta -p school"
+            macro p set browser "zen-beta -p school --private-window %u" ; open-in-browser ; set browser "zen-beta -p school"
 
             # highlights
             highlight article "^(Feed|Link):.*$" color6 default bold
