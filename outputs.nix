@@ -31,7 +31,6 @@ flake-parts.lib.mkFlake { inherit inputs; } {
         projectRootFile = "INSTALL.md";
         programs.nixfmt = {
           enable = true;
-          package = pkgs.nixfmt-rfc-style;
         };
       };
       _module.args.pkgs = import nixpkgs {
