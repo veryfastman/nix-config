@@ -109,6 +109,7 @@ localFlake:
           fzf
           ghostty
           gimp
+          helm
           htop
           lmms
           ncdu
