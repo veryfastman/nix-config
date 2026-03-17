@@ -123,8 +123,8 @@ localFlake:
           # texliveFull
           trash-cli
           unzip
-          # winetricks
-          # wineWowPackages.waylandFull
+          winetricks
+          wine
           yewtube
           yt-dlp
           zip
