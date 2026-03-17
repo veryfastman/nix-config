@@ -7,6 +7,7 @@ localFlake:
     extraGroups = [
       "networkmanager"
       "wheel"
+      "audio"
     ];
     home = "/home/donny";
     hashedPasswordFile = config.sops.secrets.donny_password.path;
