@@ -78,6 +78,10 @@
       flake = false;
     };
 
+    # lmms-master = {
+    #   url = "github:"
+    # };
+
     # zig-overlay = {
     #   url = "github:mitchellh/zig-overlay";
     #   inputs.nixpkgs.follows = "nixpkgs";

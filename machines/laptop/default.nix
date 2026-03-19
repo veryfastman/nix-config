@@ -110,7 +110,6 @@ localFlake:
           ghostty
           gimp
           htop
-          lmms
           ncdu
           nixfmt
           obsidian
@@ -130,12 +129,21 @@ localFlake:
           zotero
           zig
 
+          # TODO: FIX!
+          (callPackage ../../pkgs/lmms-master.nix {
+            inherit (libsForQt5.qt5)
+              qtbase
+              qtx11extras
+              qttools
+              wrapQtAppsHook
+              ;
+          })
+
           localFlake.inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
           ((localFlake.self.packages.${pkgs.stdenv.hostPlatform.system}.nvim).extend
             config.stylix.targets.nixvim.exportedModule
           )
           # (callPackage ../../pkgs/tex.nix { })
-          # TODO: Fix this
           (writeShellScriptBin "glsearch" ''
             firefox \
                 ~/Misc/OpenGL-Refpages/gl4/html/$(ls ~/Misc/OpenGL-Refpages/gl4/html/*.xhtml \
