@@ -166,6 +166,8 @@ localFlake:
           '')
 
           # vsts
+          yabridge
+          yabridgectl
           helm
           lsp-plugins
           infamousPlugins
