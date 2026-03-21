@@ -44,6 +44,7 @@ localFlake: {
             # ".local/state" This is problematic
             ".local/state/cosmic"
             ".mozilla"
+            ".vst"
             ".wine"
             ".zen"
 
