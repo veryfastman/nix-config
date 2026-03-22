@@ -122,7 +122,7 @@ localFlake:
           trash-cli
           unzip
           winetricks
-          wine
+          wine64
           yewtube
           yt-dlp
           zip
