@@ -18,7 +18,6 @@
   plugins = {
     comment.enable = true;
     nvim-autopairs.enable = true;
-    treesitter.enable = true;
     trouble.enable = true;
     web-devicons.enable = true;
 
@@ -26,6 +25,12 @@
       enable = true;
       texlivePackage = pkgs.texliveFull;
       settings.view_method = "zathura";
+    };
+
+    treesitter = {
+      enable = true;
+      highlight.enable = true;
+      indent.enable = true;
     };
   };
 }
